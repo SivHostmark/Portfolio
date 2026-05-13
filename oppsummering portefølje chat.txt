@@ -1,0 +1,54 @@
+Prosjekt
+
+Siv Høstmarks UX-portefølje — statiske HTML/CSS-filer lagret i:
+/Users/AD17830/Documents/Siv Portfolio/
+
+Filer i mappen
+
+Fil	Beskrivelse
+siv-portefolio.html	Hovedportefølje — 4 prosjektkort, hero, footer
+styles.css	Delt designsystem for hele porteføljen
+case-study.html	Case study-mal vi lagde denne sesjonen
+case-study.css	Stilark kun for case study-siden
+4.png	Bakgrunnsbilde brukt i hero
+Designsystem (fra styles.css)
+
+
+Fonter:
+  --font-display: 'Cormorant Garamond' (serif, headers)
+  --font-body: 'DM Sans' (sans-serif, brødtekst)
+
+Farger:
+  --black: #111111
+  --white: #ffffff
+  --gray:  #f7f7f7
+  --mid-gray: #888888
+Header er position: fixed, hvit tekst over hero, bytter til mørk tekst (dark-nav-klasse) når hero-seksjonen scroller ut av view
+.btn — outlined knapp, fyller svart ved hover
+Seksjoner veksler mellom .white-bg og .light-bg (#f7f7f7)
+Hva vi lagde: case-study.html + case-study.css
+
+Siden er bygd som en ferdig case study-mal med disse seksjonene (alle med unike IDer for scroll-spy):
+
+ID	Seksjon
+cs-section-overview	Svart oversiktsstripe — Rolle, Verktøy, Tidsperiode, Plattform
+cs-section-problem	Problem — "What was the challenge?" + 2 kort
+cs-section-research	Research & Approach — metoder, funn, bildegrid
+cs-section-process	Design Process — 3 iterasjonsbilder + kort
+cs-section-solution	Solution — full-bredde bilde + 2 kort
+cs-section-results	Results — 3 store tall (91.7% CSAT, +40%, −28%)
+Øverst: en cs-hero-seksjon med bakgrunnsbilde (4.png), stor tittel og metadata.
+Nederst: prosjektnavigasjon (← Forrige / Neste →) + samme footer som porteføljsiden.
+
+Sidemeny (venstre, sticky)
+
+<aside class="cs-sidebar" id="cs-sidebar"> — fixed posisjonert, venstre side
+6 lenker: Overview · Problem · Research · Design Process · Solution · Results
+Scroll-spy med IntersectionObserver — markerer aktiv seksjon automatisk
+Skjult under hero, glir inn når hero scroller ut (visible-klasse togles)
+Kun synlig på skjermer ≥ 1300px — innhold forskyves 240px til høyre for å gi plass
+Font: Cormorant Garamond 19px
+Inaktiv farge: #aaa | Aktiv farge: #111 | Hover: #666
+Neste steg (ikke gjort ennå)
+
+Brukeren ønsker å fjerne cs-hero-seksjonen (bakgrunnsbildet øverst på case study-siden) og erstatte den med en enkel, ren tekstbasert intro — hvit bakgrunn, stor tittel, metadata — som går direkte inn i den svarte oversiktsstripa. Verktøyet krasjet før dette ble utført.

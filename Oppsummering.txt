@@ -1,0 +1,45 @@
+Sammendrag — Siv Høstmark Portfolio
+Research
+
+UX-portefolio — hva de beste inneholder:
+
+Struktur: hero/forside, om-meg, 2–4 detaljerte case studies, kontakt
+Case study-format: Problem → Tilnærming → Prosess → Resultat
+Hva recruiters ser etter: tydelighet i resonnement, eierskap/scope, målbare resultater
+Typiske feil å unngå: passordbeskyttelse, vage roller, svak visuell hierarki, skrivefeil
+35+ portefolio-eksempler researched, inkludert:
+
+Lola Jiang (lolajiang.com) — rangert som en av de beste globalt, inspirasjon for Sivs design
+Gloria Ha, Mia Galloro, Matt Fredette, Jessica Goldman og mange flere
+Det vi har bygget
+
+En komplett portefolio-forside for Siv Høstmark, inspirert av Lola Jiangs minimalistiske stil.
+
+Filer:
+
+
+/Users/AD17830/Documents/Siv Portfolio/
+├── siv-portefolio.html
+└── styles.css
+Innhold på siden:
+
+Fast toppmeny med logo (S), Portfolio / Resume / Art / About
+Hero-seksjon med navn, ingress, vertikal strek og animert nedoverpil
+4 prosjektseksjoner (vekslende hvit/grå bakgrunn, alternerende tekst/bilde-layout)
+Footer med kontaktinfo og ikoner for e-post og LinkedIn
+Design-valg:
+
+Fonter: Cormorant Garamond (serif, til overskrifter) + DM Sans (sans-serif, til brødtekst)
+Fargepalett: nesten-svart, hvit, lysgrå, myk gradient (blå → lilla → beige) i hero
+Animasjoner: fadeUp på hero-tekst, bounce på scroll-pil, fade-inn på prosjektseksjoner ved scroll
+Tekniske ting vi ryddet opp i:
+
+Splittet CSS ut i egen fil (best practice)
+Fjernet død kode og overflødige stiler
+Fikset grid-rekkefølge-bug i reverse-layout på prosjektseksjoner
+Fikset sentrering av scroll-pil
+Gjenstår
+
+Bytte ut "Project Image"-placeholder med ekte prosjektbilder
+Oppdatere LinkedIn-lenke til riktig profil-URL
+Bygge ut individuelle case study-sider
