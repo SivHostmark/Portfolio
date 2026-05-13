@@ -30,16 +30,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 28px 48px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-header.dark-nav {
-  background: transparent;
-  box-shadow: none;
-}
-
-header.dark-nav::before {
+header::before {
   content: '';
   position: absolute;
   left: 0;
@@ -48,8 +41,13 @@ header.dark-nav::before {
   bottom: 14px;
   background: var(--white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
   z-index: -1;
 }
+
+header.dark-nav::before { opacity: 1; }
 
 .logo-mark {
   width: 32px;
@@ -103,6 +101,7 @@ nav ul li a:hover::after { width: 100%; }
 nav ul li a:hover { opacity: 1; }
 header.dark-nav nav ul li a:hover { opacity: 0.6; }
 nav ul li.active a::after { width: 100%; }
+header.dark-nav nav ul li:first-child a::after { width: 100%; }
 
 header:not(.dark-nav) nav ul li a { text-shadow: 0 1px 8px rgba(0,0,0,0.2); }
 
@@ -138,7 +137,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   justify-content: center;
   align-items: center;
   padding: 0 80px;
-  background: url('4.png') center center / cover no-repeat;
+  background: url('4.5.png') center center / cover no-repeat;
   overflow: hidden;
   position: relative;
 }
