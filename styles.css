@@ -29,14 +29,26 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 48px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+  padding: 28px 48px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 header.dark-nav {
+  background: transparent;
+  box-shadow: none;
+}
+
+header.dark-nav::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14px;
+  bottom: 14px;
   background: var(--white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  z-index: -1;
 }
 
 .logo-mark {
