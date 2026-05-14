@@ -37,7 +37,7 @@ header::before {
   position: absolute;
   left: 0;
   right: 0;
-  top: 14px;
+  top: 0;
   bottom: 14px;
   background: var(--white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -76,6 +76,7 @@ nav ul {
 }
 
 nav ul li a {
+  font-family: 'Jost', sans-serif;
   text-decoration: none;
   font-size: 13px;
   font-weight: 400;
@@ -151,11 +152,12 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 }
 
 #hero h1 {
-  font-family: var(--font-display);
+  font-family: 'Jost', sans-serif;
   font-size: clamp(22px, 2.5vw, 36px);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.05;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-bottom: 14px;
   color: #ffffff;
   text-shadow: 0 1px 12px rgba(0,0,0,0.18);
