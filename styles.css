@@ -138,7 +138,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   justify-content: center;
   align-items: center;
   padding: 0 80px;
-  background: url('4.5.png') center center / cover no-repeat;
+  background: url('4.5.avif') center center / cover no-repeat;
   overflow: hidden;
   position: relative;
 }
@@ -169,7 +169,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   line-height: 1.6;
   color: #ffffff;
   font-weight: 300;
-  max-width: 220px;
+  max-width: 300px;
   text-shadow: 0 1px 8px rgba(0,0,0,0.15);
   animation: fadeUp 0.9s 0.15s ease both;
 }
@@ -240,12 +240,13 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 }
 
 .project-text h2 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.5vw, 46px);
-  font-weight: 400;
-  line-height: 1.15;
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 300;
+  line-height: 1.2;
   margin-bottom: 20px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .project-text p {
