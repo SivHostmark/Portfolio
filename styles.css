@@ -9,7 +9,10 @@
   --font-body: 'DM Sans', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
 
 body {
   font-family: var(--font-body);
@@ -58,6 +61,8 @@ header.dark-nav::before { opacity: 1; }
   align-items: center;
   justify-content: center;
   transition: border-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .logo-mark span {
@@ -324,9 +329,9 @@ footer {
 }
 
 .footer-left h3 {
-  font-family: 'Jost', sans-serif;
+  font-family: var(--font-display);
   font-size: 32px;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 12px;
