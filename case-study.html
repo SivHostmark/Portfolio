@@ -13,7 +13,7 @@
 <body>
 
   <!-- ─────────────────────────────── HEADER ─── -->
-  <header>
+  <header class="dark-nav">
     <div class="logo">
       <a href="siv-portefolio.html" class="logo-mark"><span>S</span></a>
     </div>
@@ -29,30 +29,34 @@
   </header>
 
   <!-- ─────────────────────────────── 1. HERO ─── -->
-  <section class="cs-hero" id="cs-hero"
-    style="background-image: url('4.png');">
+  <section class="cs-hero" id="cs-hero">
+    <div class="cs-hero-inner">
+      <div class="cs-hero-content">
+        <div class="cs-hero-label">
+          Case Study <span>·</span> Product Design
+        </div>
 
-    <div class="cs-hero-content">
-      <div class="cs-hero-label">
-        02 — Case Study
-        <span>·</span>
-        Product Design
+        <h1>Optimizing Store<br>Operations with AI</h1>
+
+        <p class="cs-hero-desc">A short project description that summarises what this case study is about.</p>
       </div>
 
-      <h1>Optimizing Store<br>Operations with AI</h1>
-
-      <div class="cs-hero-meta">
-        <div class="cs-hero-meta-item">
-          <span class="label">Role</span>
-          <span class="value">Lead Product Designer</span>
+      <div class="cs-hero-info">
+        <div class="cs-hero-info-row">
+          <div class="info-label">Role</div>
+          <div class="info-value">Lead Product Designer</div>
         </div>
-        <div class="cs-hero-meta-item">
-          <span class="label">Year</span>
-          <span class="value">2023 – 2024</span>
+        <div class="cs-hero-info-row">
+          <div class="info-label">Tools</div>
+          <div class="info-value">Figma · FigJam<br>Maze · Dovetail</div>
         </div>
-        <div class="cs-hero-meta-item">
-          <span class="label">Category</span>
-          <span class="value">Service Design · AI</span>
+        <div class="cs-hero-info-row">
+          <div class="info-label">Duration</div>
+          <div class="info-value">6 months<br>2023 – 2024</div>
+        </div>
+        <div class="cs-hero-info-row">
+          <div class="info-label">Platform</div>
+          <div class="info-value">Internal Web App<br>Mobile (iOS)</div>
         </div>
       </div>
     </div>
@@ -61,7 +65,6 @@
   <!-- ─────────────────────────────── SIDEBAR NAV ─── -->
   <aside class="cs-sidebar" id="cs-sidebar">
     <nav class="cs-sidenav">
-      <a href="#cs-section-overview"  class="cs-sidenav-link" data-section="cs-section-overview">Overview</a>
       <a href="#cs-section-problem"   class="cs-sidenav-link" data-section="cs-section-problem">Problem</a>
       <a href="#cs-section-research"  class="cs-sidenav-link" data-section="cs-section-research">Research</a>
       <a href="#cs-section-process"   class="cs-sidenav-link" data-section="cs-section-process">Design Process</a>
@@ -70,25 +73,11 @@
     </nav>
   </aside>
 
-  <!-- ─────────────────────────────── 2. OVERVIEW STRIP ─── -->
-  <div class="cs-overview" id="cs-section-overview">
-    <div class="cs-overview-inner">
-      <div class="cs-overview-item">
-        <div class="label">Role</div>
-        <div class="value">Lead Product Designer</div>
-      </div>
-      <div class="cs-overview-item">
-        <div class="label">Tools</div>
-        <div class="value">Figma · FigJam<br>Maze · Dovetail</div>
-      </div>
-      <div class="cs-overview-item">
-        <div class="label">Duration</div>
-        <div class="value">6 months<br>2023 – 2024</div>
-      </div>
-      <div class="cs-overview-item">
-        <div class="label">Platform</div>
-        <div class="value">Internal Web App<br>Mobile (iOS)</div>
-      </div>
+
+  <!-- ─────────────────────────────── COVER IMAGE ─── -->
+  <div class="cs-cover-image">
+    <div class="cs-cover-image-inner">
+      <div class="img-placeholder">Project Cover Image</div>
     </div>
   </div>
 
@@ -302,26 +291,21 @@
   </footer>
 
   <script>
-    /* ── Header colour-switch on scroll ── */
-    const header = document.querySelector('header');
-    const hero   = document.querySelector('#cs-hero');
+    const hero = document.querySelector('#cs-hero');
 
-    const heroHeaderObserver = new IntersectionObserver(([entry]) => {
-      header.classList.toggle('dark-nav', !entry.isIntersecting);
-    }, { threshold: 0.05 });
-    heroHeaderObserver.observe(hero);
-
-    /* ── Sidebar: show/hide based on hero visibility ── */
+    /* ── Sidebar: show when Problem section reaches top of viewport ── */
     const sidebar = document.getElementById('cs-sidebar');
+    const problemSection = document.getElementById('cs-section-problem');
 
-    const heroSidebarObserver = new IntersectionObserver(([entry]) => {
-      sidebar.classList.toggle('visible', !entry.isIntersecting);
-    }, { threshold: 0.1 });
-    heroSidebarObserver.observe(hero);
+    const updateSidebar = () => {
+      const triggerY = problemSection.getBoundingClientRect().top;
+      sidebar.classList.toggle('visible', triggerY < 200);
+    };
+    window.addEventListener('scroll', updateSidebar, { passive: true });
+    updateSidebar();
 
     /* ── Sidebar scroll-spy ── */
     const sectionIds = [
-      'cs-section-overview',
       'cs-section-problem',
       'cs-section-research',
       'cs-section-process',
@@ -337,7 +321,7 @@
     };
 
     // Default to first section
-    setActive('cs-section-overview');
+    setActive('cs-section-problem');
 
     const spyObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
