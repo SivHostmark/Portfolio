@@ -369,6 +369,7 @@ footer {
 /* SVG icons */
 .icon { width: 18px; height: 18px; fill: currentColor; }
 
+
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   header { padding: 24px; }

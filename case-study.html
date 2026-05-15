@@ -263,6 +263,13 @@
     </div>
   </div>
 
+  <!-- ─────────────────────────────── BACK TO TOP ─── -->
+  <div class="to-top-wrapper">
+    <button class="to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"/></svg>
+    </button>
+  </div>
+
   <!-- ─────────────────────────────── 8. PROJECT NAV ─── -->
   <nav class="cs-project-nav">
     <a href="case-study.html" class="cs-nav-prev">
@@ -302,6 +309,12 @@
       </a>
     </div>
   </footer>
+
+  <script>
+    document.querySelector('.to-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 
   <script>
     const hero = document.querySelector('#cs-hero');
