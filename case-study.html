@@ -293,13 +293,16 @@
   <script>
     const hero = document.querySelector('#cs-hero');
 
-    /* ── Sidebar: show when Problem section reaches top of viewport ── */
+    /* ── Sidebar: show when Problem section reaches top of viewport, hide at project nav ── */
     const sidebar = document.getElementById('cs-sidebar');
     const problemSection = document.getElementById('cs-section-problem');
+    const projectNav = document.querySelector('.cs-project-nav');
 
     const updateSidebar = () => {
       const triggerY = problemSection.getBoundingClientRect().top;
-      sidebar.classList.toggle('visible', triggerY < 200);
+      const projectNavY = projectNav.getBoundingClientRect().top;
+      const shouldShow = triggerY < 200 && projectNavY > window.innerHeight - 100;
+      sidebar.classList.toggle('visible', shouldShow);
     };
     window.addEventListener('scroll', updateSidebar, { passive: true });
     updateSidebar();

@@ -30,7 +30,7 @@
   font-size: 19px;
   font-weight: 400;
   line-height: 1.2;
-  color: #aaa;
+  color: #757575;
   text-decoration: none;
   transition: color 0.3s ease;
   letter-spacing: 0.01em;
@@ -38,11 +38,12 @@
 }
 
 .cs-sidenav-link:hover {
-  color: #666;
+  color: #444;
 }
 
 .cs-sidenav-link.active {
   color: var(--black);
+  font-weight: 600;
 }
 
 /* ── Wide screen: show sidebar + shift content into right gutter ── */
@@ -58,14 +59,14 @@
 .cs-hero {
   display: flex;
   justify-content: center;
-  padding: 140px 80px 40px;
+  padding: 140px 80px 120px;
   background: var(--white);
   position: relative;
   overflow: hidden;
 }
 
 .cs-cover-image {
-  padding: 0 80px 80px;
+  padding: 0 80px;
   background: var(--white);
 }
 
