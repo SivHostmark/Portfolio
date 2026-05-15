@@ -490,27 +490,33 @@
 .to-top-wrapper {
   display: flex;
   justify-content: center;
-  padding: 40px 32px 48px;
+  padding: 48px 32px 48px;
 }
 
 .to-top {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1.5px solid var(--mid-gray);
-  background: var(--white);
-  color: var(--mid-gray);
-  cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0;
-  overflow: hidden;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--mid-gray);
+  background: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.to-top:hover {
+  color: var(--black);
 }
 
 .to-top svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   stroke: currentColor;
   fill: none;
   stroke-width: 1.5;
@@ -520,7 +526,7 @@
 }
 
 .to-top:hover svg {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 /* ── PROJECT NAV ── */
