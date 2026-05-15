@@ -71,19 +71,20 @@
 }
 
 .cs-cover-image-inner {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  aspect-ratio: 16 / 9;
-  background: #e8e8e8;
-  overflow: hidden;
   position: relative;
 }
 
 .cs-cover-image-inner img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+}
+
+.cs-cover-image-inner .img-placeholder {
+  aspect-ratio: 16 / 9;
+  background: #e8e8e8;
 }
 
 .cs-cover-image-inner .img-placeholder {
@@ -293,6 +294,23 @@
   color: #555;
   font-weight: 300;
   max-width: 640px;
+}
+
+/* Center the heading block + dividers; body text stays left-aligned but centered as a block */
+.cs-section > .cs-section-header,
+.cs-section > .cs-img-caption {
+  text-align: center;
+}
+
+.cs-section > p,
+.cs-section > .cs-img-caption {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs-section > .cs-divider {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cs-section p + p {
