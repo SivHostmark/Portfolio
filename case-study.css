@@ -298,8 +298,8 @@
 .cs-section-wrap.light { background: #fffcf9; }
 .cs-section-wrap.white { background: var(--white); }
 
-.cs-section-wrap.white .cs-card { background: #889f8e; border-color: transparent; }
-.cs-section-wrap.light .cs-card { background: #9c8e80; border-color: transparent; }
+.cs-section-wrap.white .cs-card { background: #eef4ef; border: 2px solid #889f8e; }
+.cs-section-wrap.light .cs-card { background: #f7f2ec; border: 2px solid #9c8e80; }
 
 .cs-section-header {
   margin-bottom: 56px;
@@ -375,7 +375,7 @@
   padding: 28px 32px;
   border: 1px solid #e8e8e8;
   background: var(--white);
-  color: #fff;
+  color: #111;
 }
 
 
@@ -383,14 +383,14 @@
   font-family: var(--font-display);
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  color: #111;
   margin-bottom: 14px;
 }
 
 .cs-card p {
   font-size: 15px;
   line-height: 1.6;
-  color: #fff;
+  color: #111;
   font-weight: 300;
   max-width: none;
 }
@@ -403,7 +403,7 @@
   font-size: 15px;
   line-height: 1.9;
   font-weight: 300;
-  color: #fff;
+  color: #111;
 }
 
 .cs-card .cs-list li {
