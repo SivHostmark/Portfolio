@@ -370,7 +370,7 @@
 }
 
 .cs-card {
-  padding: 40px;
+  padding: 32px;
   border: 1px solid #e8e8e8;
   background: var(--white);
   color: #fff;
@@ -386,8 +386,8 @@
 }
 
 .cs-card p {
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.7;
   color: #fff;
   font-weight: 300;
   max-width: none;
