@@ -421,6 +421,33 @@
   background: currentColor;
 }
 
+.cs-list-section {
+  list-style: none;
+  padding: 0;
+  margin: 28px auto 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 2;
+  font-weight: 300;
+  color: #111;
+  max-width: 640px;
+}
+
+.cs-list-section li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.cs-list-section li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+}
+
 /* ── PROCESS IMAGE GRID ── */
 .cs-image-grid {
   display: grid;
