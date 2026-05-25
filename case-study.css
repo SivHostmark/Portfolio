@@ -478,6 +478,34 @@
   transform: none;
 }
 
+/* Co-design results stacked vertically (natural aspect ratios) */
+.cs-result-teacher,
+.cs-result-student {
+  margin: 40px auto 0;
+  background: #f7f7f7;
+}
+.cs-result-teacher { max-width: 900px; }
+.cs-result-student { max-width: 450px; }
+.cs-result-teacher img,
+.cs-result-student img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Starting point image (full width, single image) */
+.cs-starting-image {
+  max-width: 900px;
+  margin: 56px auto 0;
+  background: #f7f7f7;
+  overflow: hidden;
+}
+.cs-starting-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* Custom 2-col process grid: 2 stacked left + 1 tall right */
 .cs-process-grid {
   display: grid;
