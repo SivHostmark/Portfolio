@@ -150,6 +150,8 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+  width: 400px;
+  align-self: center;
 }
 
 .cs-hero-info-row {
