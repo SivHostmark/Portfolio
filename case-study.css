@@ -679,17 +679,17 @@
 .diamond.d-med { width: 43px; height: 43px; }
 .diamond.d-sm  { width: 20px; height: 20px; }
 
-/* Previous link — diamonds clustered near RIGHT edge (toward divider) */
-.cs-nav-prev .d-big  { right: -138px; top: 0;     transition-delay: 0.05s; }
-.cs-nav-prev .d-med  { right: 103px;  top: 68px;  transition-delay: 0.15s; }
-.cs-nav-prev .d-sm-1 { right: 82px;   top: 26px;  transition-delay: 0.25s; }
-.cs-nav-prev .d-sm-2 { right: 59px;   top: 136px; transition-delay: 0.35s; }
+/* Previous link — diamonds clustered on LEFT (text side) */
+.cs-nav-prev .d-big  { left: -138px;  top: 0;     transition-delay: 0.05s; }
+.cs-nav-prev .d-med  { left: 103px;   top: 68px;  transition-delay: 0.15s; }
+.cs-nav-prev .d-sm-1 { left: 82px;    top: 26px;  transition-delay: 0.25s; }
+.cs-nav-prev .d-sm-2 { left: 59px;    top: 136px; transition-delay: 0.35s; }
 
-/* Next link — mirrored on LEFT edge */
-.cs-nav-next .d-big  { left: -138px;  top: 0;     transition-delay: 0.05s; }
-.cs-nav-next .d-med  { left: 103px;   top: 68px;  transition-delay: 0.15s; }
-.cs-nav-next .d-sm-1 { left: 82px;    top: 26px;  transition-delay: 0.25s; }
-.cs-nav-next .d-sm-2 { left: 59px;    top: 136px; transition-delay: 0.35s; }
+/* Next link — mirrored on RIGHT (text side) */
+.cs-nav-next .d-big  { right: -138px; top: 0;     transition-delay: 0.05s; }
+.cs-nav-next .d-med  { right: 103px;  top: 68px;  transition-delay: 0.15s; }
+.cs-nav-next .d-sm-1 { right: 82px;   top: 26px;  transition-delay: 0.25s; }
+.cs-nav-next .d-sm-2 { right: 59px;   top: 136px; transition-delay: 0.35s; }
 
 .cs-project-nav a:first-child {
   border-right: none;
