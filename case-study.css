@@ -135,11 +135,11 @@
 }
 
 .cs-hero-desc {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
-  color: #555;
+  color: #000;
   font-weight: 300;
-  max-width: 480px;
+  max-width: 520px;
   margin-top: 0;
 }
 
@@ -322,9 +322,9 @@
 }
 
 .cs-section p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
-  color: #555;
+  color: #111;
   font-weight: 300;
   max-width: 640px;
 }
@@ -370,7 +370,7 @@
 }
 
 .cs-card {
-  padding: 32px;
+  padding: 28px 32px;
   border: 1px solid #e8e8e8;
   background: var(--white);
   color: #fff;
@@ -387,10 +387,36 @@
 
 .cs-card p {
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: #fff;
   font-weight: 300;
   max-width: none;
+}
+
+.cs-card .cs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 300;
+  color: #fff;
+}
+
+.cs-card .cs-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.cs-card .cs-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
 }
 
 /* ── PROCESS IMAGE GRID ── */
@@ -493,6 +519,12 @@
   color: var(--mid-gray);
   letter-spacing: 0.06em;
   margin-top: 10px;
+}
+
+.cs-img-caption-large {
+  font-size: 16px;
+  letter-spacing: 0;
+  margin-top: 16px;
 }
 
 /* ── SOLUTION IMAGE — full-width ── */
