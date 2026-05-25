@@ -296,8 +296,8 @@
 .cs-section-wrap.light { background: #fffcf9; }
 .cs-section-wrap.white { background: var(--white); }
 
-.cs-section-wrap.light .cs-card,
-.cs-section-wrap.light .cs-hero-info { background: var(--white); }
+.cs-section-wrap.white .cs-card { background: #889f8e; border-color: transparent; }
+.cs-section-wrap.light .cs-card { background: #9c8e80; border-color: transparent; }
 
 .cs-section-header {
   margin-bottom: 56px;
@@ -373,21 +373,22 @@
   padding: 40px;
   border: 1px solid #e8e8e8;
   background: var(--white);
+  color: #fff;
 }
 
-.cs-section-wrap.white .cs-card  { background: var(--gray); border-color: transparent; }
 
 .cs-card .card-title {
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
   margin-bottom: 14px;
 }
 
 .cs-card p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.75;
-  color: #666;
+  color: #fff;
   font-weight: 300;
   max-width: none;
 }
