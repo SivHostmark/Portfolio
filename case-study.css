@@ -639,7 +639,6 @@
 
 /* ── PROJECT NAV ── */
 .cs-project-nav {
-  border-top: 1px solid #e8e8e8;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -693,7 +692,7 @@
 .cs-nav-next .d-sm-2 { left: 59px;    top: 136px; transition-delay: 0.35s; }
 
 .cs-project-nav a:first-child {
-  border-right: 1px solid #e8e8e8;
+  border-right: none;
 }
 
 .cs-project-nav a:last-child {
