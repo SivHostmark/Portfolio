@@ -446,6 +446,13 @@
   grid-row: 1 / span 2;
 }
 .cs-process-grid .cs-img-block { aspect-ratio: auto; height: auto; }
+.cs-process-grid .cs-img-block img,
+.cs-process-grid .cs-img-block:hover img {
+  filter: none;
+  transform: none;
+  object-fit: cover;
+  object-position: center;
+}
 
 .cs-img-block {
   width: 100%;
