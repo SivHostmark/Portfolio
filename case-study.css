@@ -404,6 +404,25 @@
 .cs-image-grid.single { grid-template-columns: 1fr; }
 .cs-image-grid.three  { grid-template-columns: 1fr 1fr 1fr; }
 
+/* Research images: 3 small, centered, no hover effect */
+.cs-research-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cs-research-images .cs-img-block {
+  width: 200px;
+  height: 191px;
+  aspect-ratio: auto;
+  background: #e4e4e4;
+}
+.cs-research-images .cs-img-block img,
+.cs-research-images .cs-img-block:hover img {
+  filter: none;
+  transform: none;
+}
+
 /* Custom 2-col process grid: 2 stacked left + 1 tall right */
 .cs-process-grid {
   display: grid;
