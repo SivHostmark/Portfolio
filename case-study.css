@@ -655,7 +655,11 @@
   transition: background 0.25s;
   position: relative;
   overflow: hidden;
+  width: 70%;
 }
+
+.cs-nav-prev { justify-self: start; }
+.cs-nav-next { justify-self: end; }
 
 .nav-direction, .nav-title { position: relative; z-index: 1; }
 
@@ -703,7 +707,7 @@
 }
 
 .cs-project-nav a:hover {
-  background: var(--gray);
+  background: transparent;
 }
 
 .cs-project-nav .nav-direction {
