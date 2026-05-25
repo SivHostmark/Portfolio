@@ -136,13 +136,12 @@
 }
 
 .cs-hero-info {
-  background: #fffcf9;
-  border: 1px solid #f0e8e0;
+  background: #f2e9d9;
+  border: 1px solid #e8e8e8;
   padding: 36px 40px;
   display: flex;
   flex-direction: column;
   gap: 22px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .cs-hero-info-row {
@@ -153,17 +152,19 @@
 }
 
 .cs-hero-info-row .info-label {
+  font-family: 'Jost', sans-serif;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--mid-gray);
+  color: #000;
   font-weight: 500;
   padding-top: 3px;
 }
 
 .cs-hero-info-row .info-value {
+  font-family: 'Jost', sans-serif;
   font-size: 14px;
-  color: var(--black);
+  color: #000;
   line-height: 1.55;
   font-weight: 300;
 }
