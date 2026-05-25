@@ -339,7 +339,7 @@ footer {
 
 .footer-left p {
   font-size: 13px;
-  color: #888;
+  color: var(--white);
   font-weight: 300;
 }
 
