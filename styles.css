@@ -162,7 +162,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 14px;
   color: #ffffff;
   text-shadow: 0 1px 12px rgba(0,0,0,0.18);
@@ -253,6 +253,8 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+.project-text h2 .h2-bold { font-weight: 500; }
+.project-text h2 a { color: inherit; text-decoration: none; }
 
 .project-text p {
   font-size: 14px;
@@ -304,6 +306,10 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   transform: scale(1.03);
   filter: grayscale(0%);
 }
+
+.project-image a { display: block; width: 100%; height: 100%; }
+.project-image.no-hover img { transition: none; }
+.project-image.no-hover:hover img { transform: none; filter: grayscale(15%); }
 
 .project-image .img-placeholder {
   width: 100%;
