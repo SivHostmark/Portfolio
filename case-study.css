@@ -134,6 +134,16 @@
   max-width: 1200px;
 }
 
+.cs-hero-meta {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 24px;
+  text-align: left;
+}
+
 .cs-hero-desc {
   font-size: 20px;
   line-height: 1.6;
@@ -217,32 +227,6 @@
   font-weight: 500;
 }
 
-.cs-hero-meta {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeUp 0.9s 0.2s ease both;
-}
-
-.cs-hero-meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.cs-hero-meta-item .label {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--mid-gray);
-}
-
-.cs-hero-meta-item .value {
-  font-size: 13px;
-  font-weight: 300;
-  color: #555;
-}
 
 /* ── OVERVIEW STRIP ── */
 .cs-overview {
@@ -798,8 +782,6 @@
 @media (max-width: 768px) {
   .cs-hero            { padding: 0 24px 72px; }
   .cs-hero h1         { font-size: 36px; }
-  .cs-hero-meta       { flex-wrap: wrap; gap: 24px; }
-
   .cs-overview        { padding: 0 24px; }
   .cs-overview-inner  { flex-direction: column; }
   .cs-overview-item   { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 28px 0; padding-left: 0; padding-right: 0; }
