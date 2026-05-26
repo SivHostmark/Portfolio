@@ -490,6 +490,18 @@
   height: auto;
 }
 
+/* Wide, short banner (e.g. Udir's existing category bar) — show whole image, no crop */
+.cs-bar-image {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  overflow: hidden;
+}
+.cs-bar-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* Custom 2-col process grid: 2 stacked left + 1 tall right */
 .cs-process-grid {
   display: grid;
