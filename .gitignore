@@ -1,0 +1,6 @@
+# Referansemateriale med ekte, ikke-anonymiserte navn (Mandora/Taki/Casper/Sorbet).
+# Holdes lokalt og skal IKKE publiseres. Den anonymiserte versjonen ligger i
+# Project images/AI-onboarding/case-study-utkast.md
+/Project images/AI-onboarding/*.jpg
+/Project images/AI-onboarding/*.png
+/Project images/AI-onboarding/notater/
