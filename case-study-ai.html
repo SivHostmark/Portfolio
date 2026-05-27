@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding til en stemmestyrt AI-assistent — Siv Høstmark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+  <!-- ─────────────────────────────── HEADER ─── -->
+  <header class="dark-nav">
+    <div class="logo">
+      <a href="siv-portefolio.html" class="logo-mark"><span>S</span></a>
+    </div>
+    <nav>
+      <ul>
+        <li class="active"><a href="siv-portefolio.html">UX Portefølje</a></li>
+        <li><a href="#">Malerier</a></li>
+        <li><a href="#">Utforskning</a></li>
+        <li><a href="about.html">Om meg</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ─────────────────────────────── 1. HERO ─── -->
+  <section class="cs-hero" id="cs-hero">
+    <div class="cs-hero-inner">
+      <div class="cs-hero-content">
+        <p class="cs-hero-meta">Sommerjobb · 4 uker · App</p>
+
+        <h1>Onboarding til en<br><span class="h1-bold">stemmestyrt AI-assistent</span></h1>
+
+        <p class="cs-hero-desc">En onboarding-studie fra en sommerjobb i et oppstartsselskap. Hvordan får man folk komfortable med å snakke med en AI-assistent, og hvordan bør den prate for å føles naturlig? Assistenten hjelper små bedrifter med regnskapet.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── SIDEBAR NAV ─── -->
+  <aside class="cs-sidebar" id="cs-sidebar">
+    <nav class="cs-sidenav">
+      <a href="#cs-section-problem"   class="cs-sidenav-link" data-section="cs-section-problem">Problemet</a>
+      <a href="#cs-section-research"  class="cs-sidenav-link" data-section="cs-section-research">Research</a>
+      <a href="#cs-section-process"   class="cs-sidenav-link" data-section="cs-section-process">Designprosess</a>
+      <a href="#cs-section-solution"  class="cs-sidenav-link" data-section="cs-section-solution">Løsningen</a>
+      <a href="#cs-section-results"   class="cs-sidenav-link" data-section="cs-section-results">Refleksjoner</a>
+    </nav>
+  </aside>
+
+
+  <!-- ─────────────────────────────── COVER IMAGE ─── -->
+  <div class="cs-cover-image">
+    <div class="cs-cover-image-inner">
+      <!-- TODO: bytt ut med anonymisert cover-skjerm gjenskapt i Figma -->
+      <div style="aspect-ratio:16/9;width:100%;display:flex;align-items:center;justify-content:center;background:#f0ede8;border:1px dashed #c9bfb2;border-radius:12px;color:#8a8175;font-family:'DM Sans',sans-serif;font-size:15px;">Cover-skjerm gjenskapes anonymisert i Figma</div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 3. PROBLEM ─── -->
+  <div class="cs-section-wrap white" id="cs-section-problem">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">01 — Problemet</div>
+        <h2>Hva var utfordringen?</h2>
+      </div>
+      <p>
+        Oppgaven var å designe onboardingen til en stemmestyrt AI-assistent for små bedrifter. Du snakker med assistenten, og den hjelper deg med regnskapet.
+      </p>
+      <p>
+        Kjernen i utfordringen var menneskelig, ikke teknisk. Folk er ikke vant til å snakke med en AI, og det var uklart hvordan assistenten burde prate for å føles naturlig. Den skulle være varm og vennlig, men troverdig nok til at folk faktisk ville bruke den.
+      </p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Utfordringen</div>
+          <p>Folk er utrygge på å snakke høyt til en AI, særlig i et åpent kontorlandskap. En robotaktig stemme føles unaturlig og skaper avstand.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Hvorfor det betyr noe</div>
+          <p>Tillit er det som avgjør om folk i det hele tatt tar i bruk en stemmeassistent. Arbeidet med tone og personlighet handler derfor direkte om at produktet blir brukt.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 4. RESEARCH ─── -->
+  <div class="cs-section-wrap light" id="cs-section-research">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">02 — Research</div>
+        <h2>Å forstå brukerne<br>og stemmen</h2>
+      </div>
+      <p>
+        Jeg satte av to dager til innsikt og strukturerte funnene slik at de var lette å lese og bruke videre.
+      </p>
+      <p>
+        Jeg testet et eksisterende regnskapsverktøy og sammenlignet opplevelsen med offentlige tjenester som Altinn og Brønnøysundregistrene. Tilbakemeldingen var tydelig: prosessen oppleves treg og tungvint, og den er vanskelig for den som er helt fersk.
+      </p>
+      <p>
+        Jeg lente meg på forskning om hvordan mennesker forholder seg til stemmeassistenter. Folk behandler dem som sosiale aktører og reagerer på hvordan de snakker, ikke bare hva de sier. Et tema jeg ble spesielt opptatt av var stemme og kjønn. Bransjen velger ofte kvinnestemme som standard fordi den forbindes med trygghet, men det er også en dokumentert bekymring for at det forsterker kjønnsstereotypier (UNESCO, 2019). Det var en spenning jeg var bevisst på i arbeidet med stemmen.
+      </p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Metodene jeg brukte</div>
+          <ul class="cs-list">
+            <li>Brukerintervjuer</li>
+            <li>Personaer og user stories</li>
+            <li>Konkurranse- og verktøyanalyse</li>
+            <li>Strukturert innsiktsarbeid</li>
+            <li>Prototyping av samtaler</li>
+          </ul>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Funn og temaer</div>
+          <ul class="cs-list">
+            <li>Ubehag ved å snakke høyt til en AI</li>
+            <li>Ønske om en naturlig, ikke robotaktig stemme</li>
+            <li>Behov for bekreftelse på at den forsto</li>
+            <li>Ikke møt folk med en vegg av tekst</li>
+            <li>Oversikt og kontroll over egne data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 5. PROCESS ─── -->
+  <div class="cs-section-wrap white" id="cs-section-process">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">03 — Designprosess</div>
+        <h2>Å bygge en stemme<br>og personlighet</h2>
+      </div>
+      <p>
+        Jeg konfigurerte en system-prompt på en språkmodell og testet ut personlighet og tone. Jeg simulerte samtaler og lagde en testkunde for å se hvordan det fungerte i praksis.
+      </p>
+      <p>
+        Et tidlig valg ble førende: assistenten skulle svare både muntlig og skriftlig. Skriftlige svar gir folk noe å støtte seg på og oppleves tryggere enn stemme alene. Det ble hjertet i løsningen.
+      </p>
+      <p>
+        Jeg utforsket spørsmål som: Skal assistenten ta initiativ, eller vente til den blir spurt? Hvor mye skal den forklare? Hvordan unngår vi at folk møtes av en vegg av tekst? Jeg ledet planleggingen og faciliterte en workshop, og tok jevnlig et steg tilbake for å tenke på brukeren.
+      </p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Personlighet og tone</div>
+          <p>Målet var en varm, menneskelig stemme uten å late som den er et menneske. Ikke robotaktig, men heller ikke kunstig perfekt.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">En stemme alltid for hånden</div>
+          <p>En snakke-knapp tilgjengelig hele tiden, slik at terskelen for å ta i bruk stemmen er lav.</p>
+        </div>
+      </div>
+
+      <div class="cs-starting-image" style="margin-top: 56px;">
+        <!-- TODO: bytt ut med anonymisert ideasjons-/stemme-ikon-skisse -->
+        <div style="aspect-ratio:16/10;width:100%;display:flex;align-items:center;justify-content:center;background:#f5f3ef;border:1px dashed #c9bfb2;border-radius:12px;color:#8a8175;font-family:'DM Sans',sans-serif;font-size:15px;">Skisser av stemme-ikonet (gjenskapes anonymisert)</div>
+      </div>
+      <p class="cs-img-caption">Tidlig utforskning av assistentens visuelle uttrykk</p>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 6. SOLUTION ─── -->
+  <div class="cs-section-wrap light" id="cs-section-solution">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">04 — Løsningen</div>
+        <h2>Det jeg kom frem til</h2>
+      </div>
+      <p>
+        Onboardingen tar brukeren fra innlogging, gjennom å identifisere bedriften ved hjelp av stemmen, til å velge assistentens personlighet og komme i gang med den første samtalen.
+      </p>
+      <p>
+        Brukertestene ga konkret tilbakemelding som formet løsningen videre.
+      </p>
+
+      <div class="cs-bar-image">
+        <!-- TODO: bytt ut med anonymisert skjerm: stemme-onboarding / dashboard -->
+        <div style="aspect-ratio:16/9;width:100%;display:flex;align-items:center;justify-content:center;background:#f0ede8;border:1px dashed #c9bfb2;border-radius:12px;color:#8a8175;font-family:'DM Sans',sans-serif;font-size:15px;">Nøkkelskjerm gjenskapes anonymisert i Figma</div>
+      </div>
+      <p class="cs-img-caption">Stemme-onboardingen, gjenskapt anonymisert</p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Mindre tekst</div>
+          <p>Folk var usikre på om de skulle scrolle, og møtte for mye tekst. Vi gikk over til «Se mer» i stedet for knapper, og kuttet ned på mengden.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Tydeligere invitasjon</div>
+          <p>«Vil du prøve å snakke?» ble til «Assistenten kan ta deg gjennom». Det føltes mindre krevende for brukeren å si ja til.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 7. REFLECTIONS ─── -->
+  <div class="cs-section-wrap white" id="cs-section-results">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">05 — Refleksjoner</div>
+        <h2>Hva jeg sitter igjen med</h2>
+      </div>
+      <!-- TODO (Siv): fyll inn egne refleksjoner. Spørsmål å svare på:
+           1) Hva overrasket deg mest? 2) Hva er du mest fornøyd med?
+           3) Hva ville du gjort annerledes med mer tid? 4) Hva tok du med deg videre? -->
+      <p style="color:#8a8175;font-style:italic;">
+        Denne delen fyller jeg ut snart.
+      </p>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── BACK TO TOP ─── -->
+  <div class="to-top-wrapper">
+    <button class="to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"/></svg>
+      Back to top
+    </button>
+  </div>
+
+  <!-- ─────────────────────────────── 8. PROJECT NAV ─── -->
+  <nav class="cs-project-nav">
+    <a href="case-study.html" class="cs-nav-prev">
+      <span class="nav-diamonds" aria-hidden="true">
+        <span class="diamond d-big"></span>
+        <span class="diamond d-sm d-sm-1"></span>
+        <span class="diamond d-sm d-sm-2"></span>
+      </span>
+      <span class="nav-direction">← Forrige</span>
+      <span class="nav-title">Et mer brukervennlig<br>Udir.no</span>
+    </a>
+    <a href="siv-portefolio.html" class="cs-nav-next">
+      <span class="nav-diamonds" aria-hidden="true">
+        <span class="diamond d-big"></span>
+        <span class="diamond d-sm d-sm-1"></span>
+        <span class="diamond d-sm d-sm-2"></span>
+      </span>
+      <span class="nav-direction">Neste →</span>
+      <span class="nav-title">Tilbake til<br>porteføljen</span>
+    </a>
+  </nav>
+
+  <!-- ─────────────────────────────── FOOTER ─── -->
+  <footer>
+    <div class="footer-left">
+      <h3><a href="mailto:siv.hostmark@gmail.com">Kontakt meg</a></h3>
+      <p><a href="mailto:siv.hostmark@gmail.com">siv.hostmark@gmail.com</a></p>
+      <p class="footer-copyright">© 2025 Siv Høstmark</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:siv.hostmark@gmail.com" title="Email">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/sivhostmark" target="_blank" title="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.to-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <script>
+    const hero = document.querySelector('#cs-hero');
+
+    /* ── Sidebar: show when Problem section reaches top of viewport, hide at project nav ── */
+    const sidebar = document.getElementById('cs-sidebar');
+    const problemSection = document.getElementById('cs-section-problem');
+    const projectNav = document.querySelector('.cs-project-nav');
+
+    const updateSidebar = () => {
+      const triggerY = problemSection.getBoundingClientRect().top;
+      const projectNavY = projectNav.getBoundingClientRect().top;
+      const shouldShow = triggerY < 200 && projectNavY > window.innerHeight - 100;
+      sidebar.classList.toggle('visible', shouldShow);
+    };
+    window.addEventListener('scroll', updateSidebar, { passive: true });
+    updateSidebar();
+
+    /* ── Sidebar scroll-spy ── */
+    const sectionIds = [
+      'cs-section-problem',
+      'cs-section-research',
+      'cs-section-process',
+      'cs-section-solution',
+      'cs-section-results'
+    ];
+    const navLinks = document.querySelectorAll('.cs-sidenav-link');
+
+    const setActive = (id) => {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.section === id);
+      });
+    };
+
+    // Default to first section
+    setActive('cs-section-problem');
+
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, {
+      rootMargin: '-20% 0px -65% 0px',
+      threshold: 0
+    });
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) spyObserver.observe(el);
+    });
+
+    /* ── Scroll-in animations ── */
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(
+      '.cs-section-header, .cs-section > p'
+    ).forEach(el => {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+      el.style.transform = 'translateY(22px)';
+      fadeObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
