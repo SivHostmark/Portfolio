@@ -8,7 +8,7 @@ selskap) skal IKKE med i den publiserte versjonen — vi kaller den «AI-assiste
 
 ## Hero
 - **Tittel:** Onboarding til en stemmestyrt regnskapsassistent  *(foreløpig)*
-- **Meta:** Oppstartsselskap · 4 uker · App  *(hele sommerjobben var 8 uker; ditt prosjekt 3–4 uker; rolle: UX-designer og prosjektleder; vikar for UX-er i pappaperm)*
+- **Meta:** Prosjekt for oppstartsselskap · 4 uker · App  *(hele sommerjobben var 8 uker; ditt prosjekt 3–4 uker; rolle: UX-designer og prosjektleder; vikar for UX-er i pappaperm)*
 - **Anonymiserings-note (under hero):** Selskaps- og produktnavn er anonymisert av hensyn til arbeidsgiver.
 - **Beskrivelse:** En onboarding-studie om hvordan man får folk komfortable med å
   snakke med en AI-assistent, og hvordan den bør prate for å føles naturlig.
