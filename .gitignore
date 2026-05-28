@@ -1,7 +1,7 @@
 # Referansemateriale med ekte, ikke-anonymiserte navn (Mandora/Taki/Casper/Sorbet).
 # Holdes lokalt og skal IKKE publiseres. Vi ignorerer alt i AI-onboarding-mappa
 # unntatt det anonymiserte case-study-utkastet, Sivs egne skisser,
-# inspirasjons-/referansebildene og cover-bildet.
+# inspirasjons-/referansebildene, cover-bildet og resultat-gjengivelsen.
 /Project images/AI-onboarding/*
 !/Project images/AI-onboarding/case-study-utkast.md
 !/Project images/AI-onboarding/20250808_091939.jpg
@@ -9,3 +9,4 @@
 !/Project images/AI-onboarding/fiken.png
 !/Project images/AI-onboarding/gpt og claude.png
 !/Project images/AI-onboarding/coverfoto3.png
+!/Project images/AI-onboarding/resultat.png
