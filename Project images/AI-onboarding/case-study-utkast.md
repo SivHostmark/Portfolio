@@ -8,7 +8,8 @@ selskap) skal IKKE med i den publiserte versjonen — vi kaller den «AI-assiste
 
 ## Hero
 - **Tittel:** Onboarding til en stemmestyrt regnskapsassistent  *(foreløpig)*
-- **Meta:** Sommerjobb · 4 uker · Rolle: UX-designer og prosjektleder · App  (du vikarierte for en UX-er i pappaperm)
+- **Meta:** Oppstartsselskap · 4 uker · App  *(hele sommerjobben var 8 uker; ditt prosjekt 3–4 uker; rolle: UX-designer og prosjektleder; vikar for UX-er i pappaperm)*
+- **Anonymiserings-note (under hero):** Selskaps- og produktnavn er anonymisert av hensyn til arbeidsgiver.
 - **Beskrivelse:** En onboarding-studie om hvordan man får folk komfortable med å
   snakke med en AI-assistent, og hvordan den bør prate for å føles naturlig.
 
@@ -63,6 +64,9 @@ er han opptatt av om dette faktisk gjør regnskap enklere – nå, ikke på sikt
 - Konfigurerte en system-prompt på en språkmodell (LLM), testet ut personlighet og «brand».
 - Simulerte samtaler («User: How can you help me?»), lagde en test-«kunde» for å se hvordan det funker i praksis.
 - Jobbet med både muntlig og skriftlig tone.
+
+**Plattform-disiplin:**
+- Designet parallelt for iOS og Android, og fulgte plattformenes egne retningslinjer (Human Interface Guidelines og Material Design). Sikret at appen føltes hjemme på begge plattformene, ikke som et frittstående konsept.
 
 **Designvalg / spørsmål jeg utforsket:**
 - Aktiv (taleintro) vs passiv (ved forespørsel) møte med brukeren?
