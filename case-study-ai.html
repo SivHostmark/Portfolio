@@ -101,7 +101,20 @@
         På den andre siden lente jeg meg på forskning om hvordan mennesker forholder seg til stemmeassistenter. Folk behandler dem som sosiale aktører, der måten noe sies på veier like tungt som innholdet. Et tema jeg syntes var interessant var stemme og kjønn. Bransjen velger ofte kvinnestemme som standard fordi den forbindes med trygghet. Samtidig har UNESCO (2019) dokumentert at praksisen forsterker kjønnsstereotypier.
       </p>
       <p>
-        Under de semistrukturerte intervjuene og brukertestene jeg hadde dukket det opp noe overraskende og tankevekkende: ingen av deltakerne ville prøve å snakke med assistenten i onboardingen. De foretrakk heller å trykke på knapper og skrive. Mange syntes det føltes inngripende å snakke med AI fordi de ikke var vant til det, og noen påpekte at det er en vane å trykke og skrive, så å bruke stemmen føltes feil. Andre hadde lave forventninger fordi lignende stemmestyrte tjenester ikke er gode nok i dag. Flere ville også lese personvernsvilkårene før de gav AI-en tilgang til stemmen sin, og noen syntes det rett og slett virket tungvindt. Det siste var et nyttig funn fordi AI-samtalene ikke alltid fløt så godt på det tidspunktet.
+        Under de semistrukturerte intervjuene og brukertestene jeg hadde dukket det opp noe overraskende og tankevekkende: ingen av deltakerne ville prøve å snakke med assistenten i onboardingen. De foretrakk heller å trykke på knapper og skrive.
+      </p>
+      <p>
+        Begrunnelsene var ulike:
+      </p>
+      <ul class="cs-list cs-list-section">
+        <li>Det føltes inngripende å snakke med AI fordi de ikke var vant til det</li>
+        <li>Det er en vane å trykke og skrive, så å bruke stemmen føltes feil</li>
+        <li>Lignende stemmestyrte tjenester er ikke gode nok i dag, og forventningene var lave</li>
+        <li>Flere ville lese personvernsvilkårene før de gav AI-en tilgang til stemmen sin</li>
+        <li>Noen syntes det rett og slett virket tungvindt</li>
+      </ul>
+      <p>
+        Det siste var et nyttig funn fordi AI-samtalene ikke alltid fløt så godt på det tidspunktet.
       </p>
 
       <div class="cs-two-col">
@@ -142,9 +155,6 @@
         Jeg designet parallelt for iOS og Android, og fulgte plattformenes egne retningslinjer (Human Interface Guidelines og Material Design). Slik passet jeg på at appen føltes hjemme på begge plattformene.
       </p>
       <p>
-        I intervjuene var det blandede meninger om hvordan AI-en visuelt burde se ut og hvor menneskelig den skulle fremstå. Jeg landet til slutt på at jeg ville lage et design som minnet om ChatGPT og Claude fordi de har blitt en slags standard og folk er vant til å bruke dem. Da er det lettere å kjenne igjen en AI-funksjon, og det blir mindre kognitiv belastning for brukeren når de møter på noe kjent.
-      </p>
-      <p>
         Jeg utforsket blant annet om assistenten skulle ta initiativ eller vente på å bli spurt, og hvor mye den burde forklare uten å overvelde brukeren. Jeg ledet planleggingen og hadde workshops sammen med utviklere, og tok jevnlig et steg tilbake for å tenke på brukeren.
       </p>
 
@@ -159,8 +169,8 @@
         </div>
       </div>
 
-      <p style="margin-top: 56px;">
-        Det jeg jobbet med var en tidlig versjon av onboarding-flyten på fire steg, fra innlogging til en kom-i-gang-side.
+      <p style="margin-top: 56px;text-align:center;">
+        Her er et flytdiagram av en tidlig versjon av onboardingsflyten.
       </p>
 
       <div style="margin:48px auto;max-width:480px;">
@@ -193,7 +203,6 @@
           <text x="60" y="547" font-family="DM Sans, sans-serif" font-size="13" fill="#6a6258">Omvisning eller AI-samtale</text>
         </svg>
       </div>
-      <p class="cs-img-caption">Onboarding-flyten</p>
     </div>
   </div>
 
@@ -205,26 +214,13 @@
         <h2>Det jeg kom frem til</h2>
       </div>
       <p>
-        Jeg landet tidlig på at assistenten burde svare både muntlig og skriftlig. Det ga brukerne noe å støtte seg på, og det føltes tryggere enn å bare måtte bruke stemmen.
+        Et av valgene jeg landet på tidlig var at brukeren skulle kunne velge om de ville snakke med assistenten eller skrive til den. Det ga brukerne noe å støtte seg på, og det føltes tryggere enn å bare måtte bruke stemmen.
       </p>
-
-      <div class="cs-two-col">
-        <div class="cs-card">
-          <div class="card-title">Mindre tekst</div>
-          <p>I onboarding-skjermene var det for mye tekst, og noen var usikre på om de skulle scrolle. Jeg kuttet ned og gjorde innholdet mer luftig.</p>
-        </div>
-        <div class="cs-card">
-          <div class="card-title">Tydeligere invitasjon</div>
-          <p>«Vil du prøve å snakke?» ble til «Assistenten kan ta deg gjennom». Det føltes mindre krevende for brukeren å si ja til.</p>
-        </div>
-      </div>
-
-      <p style="margin-top: 56px;">
-        En annen ting som ble tydelig underveis var at stemmen lett kunne føre til unødvendig mange steg. Et eksempel: brukeren sier selskapsnavnet, AI-en slår det opp og leser det tilbake, og brukeren bekrefter. Hvis det er feil, må de uansett inn i en manuell liste og søke selv. Da var hele poenget med stemme borte, og det gikk fortere å bare bruke knapper og skrive.
-      </p>
-
       <p>
-        En konklusjon jeg trakk var at det ikke var lurt å pushe AI-assistenten i selve onboardingen. Det var bedre å vise frem hva appen kunne gjøre, hvordan den fungerte og hvilken verdi den ga, og heller introdusere AI-assistenten som en ekstra funksjon etter at onboardingen var ferdig.
+        Et annet sted jeg ga brukeren valget var på kom-i-gang-siden, etter onboardingen. Der kunne de selv bestemme om de ville få en omvisning av funksjonene, eller bli med på en samtale med AI-en. Slik kunne brukeren selv styre hvor mye AI som skulle inn i opplevelsen fra start.
+      </p>
+      <p>
+        I intervjuene var det blandede meninger om hvordan AI-en visuelt burde se ut og hvor menneskelig den skulle fremstå. Jeg landet til slutt på at jeg ville lage et design som minnet om ChatGPT og Claude fordi de har blitt en slags standard og folk er vant til å bruke dem. Da er det lettere å kjenne igjen en AI-funksjon, og det blir mindre kognitiv belastning for brukeren når de møter på noe kjent.
       </p>
     </div>
   </div>
@@ -238,6 +234,12 @@
       </div>
       <p>
         En refleksjon jeg satt igjen med var at AI-en kanskje ikke burde være en del av onboardingsflyten ennå. Foreløpig er teknologien såpass ny at folk ikke ser noen grunn til å bruke den, og de velger heller det som er kjent: knapper og lesing. Kanskje endrer det seg etter hvert.
+      </p>
+      <p>
+        En annen ting som ble tydelig underveis var at stemmen lett kunne føre til unødvendig mange steg. Et eksempel: brukeren sier selskapsnavnet, AI-en slår det opp og leser det tilbake, og brukeren bekrefter. Hvis det er feil, må de uansett inn i en manuell liste og søke selv. Da var hele poenget med stemme borte, og det gikk fortere å bare bruke knapper og skrive.
+      </p>
+      <p>
+        En konklusjon jeg trakk var at det ikke var lurt å pushe AI-assistenten i selve onboardingen. Det var bedre å vise frem hva appen kunne gjøre, hvordan den fungerte og hvilken verdi den ga, og heller introdusere AI-assistenten som en ekstra funksjon etter at onboardingen var ferdig.
       </p>
     </div>
   </div>
