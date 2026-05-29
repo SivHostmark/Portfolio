@@ -144,7 +144,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 .hero-content {
   padding-left: 20px;
   border-left: 1px solid rgba(255,255,255,0.7);
-  margin-top: 20vh;
+  margin-top: 35vh;
   position: relative;
   z-index: 3;
 }
@@ -163,18 +163,18 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 }
 
 #hero p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.6;
   color: #ffffff;
   font-weight: 300;
-  max-width: 210px;
+  max-width: 222px;
   text-shadow: 0 1px 8px rgba(0,0,0,0.15);
   animation: fadeUp 0.9s 0.15s ease both;
 }
 
 .scroll-cue {
   position: absolute;
-  top: 75%;
+  top: 80%;
   left: 0;
   right: 0;
   margin: 0 auto;
