@@ -9,6 +9,101 @@
   <link rel="preload" href="https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2" as="font" type="font/woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .kontakt-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .kontakt-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .kontakt-intro {
+      font-size: 18px;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .kontakt-form {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .kontakt-field-group-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .kontakt-name-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .kontakt-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .kontakt-required {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      opacity: 0.55;
+      font-weight: 400;
+    }
+    .kontakt-input,
+    .kontakt-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d6cfc0;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: #2a2a2a;
+      box-sizing: border-box;
+    }
+    .kontakt-input:focus,
+    .kontakt-textarea:focus {
+      outline: none;
+      border-color: #a89ab8;
+      background: rgba(255, 255, 255, 0.85);
+    }
+    .kontakt-textarea {
+      min-height: 180px;
+      resize: vertical;
+      font-family: 'DM Sans', sans-serif;
+    }
+    button.btn {
+      background: transparent;
+      font-family: inherit;
+      cursor: pointer;
+      align-self: flex-start;
+      padding: 14px 44px;
+    }
+    button.btn:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+    .kontakt-alt {
+      margin-top: 72px;
+      text-align: center;
+      font-size: 15px;
+      opacity: 0.7;
+    }
+    .kontakt-alt a {
+      margin: 0 8px;
+    }
+    @media (max-width: 600px) {
+      .kontakt-name-row { grid-template-columns: 1fr; }
+      .kontakt-heading { font-size: 42px; }
+    }
+  </style>
 </head>
 <body class="kontakt-page">
 
@@ -27,17 +122,42 @@
     </nav>
   </header>
 
-  <!-- KONTAKT HERO -->
-  <section style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 120px 24px 80px;">
-    <div style="max-width: 560px; text-align: center;">
-      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 400; margin-bottom: 24px;">La oss bli kjent!</h1>
-      <p style="font-size: 18px; line-height: 1.7; margin-bottom: 48px;">Send gjerne en e-post eller koble til meg på LinkedIn.</p>
-      <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
-        <a href="mailto:siv.hostmark@gmail.com" style="font-size: 18px;">siv.hostmark@gmail.com</a>
-        <a href="https://no.linkedin.com/in/siv-ragnhild-h%C3%B8stmark-757281130" target="_blank" style="font-size: 18px;">LinkedIn</a>
-        <a href="CV_Siv-H%C3%B8stmark.pdf" class="btn" download style="margin-top: 16px;">Last ned CV</a>
+  <!-- KONTAKT -->
+  <section class="kontakt-section">
+    <h1 class="kontakt-heading">La oss bli kjent!</h1>
+    <p class="kontakt-intro">Send gjerne en melding, eller ring meg på <a href="tel:+4791725699" style="color:inherit;text-decoration:underline;">+47 917 25 699</a>.<br>Jeg elsker å bli invitert på kaffe!</p>
+
+    <form class="kontakt-form" action="https://formsubmit.co/siv.hostmark@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Ny melding fra porteføljen">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <div>
+        <label class="kontakt-field-group-label">Navn</label>
+        <div class="kontakt-name-row">
+          <div>
+            <label class="kontakt-label" for="first_name">Fornavn <span class="kontakt-required">(påkrevd)</span></label>
+            <input class="kontakt-input" type="text" id="first_name" name="first_name" required>
+          </div>
+          <div>
+            <label class="kontakt-label" for="last_name">Etternavn <span class="kontakt-required">(påkrevd)</span></label>
+            <input class="kontakt-input" type="text" id="last_name" name="last_name" required>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div>
+        <label class="kontakt-label" for="email">E-post <span class="kontakt-required">(påkrevd)</span></label>
+        <input class="kontakt-input" type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label class="kontakt-label" for="message">Melding <span class="kontakt-required">(påkrevd)</span></label>
+        <textarea class="kontakt-textarea" id="message" name="message" required></textarea>
+      </div>
+
+      <button class="btn" type="submit">Send</button>
+    </form>
+
   </section>
 
   <!-- FOOTER -->
