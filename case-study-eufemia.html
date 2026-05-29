@@ -36,7 +36,7 @@
 
         <h1>Native inn i<br><span class="h1-bold">Eufemia-portalen</span></h1>
 
-        <p class="cs-hero-desc">Et praksisprosjekt hos DNB om hvordan vi kunne få Native (iOS og Android) inn i designsystemet, og hvordan AI kan brukes som verktøy i designprosessen.</p>
+        <p class="cs-hero-desc">Et praksisprosjekt hos DNB. Vi utforsket hvordan Native (iOS og Android) kunne få plass i designsystemet, og hvordan AI kan fungere som verktøy i designprosessen.</p>
       </div>
     </div>
   </section>
@@ -68,26 +68,26 @@
         <h2>Hva var utfordringen?</h2>
       </div>
       <p>
-        Praksisen min hos DNB ble avsluttet med et fire ukers prosjekt sammen med en medstudent. Vi ville utforske et samlet designsystem på nett som inkluderte Native (iOS og Android), ikke bare Web.
+        Mot slutten av praksisen min hos DNB jobbet jeg sammen med en medstudent på et fire ukers prosjekt. Vi ville utforske om vi kunne lage et samlet designsystem på nett der Native (iOS og Android) også fikk plass.
       </p>
       <p>
-        Eufemia er DNB sitt designsystem. Det dekker Web fullt ut, men designere som jobber med mobilbanken har ikke noe konkret designsystem å forholde seg til utenfor Figma, fordi komponenter for iOS og Android ikke kan rendres på web. Portalen viser bare Web-komponentene som fasit.
+        Eufemia er DNB sitt designsystem, og det dekker Web godt. Men designere som jobber med mobilbanken har ikke noe konkret designsystem å forholde seg til utenfor Figma, siden iOS- og Android-komponenter ikke kan rendres på web. Det betyr at portalen i praksis viser bare Web-komponentene som fasit.
       </p>
       <p>
-        Det skaper friksjon. Designere savner visuelle eksempler og oppdatert informasjon. Utviklere må ofte si fra om at feil komponent er brukt. Portalen oppleves som veldig utviklerrettet, og mye av det designerne trenger ligger ikke der.
+        Det skaper friksjon i hverdagen. Designerne savner visuelle eksempler og oppdatert informasjon, og utviklerne må ofte si fra om at feil komponent er brukt. Mye av det designerne trenger ligger rett og slett ikke i portalen, som oppleves som ganske utviklerrettet.
       </p>
       <p>
-        I tillegg ville vi bruke prosjektet til å utforske AI som verktøy i designprosessen, og finne ut hvor det faktisk gir verdi å ta det i bruk.
+        Vi ville samtidig utforske AI som verktøy i designprosessen, og se hvor det faktisk gir verdi å ta det i bruk.
       </p>
 
       <div class="cs-two-col">
         <div class="cs-card">
           <div class="card-title">Friksjonen</div>
-          <p>Native-designere har ikke ett felles sted å se designsystemet utenfor Figma. Utviklere har koden og kan emulere, designere har bare statiske komponenter i Figma. Det fører til feil i handover.</p>
+          <p>Native-designerne har ikke ett felles sted å se designsystemet utenfor Figma. Utviklerne har koden og kan emulere selve oppførselen, mens designerne sitter med statiske komponenter, og det fører til feil i handover.</p>
         </div>
         <div class="cs-card">
           <div class="card-title">Verdien for DNB</div>
-          <p>En samlet portal for Web og Native gjør at design og utvikling kan jobbe ut fra samme fasit. Det sparer tid, reduserer feil, og gir designere et bedre grunnlag for å designe mobil.</p>
+          <p>En samlet portal for Web og Native gjør at design og utvikling kan jobbe ut fra samme fasit. Det betyr færre misforståelser i handover og et bedre grunnlag for å designe mobil.</p>
         </div>
       </div>
     </div>
@@ -101,16 +101,16 @@
         <h2>Forstå behovet</h2>
       </div>
       <p>
-        Vi startet med en survey for å forstå hvilke utfordringer designerne hadde med Eufemia i dag. Vi fikk inn ti svar — ikke nok til å dekke hele designavdelingen, men nok til at de samme problemene gikk igjen.
+        Vi startet med en survey for å forstå hvilke utfordringer designerne hadde med Eufemia i dag. Vi fikk inn ti svar, som ikke var nok til å dekke hele designavdelingen, men nok til at de samme problemene gikk igjen.
       </p>
       <p>
-        Vi hadde også semistrukturerte intervjuer med designere og utviklere. Mest med designere, siden portalen i dag mangler informasjon de trenger, men også med utviklere for å forstå hvordan de jobber med Native-komponentene.
+        Vi hadde også semistrukturerte intervjuer, mest med designere siden portalen i dag mangler det de trenger, og noen med utviklere for å forstå hvordan de jobber med Native-komponentene.
       </p>
       <p>
-        Et viktig funn var at utviklerne har tilgang til emulatorer som viser hvordan iOS- og Android-komponenter faktisk oppfører seg: animasjoner, states, og mer. Designerne har ikke den informasjonen, og det er en av kildene til feil i handover.
+        Et viktig funn var at utviklerne har tilgang til emulatorer som lar dem se hvordan iOS- og Android-komponentene faktisk oppfører seg, med animasjoner og interaktive states. Designerne har ikke den informasjonen, og det er en av kildene til feil i handover.
       </p>
       <p>
-        Vi gjorde også research på hvordan andre designsystemer viser Native-komponenter, og hentet inspirasjon til både funksjon og visuelt design.
+        Vi gjorde også research på hvordan andre designsystemer viser Native-komponenter, og hentet inspirasjon til funksjon og visuelt design.
       </p>
 
       <div class="cs-two-col">
@@ -144,16 +144,16 @@
         <h2>Å bygge prototypen<br>med AI</h2>
       </div>
       <p>
-        Vi valgte å bygge prototypen med Claude Code (gjennom RAI, DNB sin interne versjon) koblet til Figma via Figma MCP. Da kunne språkmodellen bruke de faktiske Eufemia-komponentene i Figma, i stedet for å prøve å etterligne dem.
+        Vi valgte å bygge prototypen med Claude Code, gjennom RAI som er DNB sin interne versjon, koblet til Figma via Figma MCP. Da kunne språkmodellen bruke selve Eufemia-komponentene i Figma, i stedet for å prøve å etterligne dem.
       </p>
       <p>
-        Vi koblet også arbeidet til GitHub og brukte Sourcetree for å følge med på koden underveis. Jeg syntes det var viktig å forstå hva AI-en faktisk gjorde. Når jeg så koden den skrev, kunne jeg ta bedre beslutninger om hva jeg skulle akseptere, hva jeg skulle endre, og hvor jeg måtte ta over selv.
+        Vi koblet også arbeidet til GitHub og brukte Sourcetree for å se hva som faktisk skjedde i koden underveis. For meg var det viktig å forstå hva AI-en gjorde, så jeg kunne ta bedre beslutninger om når jeg skulle akseptere endringer, og når jeg måtte gripe inn selv.
       </p>
       <p>
-        Vi tok utgangspunkt i en skisse fra veilederen vår, inspirert av Fluent 2. Det viste seg å være mye lettere å jobbe med AI når den hadde noe konkret å bygge fra. Skissen fjernet mye av tolkningene, så AI-en slapp å gjette.
+        Vi tok utgangspunkt i en skisse fra veilederen vår, inspirert av Fluent 2. Det viste seg å være mye lettere å jobbe med AI når den hadde noe konkret å bygge fra, fordi skissen fjernet mye av tolkningene og AI-en slapp å gjette.
       </p>
       <p>
-        Vi måtte også scope ned. Vi kunne ikke ta for oss hele komponentbiblioteket på fire uker, så vi valgte én komponent som case: Button på iOS og Android.
+        Vi måtte også gjøre scopet smalere. Hele komponentbiblioteket var ikke realistisk på fire uker, så vi valgte én komponent som case: Button på iOS og Android.
       </p>
 
       <div class="cs-two-col">
@@ -169,7 +169,7 @@
         </div>
         <div class="cs-card">
           <div class="card-title">Lærdom underveis</div>
-          <p>AI jobber best når den har skisser og tydelige rammer å bygge fra. Småpirk i layout og detaljer tar uforholdsmessig lang tid. Det er viktigere å forstå koden enn å la AI gjøre alt.</p>
+          <p>AI jobber best når den har skisser og tydelige rammer å bygge fra, og småpirk i layout og detaljer tar uforholdsmessig lang tid. Det er viktigere å forstå koden enn å la AI gjøre alt.</p>
         </div>
       </div>
 
@@ -189,10 +189,10 @@
         <h2>En portal der Web<br>og Native er likestilt</h2>
       </div>
       <p>
-        Resultatet ble en fungerende prototype der Web, iOS og Android vises som likestilte plattformer. Min medstudent jobbet med iOS, jeg med Android. Jeg sto også for søkefunksjonen, compare-funksjonen og høyre-sidemenyen.
+        Resultatet ble en fungerende prototype der Web, iOS og Android vises som likestilte plattformer. Min medstudent tok hovedansvar for iOS, og jeg jobbet med Android og funksjonene som gikk på tvers: søk, compare og høyre-sidemenyen.
       </p>
       <p>
-        Søkefunksjonen er en svevende boks som vises på tvers av portalen. Den viser samme komponent på tvers av plattformer, så designere og utviklere raskt kan finne det de leter etter og se om komponenten finnes på andre plattformer.
+        Søkefunksjonen er en svevende boks som er tilgjengelig overalt i portalen. Den viser samme komponent på tvers av plattformer, så designere og utviklere raskt kan finne det de leter etter og se hvor komponenten finnes.
       </p>
 
       <div class="cs-bar-image">
@@ -202,7 +202,7 @@
       <p class="cs-img-caption">Søkefunksjonen viser komponenter på tvers av plattformer.</p>
 
       <p style="margin-top: 56px;">
-        Compare-funksjonen viser samme komponent på iOS og Android side om side, med oversikt over forskjeller i states og kode. Den løste et reelt problem designerne hadde, men i ettertid lurer jeg på om den egentlig løser symptomer av en større utfordring som designere kanskje burde kunne selv.
+        Compare-funksjonen viser samme komponent på iOS og Android side om side, med oversikt over forskjeller i states og kode. Den løste et reelt problem designerne hadde, men i ettertid lurer jeg på om den egentlig løste et symptom på en større utfordring som designere kanskje burde kunne håndtere selv.
       </p>
 
       <div class="cs-bar-image">
@@ -212,7 +212,7 @@
       <p class="cs-img-caption">Compare-funksjonen, iOS og Android side om side.</p>
 
       <p style="margin-top: 56px;">
-        Høyre-sidemenyen gir oversikt over hva som finnes på komponentsiden, så man slipper å scrolle gjennom alt. Den var vanskelig å få til med AI — selv med detaljerte prompts tok plassering og funksjonalitet uforholdsmessig lang tid.
+        Høyre-sidemenyen gir oversikt over hva som finnes på komponentsiden, så man slipper å scrolle gjennom alt. Den var vanskelig å få til med AI, og selv med detaljerte prompts tok plassering og funksjonalitet uforholdsmessig lang tid.
       </p>
 
       <div style="margin-top: 48px; text-align: center;">
@@ -251,16 +251,16 @@
         <h2>Hva jeg sitter igjen med</h2>
       </div>
       <p>
-        AI ble den største delen av læringsutbyttet mitt. Jeg hadde aldri brukt AI til å lage noe kodebasert før, og det viste seg å være et kraftig verktøy — særlig for prototyping med konkrete skisser og tydelig scope. Jeg fikk testet funksjoner jeg ellers ikke ville fått testet i Figma, som animasjoner og interaktive states.
+        AI ble den største delen av læringsutbyttet mitt. Jeg hadde aldri brukt AI til å lage noe kodebasert før, og det viste seg å være veldig nyttig, særlig for prototyping når jeg hadde konkrete skisser og et tydelig scope. Jeg fikk testet funksjoner jeg ellers ikke ville fått testet i Figma, som animasjoner og interaktive states.
       </p>
       <p>
-        Men det er ikke uten kostnader. I én uke brukte jeg nesten 5000 kroner på 1029 prompts. Hver prompt tilsvarer rundt én desiliter vann. Det er ikke noe man tenker på når man sitter midt i, og det er en kompetanse i seg selv å vite når det er verdt å bruke AI, og når man er bedre tjent med å gjøre noe selv.
+        Men det er ikke uten kostnader. I løpet av én uke brukte jeg nesten 5000 kroner på 1029 prompts, og hver prompt tilsvarer rundt én desiliter vann. Det er ikke noe man tenker på når man sitter midt i det, og det er en kompetanse i seg selv å vite når det er verdt å bruke AI, og når man er bedre tjent med å gjøre noe selv.
       </p>
       <p>
-        En annen ting jeg tar med meg er hvor viktig det er å forstå koden AI-en skriver. Det er lett å la den gjøre alt, men da mister man kontrollen — over kvaliteten, over sikkerheten, og over hva som faktisk skjer. Å følge med i Sourcetree og utfordre valgene underveis ga meg en sunnere tilnærming til verktøyet.
+        En annen ting jeg tar med meg er hvor viktig det er å forstå koden AI-en skriver. Det er lett å la den gjøre alt, men da mister man kontrollen over både kvalitet og over hva som faktisk skjer i bakgrunnen. Å følge med i Sourcetree og utfordre valgene underveis ga meg en sunnere tilnærming til verktøyet.
       </p>
       <p>
-        Praksisen ga meg også selvtillit. Jeg ble god på å gripe tak i folk, booke møter, sende meldinger og stille spørsmål jeg trodde var dumme. Det er kanskje det viktigste jeg sitter igjen med.
+        Praksisen ga meg også selvtillit. Jeg ble bedre på å gripe tak i folk, booke møter og stille spørsmål jeg trodde var dumme, og det er kanskje det viktigste jeg sitter igjen med.
       </p>
     </div>
   </div>
