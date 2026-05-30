@@ -1,0 +1,54 @@
+/* ── KUNST PORTEFØLJE ── */
+
+.kunst-hero {
+  padding: 140px 48px 48px;
+  text-align: center;
+}
+
+.kunst-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  margin: 0;
+}
+
+.kunst-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  max-width: 1100px;
+  margin: 0 auto 100px;
+  padding: 0 16px;
+}
+
+.kunst-item {
+  aspect-ratio: 1 / 1;
+  background: #efe9df;
+  overflow: hidden;
+}
+
+.kunst-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .kunst-hero {
+    padding: 100px 24px 32px;
+  }
+  .kunst-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kunst-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
