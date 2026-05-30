@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODEL: Direkte fra bonden — Siv Høstmark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+  <!-- ─────────────────────────────── HEADER ─── -->
+  <header class="dark-nav">
+    <div class="logo">
+      <a href="siv-portefolio.html" class="logo-mark"><span>S</span></a>
+    </div>
+    <nav>
+      <ul>
+        <li class="active"><a href="siv-portefolio.html">UX Portefølje</a></li>
+        <li><a href="#">Kunst Portefølje</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="about.html">Om meg</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ─────────────────────────────── 1. HERO ─── -->
+  <section class="cs-hero" id="cs-hero">
+    <div class="cs-hero-inner">
+      <div class="cs-hero-content">
+        <p class="cs-hero-meta">Soloprosjekt · Semesteroppgave · App</p>
+
+        <h1>ODEL:<br><span class="h1-bold">Direkte fra bonden, samlet på ett sted</span></h1>
+
+        <p class="cs-hero-desc">Et app-konsept for å finne bønder i nærheten og se hva de selger. Bakgrunnen er at norske gårdsbruk legger ned, og folk savner en samlet oversikt over lokal mat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── SIDEBAR NAV ─── -->
+  <aside class="cs-sidebar" id="cs-sidebar">
+    <nav class="cs-sidenav">
+      <a href="#cs-section-problem"   class="cs-sidenav-link" data-section="cs-section-problem">Utfordringen</a>
+      <a href="#cs-section-research"  class="cs-sidenav-link" data-section="cs-section-research">Research</a>
+      <a href="#cs-section-process"   class="cs-sidenav-link" data-section="cs-section-process">Designprosess</a>
+      <a href="#cs-section-solution"  class="cs-sidenav-link" data-section="cs-section-solution">Løsningen</a>
+      <a href="#cs-section-results"   class="cs-sidenav-link" data-section="cs-section-results">Refleksjoner</a>
+    </nav>
+  </aside>
+
+  <!-- ─────────────────────────────── COVER IMAGE ─── -->
+  <div class="cs-cover-image">
+    <div class="cs-cover-image-inner">
+      <!-- TODO: cover-bilde (f.eks. kart-skjermbilde fra ODEL eller app-mockup) -->
+      <div style="aspect-ratio:16/9;width:100%;display:flex;align-items:center;justify-content:center;background:#f5f3ef;border:1px dashed #c9bfb2;border-radius:12px;color:#8a8175;font-family:'DM Sans',sans-serif;font-size:15px;">Cover-bilde kommer</div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 3. PROBLEM ─── -->
+  <div class="cs-section-wrap white" id="cs-section-problem">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">01 — Utfordringen</div>
+        <h2>Norske bønder legger ned</h2>
+      </div>
+      <p>
+        Det legges ned omtrent ett norsk gårdsbruk hver dag, og en stor del av grunnen er at matkjedene foretrekker å importere fra utlandet fordi det er billigere for dem.
+      </p>
+      <p>
+        Jeg har en bekjent som er bonde, og han har flere ganger måttet kaste store mengder grønnsaker fordi butikkene ikke ville betale, eller fordi grønnsakene ikke var pene nok. Det er en slags hverdag for ham.
+      </p>
+      <p>
+        Samtidig er det flere som er blitt bevisste på hva de spiser, om det er ultraprosessert eller ikke, og hvor det kommer fra. Mange ville gjerne handlet mer direkte fra bonden, men det er ikke alltid lett å vite hvor bonden i nærheten er og hva de har til salgs.
+      </p>
+      <p>
+        REKO-ringen finnes som en salgskanal for lokalmat, men den foregår på Facebook og oppleves litt rotete. Det er vanskelig å holde oversikt, og man får ikke sett på varene før man bestiller.
+      </p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Friksjonen</div>
+          <p>Matkjedene foretrekker å importere fra utlandet, og bønder må enten kaste varer eller selge på dårlige vilkår. Direkte salg til folk finnes, men er ikke samlet noe sted.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Konsekvensen</div>
+          <p>Folk som vil handle lokalt vet sjelden hvor bonden i nærheten er, hva de selger, eller når. Det som finnes i dag, ligger spredt i Facebook-grupper.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 4. RESEARCH ─── -->
+  <div class="cs-section-wrap light" id="cs-section-research">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">02 — Research</div>
+        <h2>Hva folk faktisk savner</h2>
+      </div>
+      <p>
+        For å forstå om dette var et reelt behov, snakket jeg først med en bonde jeg kjenner som ga meg perspektivet fra hans side. Han fortalte hvor presset bønder er i dag, og hvor lite gjennomslag de har overfor de store kjedene.
+      </p>
+      <p>
+        Deretter intervjuet jeg ni personer i to aldersgrupper, fem i alderen 25–35 og fire i alderen 50–60. Spørsmålene handlet om hva som er viktig når de handler mat, hvor opptatt de er av norsk og "ren" mat, og hvor lett det er å finne lokalmat i dag.
+      </p>
+      <p>
+        Funnene var ganske tydelige. De yngre er opptatt av at maten ikke er ultraprosessert, og handler fra bonden for å være trygge på at varene ikke er tuklet med. De eldre kobler norsk landbruk til sunn mat og egen helse, og er mer opptatt av å støtte bonden generelt. Pris er ofte høyest prioritert hos alle, men kvalitet og handleopplevelse betyr noe.
+      </p>
+      <p>
+        Til slutt sendte jeg en kort spørreundersøkelse i Microsoft Forms. 69 % svarte at de tenker over om varene kommer fra norsk landbruk når de handler, og 81 % kunne tenkt seg å bruke en samlet oversikt over gårder i nærheten.
+      </p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Metodene jeg brukte</div>
+          <ul class="cs-list">
+            <li>Intervju med en bonde</li>
+            <li>Semistrukturerte intervjuer med 9 personer</li>
+            <li>Microsoft Forms-survey</li>
+            <li>To personas</li>
+          </ul>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Hovedfunn</div>
+          <ul class="cs-list">
+            <li>Yngre kobler bonden til e-stoff-fri mat og trygghet</li>
+            <li>Eldre kobler norsk landbruk til sunn mat og egen helse</li>
+            <li>REKO-ringen oppleves rotete, folk vil se på varene først</li>
+            <li>69 % tenker på opphav i butikken, 81 % vil ha en sånn app</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 5. PROCESS ─── -->
+  <div class="cs-section-wrap white" id="cs-section-process">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">03 — Designprosess</div>
+        <h2>Fra skisse til ODEL</h2>
+      </div>
+      <p>
+        Jeg startet med å idémyldre på papir og skissere hva appen burde inneholde. En tidlig avgjørelse var at appen ikke skulle være en kjøp-og-salg-løsning, men en samlet oversikt over hva som finnes i nærheten. Det fjernet en del kompleksitet, og lot meg fokusere på det folk i intervjuene faktisk savnet: oversikt.
+      </p>
+      <p>
+        Innholdet ble delt inn i fire hovedkategorier: "Finn din bonde" med sesongoversikt, "Mat" med grønnsaker, ost, kjøtt og resten, "Annet" med ting som juletrær, skinn, ved og arrangementer, og "Kontakt" med kontaktinformasjon til bøndene. Jeg ville at det skulle være enkelt å enten lete etter en konkret vare, eller bare se hva som finnes.
+      </p>
+      <p>
+        Selve appen designet jeg i Figma for Android, siden det er det jeg har selv. Jeg landet på en gul aksentfarge fordi gult oppleves som optimistisk og er en av fargene øyet oppfatter lettest. Den resterende paletten holdt jeg ganske enkel, slik at fargen kunne hvile på ikonene og knappene. Ikonene tegnet jeg selv i Procreate fordi jeg ikke fant noe som passet i Figma-bibliotekene.
+      </p>
+      <p>
+        Navnet ble Odel, kort og gjenkjennbart og knyttet til norsk landbruk. Jeg lagde også en enkel hjemmeside med inspirasjon fra Tinder: en minimalistisk forside med en nedlastningsknapp og en info-side.
+      </p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Verktøy</div>
+          <ul class="cs-list">
+            <li>Figma</li>
+            <li>Procreate</li>
+            <li>Papir og blyant</li>
+            <li>Microsoft Forms</li>
+          </ul>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Designvalg</div>
+          <p>Gul aksentfarge fordi den er optimistisk og lett synlig. Egne ikoner i Procreate fordi jeg ikke fant det jeg trengte. Android-design fordi det er det jeg selv bruker, og det får meg til å tenke realistisk om hvordan appen oppleves i hverdagen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 6. SOLUTION ─── -->
+  <div class="cs-section-wrap light" id="cs-section-solution">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">04 — Løsningen</div>
+        <h2>Sånn ble ODEL</h2>
+      </div>
+      <p>
+        Resultatet ble en fungerende Figma-prototype av en Android-app. Forsiden er et kart der man markerer hvor man er, og de nærmeste gårdene dukker opp. Inne på hver gård kan man se hva de selger, hva som er i sesong, hvilke arrangementer som er på gang, og hvordan man kontakter dem.
+      </p>
+      <p>
+        Mat-menyen er strukturert etter kategori (grønnsaker, ost, kjøtt, egg, honning, frukt og bær), slik at man kan starte fra hva man vil ha og se hvilke gårder i nærheten som har det. "Annet"-fanen samler ting som juletrær, skinn, ved og interiør, samt arrangementer som bonden har på gården.
+      </p>
+      <p>
+        Hjemmesiden er enkel og holder seg til to ting: en nedlastningsknapp og en info-side. Stilen er minimal, inspirert av Tinder. I et "virkelig" prosjekt ville jeg nok gått for stilen som hører til appen, fordi nettsiden ble litt for koselig i forhold til temaet.
+      </p>
+      <p>
+        Det er to ting som ikke fungerer slik jeg ville. Favoritter-delen har en drag-funksjon som ikke fungerer fordi jeg fulgte en tutorial som ikke traff helt. Og GPS-en er kun visuell, ikke faktisk koblet til posisjon. Jeg valgte å la dem stå for å vise tanken.
+      </p>
+
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Hva appen viser</div>
+          <ul class="cs-list">
+            <li>Kart over gårder i nærheten</li>
+            <li>Hva bonden har i sesong</li>
+            <li>Mat-kategorier (grønnsaker, ost, kjøtt osv.)</li>
+            <li>Annet (skinn, juletrær, ved, arrangementer)</li>
+            <li>Kontaktinformasjon</li>
+          </ul>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Det som ikke fungerer ennå</div>
+          <p>Favoritter-funksjonen har drag-and-drop som ikke fungerer som tenkt, og GPS-en er kun visuell. Begge er der for å vise tanken bak.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── 7. REFLECTIONS ─── -->
+  <div class="cs-section-wrap white" id="cs-section-results">
+    <div class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-number">05 — Refleksjoner</div>
+        <h2>Hva jeg sitter igjen med</h2>
+      </div>
+      <p>
+        Det største spørsmålet jeg sitter igjen med er om en app som denne faktisk hjelper bøndene. Ærlig talt ikke alene. Men jeg tror den kan bidra litt til bevissthet rundt at vi har norske bønder i nærheten og hva de driver med, og hvis flere viser at de vil handle lokalt, så vil kanskje butikkene også ta inn mer fra norsk landbruk.
+      </p>
+      <p>
+        Det jeg lærte mest av var intervjuene. Spørreundersøkelsen ga meg tall, men det var samtalene med folk i to ulike aldersgrupper som gjorde at jeg forsto hvorfor de hadde de holdningene de hadde.
+      </p>
+      <p>
+        Jeg lærte også at det å scope tidlig sparer mye tid. Da jeg bestemte meg for at ODEL ikke skulle være en kjøp-og-salg-app, ble det enklere å tenke på hva som faktisk burde være med.
+      </p>
+      <p>
+        I et "virkelig" prosjekt ville jeg gått for én stil på tvers av app og nettside, og brukt mer tid på å få favoritter-funksjonen og GPS-en til å faktisk fungere. Men som semesteroppgave fikk jeg testet hele veien fra intervju til prototype, og det var det jeg ville få ut av oppgaven.
+      </p>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────── BACK TO TOP ─── -->
+  <div class="to-top-wrapper">
+    <button class="to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"/></svg>
+      Back to top
+    </button>
+  </div>
+
+  <!-- ─────────────────────────────── 8. PROJECT NAV ─── -->
+  <nav class="cs-project-nav">
+    <a href="case-study.html" class="cs-nav-prev">
+      <span class="nav-diamonds" aria-hidden="true">
+        <span class="diamond d-big"></span>
+        <span class="diamond d-sm d-sm-1"></span>
+        <span class="diamond d-sm d-sm-2"></span>
+      </span>
+      <span class="nav-direction">← Forrige</span>
+      <span class="nav-title">Et mer brukervennlig<br>Udir.no</span>
+    </a>
+    <a href="case-study-eufemia.html" class="cs-nav-next">
+      <span class="nav-diamonds" aria-hidden="true">
+        <span class="diamond d-big"></span>
+        <span class="diamond d-sm d-sm-1"></span>
+        <span class="diamond d-sm d-sm-2"></span>
+      </span>
+      <span class="nav-direction">Neste →</span>
+      <span class="nav-title">DNB Designsystem:<br>Native i Webportalen</span>
+    </a>
+  </nav>
+
+  <!-- ─────────────────────────────── FOOTER ─── -->
+  <footer>
+    <div class="footer-left">
+      <h3><a href="mailto:siv.hostmark@gmail.com">Kontakt meg</a></h3>
+      <p><a href="mailto:siv.hostmark@gmail.com">siv.hostmark@gmail.com</a></p>
+      <p class="footer-copyright">© 2025 Siv Høstmark</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:siv.hostmark@gmail.com" title="Email">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+      <a href="https://no.linkedin.com/in/siv-ragnhild-h%C3%B8stmark-757281130" target="_blank" title="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.to-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <script>
+    const hero = document.querySelector('#cs-hero');
+    const sidebar = document.getElementById('cs-sidebar');
+    const problemSection = document.getElementById('cs-section-problem');
+    const projectNav = document.querySelector('.cs-project-nav');
+
+    const updateSidebar = () => {
+      const triggerY = problemSection.getBoundingClientRect().top;
+      const projectNavY = projectNav.getBoundingClientRect().top;
+      const shouldShow = triggerY < 200 && projectNavY > window.innerHeight - 100;
+      sidebar.classList.toggle('visible', shouldShow);
+    };
+    window.addEventListener('scroll', updateSidebar, { passive: true });
+    updateSidebar();
+
+    const sectionIds = [
+      'cs-section-problem',
+      'cs-section-research',
+      'cs-section-process',
+      'cs-section-solution',
+      'cs-section-results'
+    ];
+    const navLinks = document.querySelectorAll('.cs-sidenav-link');
+
+    const setActive = (id) => {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.section === id);
+      });
+    };
+
+    setActive('cs-section-problem');
+
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, {
+      rootMargin: '-20% 0px -65% 0px',
+      threshold: 0
+    });
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) spyObserver.observe(el);
+    });
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(
+      '.cs-section-header, .cs-section > p'
+    ).forEach(el => {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+      el.style.transform = 'translateY(22px)';
+      fadeObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
