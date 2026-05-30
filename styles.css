@@ -144,7 +144,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 .hero-content {
   padding-left: 20px;
   border-left: 1px solid rgba(255,255,255,0.7);
-  margin-top: 35vh;
+  margin-top: 22vh;
   position: relative;
   z-index: 3;
 }
@@ -174,7 +174,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 
 .scroll-cue {
   position: absolute;
-  top: 80%;
+  top: 72%;
   left: 0;
   right: 0;
   margin: 0 auto;
