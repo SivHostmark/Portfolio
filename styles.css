@@ -246,7 +246,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-.project-text h2 .h2-bold { font-weight: 500; }
+.project-text h2 .h2-bold { font-weight: inherit; }
 .project-text h2 a { color: inherit; text-decoration: none; }
 
 .project-text p {
@@ -321,7 +321,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 footer {
   background: var(--black);
   color: var(--white);
-  padding: 80px 48px;
+  padding: 50px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -337,14 +337,25 @@ footer {
 }
 
 .footer-left p {
-  font-size: 13px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
   color: var(--white);
-  font-weight: 300;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-left p strong {
+  font-weight: 700;
 }
 
 .footer-left a {
   color: inherit;
   text-decoration: none;
+}
+
+.footer-left p a {
+  text-decoration: underline;
 }
 
 .footer-left .footer-copyright {

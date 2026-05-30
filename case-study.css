@@ -224,7 +224,7 @@
 }
 
 .cs-hero h1 .h1-bold {
-  font-weight: 500;
+  font-weight: inherit;
 }
 
 
@@ -762,7 +762,7 @@
 }
 
 .cs-project-nav .nav-direction {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--black);
