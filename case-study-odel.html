@@ -123,7 +123,8 @@
             <li>Yngre handler fra bonden for å unngå ultraprosessert mat</li>
             <li>Eldre forbinder norsk landbruk med ren og sunn mat</li>
             <li>Flere syns butikk-kjedene bestemmer for mye</li>
-            <li>69 % tenker over opphav, 81 % vil ha en samlet oversikt-app</li>
+            <li>69 % tenker over om varene er norske når de handler</li>
+            <li>81 % vil ha en samlet oversikt over lokale bønder</li>
           </ul>
         </div>
       </div>
@@ -135,34 +136,39 @@
     <div class="cs-section">
       <div class="cs-section-header">
         <div class="cs-section-number">03 — Designprosess</div>
-        <h2>Fra skisse til ODEL</h2>
+        <h2>Fra skisse til prototype</h2>
+      </div>
+      <div style="max-width: 640px; margin: 14px auto 32px;">
+        <p style="margin: 0 0 10px;">1. Idémyldring og skisser på papir</p>
+        <p style="margin: 0 0 10px;">2. Definere hovedkategorier i appen basert på innsikt:</p>
+        <ul class="cs-list-section" style="margin: 0 0 16px 22px;">
+          <li>Finn din bonde</li>
+          <li>Mat (grønnsaker, ost, kjøtt, egg, honning, frukt og bær)</li>
+          <li>Annet (juletrær, skinn, ved, animalsk, interiør, arrangementer)</li>
+          <li>Kontakt</li>
+        </ul>
+        <p style="margin: 0 0 10px;">3. Tegne og designe ikoner</p>
+        <p style="margin: 0 0 10px;">4. Bygge prototype i Figma</p>
+        <p style="margin: 0;">5. Tegne landingsside og bygge den i VSCode</p>
       </div>
       <p>
-        Jeg startet med å idémyldre og skissere på papir. Det avgjørende tidlige valget var at appen ikke skulle være en kjøp-og-salg-app. Det intervjuene viste, var at folk savnet oversikt, ikke en ny salgskanal.
+        Appen er designet for Android. Grunnen til det er fordi Android ofte blir nedprioritert.<br>
+        Hovedfargen er gul fordi det er en optimistisk farge som er lett synlig.
       </p>
-      <p>
-        Hovedkategoriene ble Finn din bonde, Mat, Annet og Kontakt. Mat har under-kategorier som grønnsaker, ost, kjøtt, egg, honning og frukt og bær. Annet samler ting som juletrær, skinn, ved, animalsk, interiør og arrangementer.
-      </p>
-      <p>
-        Appen designet jeg i Figma for Android, siden det er det jeg har selv. Jeg landet på en gul aksentfarge fordi gult oppleves som optimistisk og er en av fargene øyet oppfatter lettest. Resten av paletten holdt jeg enkel, slik at fargen kunne ligge på ikoner og knapper.
-      </p>
-      <p>
-        Ikonene tegnet jeg selv i Procreate fordi jeg ikke fant noe som passet i Figma-bibliotekene. Navnet ble Odel, kort og knyttet til norsk landbruk. Jeg lagde også en enkel hjemmeside med inspirasjon fra Tinder: en minimalistisk forside med en nedlastningsknapp og en info-side.
-      </p>
-
-      <div class="cs-two-col">
+      <div style="text-align: center; margin: 32px 0 8px;">
+        <img src="Project%20images/ODEL/Odel_knapper.svg" alt="Kategori-ikoner tegnet i Procreate" style="max-width: 420px; width: 100%; height: auto;">
+      </div>
+      <p class="cs-img-caption">Kategori-ikonene, tegnet i Procreate.</p>
+      <div style="max-width: 360px; margin: 48px auto 0;">
         <div class="cs-card">
           <div class="card-title">Verktøy</div>
           <ul class="cs-list">
             <li>Figma</li>
             <li>Procreate</li>
-            <li>Papir og blyant</li>
             <li>Microsoft Forms</li>
+            <li>VSCode</li>
+            <li>Papir og blyant</li>
           </ul>
-        </div>
-        <div class="cs-card">
-          <div class="card-title">Designvalg</div>
-          <p>Gult ble aksentfargen, valgt fordi den er optimistisk og lett synlig. Ikonene tegnet jeg selv i Procreate. Android-versjon siden det er det jeg har selv.</p>
         </div>
       </div>
     </div>
@@ -178,6 +184,10 @@
       <p>
         ODEL er et konsept for å gjøre det enklere å handle lokalt. Prototypen er en Android-app der man kan se hvilke bønder som er i nærheten, hva de selger og hva som er i sesong, alt fra ett sted. Inne i "Finn din bonde" kan man markere hvor man er, og de nærmeste gårdene dukker opp på kartet.
       </p>
+      <div class="cs-bar-image" style="margin: 32px -80px 0;">
+        <img src="Project%20images/ODEL/Odel_app_gjennomsiktigbakgrunn.svg" alt="Mockup av flere ODEL-skjermer" style="width: 100%; height: auto; display: block;">
+      </div>
+      <p class="cs-img-caption">Skjermer fra ODEL-appen.</p>
       <p>
         Inne på hver gård kan man se hva de selger og hva de har i sesong. Mat-menyen er strukturert etter kategori som grønnsaker, ost, kjøtt, egg, honning og frukt og bær, slik at man kan starte fra hva man vil ha og se hvilke gårder i nærheten som har det.
       </p>
@@ -185,8 +195,12 @@
         Annet-fanen samler ting som juletrær, skinn, ved, animalsk, interiør og arrangementer. Appen viser også utsalgssteder, for eksempel bær-stands om sommeren.
       </p>
       <p>
-        Hjemmesiden er enkel, med en nedlastningsknapp og en info-side. I et "virkelig" prosjekt ville jeg gått for stilen som hører til appen, fordi hjemmesiden ble hakket for koselig i forhold til temaet.
+        Hjemmesiden er kodet i VSCode, med en nedlastningsknapp og en info-side. Den gir folk et reelt landingspunkt for appen, der de kan se hva ODEL er og laste den ned. I et "virkelig" prosjekt ville jeg gått for stilen som hører til appen, fordi hjemmesiden ble hakket for koselig i forhold til temaet.
       </p>
+      <div class="cs-bar-image" style="margin-top: 32px;">
+        <img src="Project%20images/ODEL/landinsside.png" alt="Skjermbilde av ODEL-hjemmesiden" style="width: 100%; height: auto; display: block;">
+      </div>
+      <p class="cs-img-caption">Hjemmesiden til ODEL.</p>
       <p>
         To ting fungerer ikke som tenkt. Favoritter-delen har en drag-funksjon som ikke ble slik jeg håpet (jeg fulgte en tutorial), og GPS-en er kun visuell. Jeg lot dem stå for å vise tanken bak.
       </p>
