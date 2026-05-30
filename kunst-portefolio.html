@@ -35,31 +35,37 @@
 
   <!-- GRID -->
   <section class="kunst-grid">
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
-    <div class="kunst-item"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20230304_185027_421.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220925_141611_694.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220719_173924_806.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220703_180024_357.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220619_210033_191.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220612_181808_700.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220529_162436_102.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220517_163335_412.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220313_120633_487.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20220202_134327_171.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20210818_173552_243.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20210527_195417_849.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20210514_184722_201.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20210210_173554_376.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20210131_121305_068.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200413_141421_841.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200315_132720_245.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200307_130609_741.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/20200306_230711.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200304_132251_618.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200303_143409_339.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200301_144607_357.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200229_133202_287.jpg" alt="Maleri"></div>
+    <div class="kunst-item"><img src="Kunst%20portef%C3%B8lje/IMG_20200228_132523_909.jpg" alt="Maleri"></div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="kunst-lightbox" id="kunst-lightbox" aria-hidden="true">
+    <button class="kunst-lightbox-close" aria-label="Lukk">×</button>
+    <img class="kunst-lightbox-img" src="" alt="">
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -77,6 +83,35 @@
       </a>
     </div>
   </footer>
+
+  <script>
+    const lightbox = document.getElementById('kunst-lightbox');
+    const lightboxImg = lightbox.querySelector('.kunst-lightbox-img');
+    const closeBtn = lightbox.querySelector('.kunst-lightbox-close');
+
+    document.querySelectorAll('.kunst-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('visible');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    };
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === closeBtn) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('visible')) closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
