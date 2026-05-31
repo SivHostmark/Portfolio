@@ -58,16 +58,16 @@ header::before {
 header.dark-nav::before { opacity: 1; }
 
 .logo-mark {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border: 2px solid var(--white);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: border-color 0.3s ease, color 0.3s ease;
   text-decoration: none;
   box-sizing: border-box;
+  transform: rotate(45deg);
 }
 
 .logo-mark span {
@@ -77,6 +77,7 @@ header.dark-nav::before { opacity: 1; }
   letter-spacing: 0.02em;
   color: var(--white);
   transition: color 0.3s ease;
+  transform: rotate(-45deg);
 }
 
 nav ul {
@@ -233,6 +234,23 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 .project-inner.reverse .project-text  { order: 3; }
 .project-inner.reverse .project-image { order: 1; }
 .project-inner.reverse > div:not([class]) { order: 2; }
+
+.project-inner .project-text {
+  max-width: 360px;
+  justify-self: end;
+}
+
+.project-inner.reverse .project-text {
+  justify-self: start;
+}
+
+@media (max-width: 768px) {
+  .project-inner .project-text,
+  .project-inner.reverse .project-text {
+    max-width: none;
+    justify-self: stretch;
+  }
+}
 
 .project-number {
   font-size: 11px;
