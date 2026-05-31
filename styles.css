@@ -247,8 +247,10 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 @media (max-width: 768px) {
   .project-inner .project-text,
   .project-inner.reverse .project-text {
-    max-width: none;
-    justify-self: stretch;
+    max-width: 480px;
+    margin: 0 auto;
+    justify-self: center;
+    text-align: center;
   }
 }
 
@@ -412,12 +414,88 @@ footer {
 /* SVG icons */
 .icon { width: 18px; height: 18px; fill: currentColor; }
 
+/* ── HAMBURGER ── */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 200;
+  position: relative;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+
+header.dark-nav .menu-toggle span {
+  background: var(--black);
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   header { padding: 24px; }
-  nav ul { gap: 20px; }
-  nav ul li a { font-size: 11px; }
+
+  .menu-toggle { display: block; }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 80px 32px 32px;
+    border-radius: 0 0 0 2px;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 150;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  nav.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Lys boks når headeren er i dark-nav-modus (lyse seksjoner / scrollet ned) */
+  header.dark-nav nav {
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 18px;
+    text-align: right;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    text-shadow: none;
+  }
+
+  nav ul li a::after { background: var(--white); }
 
   #hero { padding: 0 24px; }
 
@@ -426,11 +504,26 @@ footer {
   .project-inner,
   .project-inner.reverse {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
 
-  .project-inner.reverse .project-text { order: 1; }
-  .project-inner.reverse .project-image { order: 2; }
+  /* Skjul den tomme gap-kolonnen på mobil så ikke ekstra luft hoper seg opp */
+  .project-inner > div:not([class]),
+  .project-inner.reverse > div:not([class]) {
+    display: none;
+  }
+
+  /* Bildet først (visuell anker), så tekst, så CTA — uavhengig av layout */
+  .project-inner .project-text,
+  .project-inner.reverse .project-text { order: 2; }
+  .project-inner .project-image,
+  .project-inner.reverse .project-image { order: 1; }
+
+  /* Hindrer at bildet sluker hele skjermen ved 768 */
+  .project-image {
+    max-width: 480px;
+    margin: 0 auto;
+  }
 
   footer {
     flex-direction: column;
