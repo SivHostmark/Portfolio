@@ -248,8 +248,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
   font-weight: 300;
   line-height: 1.2;
   margin-bottom: 20px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 .project-text h2 .h2-bold { font-weight: inherit; }
 .project-text h2 a { color: inherit; text-decoration: none; }

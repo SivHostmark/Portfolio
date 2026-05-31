@@ -11,9 +11,10 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="case-study.css">
   <style>
-    .cs-section-wrap.white .cs-card {
-      background: #f4e7ee;
-      border: 2px solid #c4a8bb;
+    .cs-section-wrap.white .cs-card,
+    .cs-section-wrap.light .cs-card {
+      background: #faf2f6;
+      border: none;
     }
   </style>
 </head>
@@ -44,7 +45,7 @@
 
         <p class="cs-hero-desc">En onboarding-studie om hvordan man får folk komfortable med å snakke med en AI-assistent, og hvordan den bør prate for å føles naturlig. Assistenten hjelper små bedrifter med regnskapet.</p>
 
-        <p class="cs-hero-anon" style="margin-top:24px;font-size:14px;opacity:0.6;font-style:italic;max-width:480px;">Selskaps- og produktnavn er anonymisert av hensyn til arbeidsgiver. Skjermbilder fra appen er ikke gjengitt her av samme grunn.</p>
+        <p class="cs-hero-anon" style="margin-top:24px;font-size:14px;font-style:italic;max-width:480px;">Selskaps- og produktnavn er anonymisert av hensyn til arbeidsgiver. Skjermbilder fra appen er ikke gjengitt her av samme grunn.</p>
       </div>
 
     </div>
@@ -53,7 +54,7 @@
   <!-- ─────────────────────────────── SIDEBAR NAV ─── -->
   <aside class="cs-sidebar" id="cs-sidebar">
     <nav class="cs-sidenav">
-      <a href="#cs-section-problem"   class="cs-sidenav-link" data-section="cs-section-problem">Utfordringen</a>
+      <a href="#cs-section-problem"   class="cs-sidenav-link" data-section="cs-section-problem">Oppgaven</a>
       <a href="#cs-section-research"  class="cs-sidenav-link" data-section="cs-section-research">Research</a>
       <a href="#cs-section-process"   class="cs-sidenav-link" data-section="cs-section-process">Designprosess</a>
       <a href="#cs-section-solution"  class="cs-sidenav-link" data-section="cs-section-solution">Løsningen</a>
@@ -73,17 +74,14 @@
   <div class="cs-section-wrap white" id="cs-section-problem">
     <div class="cs-section">
       <div class="cs-section-header">
-        <div class="cs-section-number">01 — Utfordringen</div>
-        <h2>Hva var utfordringen?</h2>
+        <div class="cs-section-number">01 — Oppgaven</div>
+        <h2>AI i onboardingsflyten</h2>
       </div>
       <p>
-        Som eneste UX-er på prosjektet jobbet jeg med å bygge og utforske hvordan onboardingen i en regnskapsapp kunne involvere AI i møtet med brukeren. Jeg skulle ikke lande et ferdig resultat, men funnene og designet skulle tas med videre i utviklingen.
+        Det fantes allerede en onboardingsflyt da jeg kom inn i prosjektet. Min oppgave ble å lage og teste et nytt onboarding-design, finne ut hvordan den stemmestyrte AI-en kunne passe inn i det første møtet med brukeren og hvordan AI-en skulle se ut og oppføre seg generelt.
       </p>
       <p>
-        Utfordringen handlet om hvordan jeg skulle skape et naturlig første møte med AI-en, hvordan den skulle presenteres og hvordan den skulle ta plass i onboardingsflyten til appen.
-      </p>
-      <p>
-        Folk flest er ikke vant til å bruke stemmen når de snakker med AI, og det var uklart hvordan assistenten burde prate for at det skulle føles naturlig. Språk, pauser, tone... Dette måtte på plass for at den skulle fremstå troverdig nok til at en bruker ville gi fra seg informasjon om bedriften sin.
+        Jeg måtte utforske hvordan man kan skape et naturlig første møte med AI-en, hvordan den skulle presenteres og hvordan den skulle ta plass i onboardingsflyten. Folk flest er ikke vant til å bruke stemmen når de snakker med AI, og det var uklart hvordan assistenten burde prate for at det skulle føles naturlig. Språk, pauser, tone... Dette måtte på plass for at den skulle fremstå troverdig nok til at en bruker ville gi fra seg informasjon om bedriften sin.
       </p>
 
     </div>
@@ -97,16 +95,20 @@
         <h2>Å forstå brukerne<br>og stemmen</h2>
       </div>
       <p>
-        Researchen hadde to spor: dagens regnskapsverktøy, og forskning på stemmebaserte AI-assistenter.
+        Researchen hadde to spor: dagens regnskapsverktøy og stemmebaserte AI-assistenter.
       </p>
       <p>
-        Av konkurrentene så jeg særlig på Fiken, det foretrukne regnskapsverktøyet for små bedrifter og gründere. Det er populært fordi det er enkelt å bruke, men det er ikke AI-drevet. Jeg testet også offentlige tjenester som Altinn og Brønnøysundregistrene, der prosessen oppleves treg og tungvint for den som er fersk.
+        Jeg så blant annet på Fiken, Altinn og Brønnøysundregistrene for å forstå hvordan lignende oppgaver løses i dag.
       </p>
       <p>
-        På den andre siden lente jeg meg på forskning om hvordan mennesker forholder seg til stemmeassistenter. Folk behandler dem som sosiale aktører, der måten noe sies på veier like tungt som innholdet. Et tema jeg syntes var interessant var stemme og kjønn. Bransjen velger ofte kvinnestemme som standard fordi den forbindes med trygghet. Samtidig har UNESCO (2019) dokumentert at praksisen forsterker kjønnsstereotypier.
+        Jeg undersøkte også hvordan mennesker forholder seg til stemmeassistenter. Et gjennomgående funn var at måten noe sies på er nesten like viktig som innholdet. Det gjorde språk, stemme og personlighet til viktige temaer i designarbeidet.
       </p>
       <p>
-        Under de semistrukturerte intervjuene og brukertestene jeg hadde dukket det opp noe overraskende og tankevekkende: ingen av deltakerne ville prøve å snakke med assistenten i onboardingen. De foretrakk heller å trykke på knapper og skrive.
+        Under intervjuene og brukertestene dukket det opp noe jeg ikke hadde forventet: ingen av deltakerne ville prøve å snakke med assistenten i onboardingen. De foretrakk å trykke på knapper og skrive.
+      </p>
+      <p class="cs-quote" style="color: #4a2854;">
+        <em>"Jeg har ikke så lyst til å snakke med den... Er jeg nødt?"</em><br>
+        — Bruker, 32
       </p>
       <p>
         Begrunnelsene var ulike:
@@ -124,7 +126,7 @@
 
       <div class="cs-two-col">
         <div class="cs-card">
-          <div class="card-title">Metodene jeg brukte</div>
+          <div class="card-title">Metodene jeg brukte under research</div>
           <ul class="cs-list">
             <li>Brukerintervjuer</li>
             <li>Personaer og user stories</li>
@@ -154,10 +156,10 @@
         <h2>Å bygge en stemme<br>og personlighet</h2>
       </div>
       <p>
-        Det ble satt opp en system-prompt i Claude Projects, slik at jeg kunne teste mindre ting underveis uten å hente inn nye brukere hver gang. Jeg lagde en testkunde for å se hvordan dialogen fungerte i praksis.
+        Det ble satt opp en system-prompt i Claude Projects, slik at jeg kunne teste mindre ting underveis uten å hente inn nye brukere hver gang. Jeg lagde en testkunde for å se hvordan dialogen fungerte i praksis og bruke den som et supplement til intervjuene og brukertestene.
       </p>
       <p>
-        Jeg utforsket også om AI-en kunne ha et mer maskot-aktig uttrykk. Jeg hentet inspirasjon fra Notions AI-figur og Fikens maskot, som begge har menneskelige trekk som ansiktsuttrykk, og lagde skisser med ulike retninger.
+        Jeg utforsket også om AI-en kunne ha et mer maskot-aktig uttrykk. Målet var å undersøke om et mer menneskelig uttrykk kunne gjøre assistenten lettere å forstå og mer innbydende å ta i bruk. Med inspirasjon fra Notions AI-figur og Fikens maskot lagde jeg skisser med ulike retninger.
       </p>
 
       <div style="display:flex;gap:24px;justify-content:center;align-items:flex-start;margin-top:32px;flex-wrap:wrap;">
@@ -184,7 +186,7 @@
         I Figma designet jeg parallelt for iOS og Android, og fulgte plattformenes egne retningslinjer (Human Interface Guidelines og Material Design). Slik passet jeg på at appen føltes hjemme på begge plattformene.
       </p>
       <p>
-        Jeg utforsket blant annet om assistenten skulle ta initiativ eller vente på å bli spurt, og hvor mye den burde forklare uten å overvelde brukeren. Jeg ledet planleggingen og hadde workshops sammen med utviklere, og tok jevnlig et steg tilbake for å tenke på brukeren.
+        Jeg utforsket blant annet om assistenten skulle ta initiativ eller vente på å bli spurt, og hvor mye den burde forklare uten å overvelde brukeren. Samtaler med utviklerne gjorde det lettere å forstå hvilke løsninger som var realistiske å bygge, og jeg fikk vite hvilke synspunkter de hadde på AI i onboardingsflyten.
       </p>
 
       <div class="cs-two-col">
@@ -243,7 +245,13 @@
         <h2>Konklusjonene mine</h2>
       </div>
       <p>
-        Et av valgene jeg landet på tidlig var at brukeren skulle kunne velge om de ville snakke med assistenten eller skrive til den. Det ga brukerne noe å støtte seg på, og det føltes tryggere enn å bare måtte bruke stemmen. Jeg mener denne tilnærmingen ble en bedre løsning i dette tilfellet enn å bruke en maskot. En egen figur ville muligens skilt seg for mye ut fra de AI-assistentene folk allerede kjenner, og kanskje bli oppfattet som litt useriøs i sammenheng med regnskap. Men dette kan ikke konkluderes uten videre testing.
+        Et av valgene jeg landet på tidlig var at brukeren skulle kunne velge om de ville snakke med assistenten eller skrive til den. Under intervjuene og brukertestene var det ingen som ønsket å snakke med AI-en med en gang, så det føltes viktig å gi brukeren flere måter å komme i gang på.
+      </p>
+      <p>
+        På kom-i-gang-siden kunne brukeren velge mellom en omvisning av appen eller en samtale med AI-en. På den måten kunne brukeren selv bestemme hvor mye AI som skulle inn i opplevelsen fra start.
+      </p>
+      <p>
+        Jeg utforsket også om AI-en kunne ha et mer maskot-aktig uttrykk. Etter hvert gikk jeg bort fra den retningen og valgte et uttrykk som lå nærmere ChatGPT og Claude, siden det bygget på mønstre brukerne allerede var kjent med.
       </p>
 
       <div style="margin-top: 32px;text-align:center;">
@@ -252,16 +260,7 @@
       <p class="cs-img-caption" style="font-style:italic;opacity:0.7;font-size:13px;">Forenklet, nøytralisert illustrasjon av chattefunksjonen.</p>
 
       <p>
-        I tekstfeltet kunne brukeren skrive direkte til AI-en, eller trykke på mikrofonen om de heller ville snakke. «Snakk»-knappen er en bredere inngang for samtale med AI-en, og pluss-ikonet gir tilgang til vedlegg, ny samtale og andre handlinger.
-      </p>
-      <p>
-        På kom-i-gang-siden mot slutten av flyten kunne brukeren velge om de ville få en omvisning av funksjonene, eller starte en samtale med AI-en. Det lot dem selv bestemme hvor mye AI som skulle inn fra start.
-      </p>
-      <p>
-        Jeg landet på at AI-en skulle ha en varm og menneskelig tone, uten å late som den var et menneske. Den skulle føles trygg å snakke med og ærlig på hva den faktisk var.
-      </p>
-      <p>
-        Det viktigste prosjektet ga, var innsikten i om AI burde være med i onboardingen i det hele tatt. Svaret ble nei. Det ga mer verdi å introdusere appen som en regnskapsapp først, og la AI-en komme litt i skyggen av det. Å bli møtt av en AI tok oppmerksomheten vekk fra det appen egentlig skulle gi: å gjøre regnskap kjempe enkelt.
+        Jeg landet også på en varm og menneskelig tone, uten at assistenten skulle fremstå som et menneske.
       </p>
     </div>
   </div>
@@ -274,13 +273,10 @@
         <h2>Hva jeg sitter igjen med</h2>
       </div>
       <p>
-        En refleksjon jeg satt igjen med var at AI-en kanskje ikke burde være en del av onboardingsflyten ennå. Foreløpig er teknologien såpass ny at folk ikke ser noen grunn til å bruke den, og de velger heller det som er kjent: knapper og lesing. Kanskje endrer det seg etter hvert.
+        En refleksjon jeg satt igjen med var at den opprinnelige onboardingsflyten gjorde noe riktig ved å holde AI-en utenfor. Deltakerne i testene foretrakk knapper og tekst fremfor stemmestyring, og flere så ikke noen tydelig fordel med å bruke stemmen. AI-assistenten passer nok bedre som en funksjon brukeren kan oppdage når de har skjønt hva appen kan gjøre for dem. Å være det første brukeren møter tar oppmerksomheten vekk fra konseptet.
       </p>
       <p>
         En annen ting som ble tydelig underveis var at stemmen lett kunne føre til unødvendig mange steg. Et eksempel: brukeren sier selskapsnavnet, AI-en slår det opp og leser det tilbake, og brukeren bekrefter. Hvis det er feil, må de uansett inn i en manuell liste og søke selv. Da var hele poenget med stemme borte, og det gikk fortere å bare bruke knapper og skrive.
-      </p>
-      <p>
-        Det jeg satt igjen med var at AI-assistenten passer bedre som en funksjon brukeren oppdager når de allerede har skjønt hva appen kan gjøre for dem, ikke som det første de møter.
       </p>
     </div>
   </div>
@@ -302,7 +298,7 @@
         <span class="diamond d-sm d-sm-2"></span>
       </span>
       <span class="nav-direction">← Forrige prosjekt</span>
-      <span class="nav-title">DNB Designsystem:<br>Native i Webportalen</span>
+      <span class="nav-title">DNB Designsystem:<br>En felles portal for<br>alle plattformer</span>
     </a>
     <a href="case-study.html" class="cs-nav-next">
       <span class="nav-diamonds" aria-hidden="true">
@@ -311,7 +307,7 @@
         <span class="diamond d-sm d-sm-2"></span>
       </span>
       <span class="nav-direction">Neste prosjekt →</span>
-      <span class="nav-title">Et mer brukervennlig<br>Udir.no</span>
+      <span class="nav-title">Et mer brukervennlig<br>UDIR.NO</span>
     </a>
   </nav>
 
