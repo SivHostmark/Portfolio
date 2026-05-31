@@ -13,7 +13,10 @@
   <style>
     .cs-section-wrap.white .cs-card {
       background: #ecf3f3;
-      border: 1.5px solid #b8d0d0;
+      border: none;
+    }
+    .cs-section-wrap.light .cs-card {
+      border: none;
     }
   </style>
 </head>
@@ -40,9 +43,9 @@
       <div class="cs-hero-content">
         <p class="cs-hero-meta">UX Design Intern · 4 ukers prosjekt · Web</p>
 
-        <h1>DNB Designsystem:<br>Å få <span class="h1-bold">Native</span> inn i <span class="h1-bold">Webportalen</span></h1>
+        <h1>DNB Designsystem:<br>Én portal for Web,<br>iOS og Android</h1>
 
-        <p class="cs-hero-desc">Et praksisprosjekt hos DNB. Jeg og en medstudent jobbet med å få Native (iOS og Android) inn i webportalen til designsystemet Eufemia, og utforsket AI som verktøy i designprosessen.</p>
+        <p class="cs-hero-desc">Et praksisprosjekt hos DNB hvor jeg undersøkte hvordan Native-designere kunne få bedre tilgang til informasjon om iOS- og Android-komponenter gjennom en felles portal for Web og Native.</p>
       </div>
     </div>
   </section>
@@ -118,18 +121,19 @@
         <li>Samtaler med utviklere</li>
         <li>Gjennomgang av andre designsystemer</li>
       </ul>
-      <p style="font-weight: 500; margin-top: 32px;">Viktigste funn</p>
-      <ul class="cs-list-section">
-        <li>Figma og webportalen viste ikke alltid den samme informasjonen</li>
-        <li>Designerne savnet eksempler på hvordan komponentene oppførte seg i praksis</li>
-        <li>Komponenter kunne ha ulike navn på ulike plattformer</li>
-        <li>Utviklere hadde tilgang til informasjon designerne ikke enkelt kunne finne selv</li>
-      </ul>
+      <div style="max-width: 560px; margin: 32px auto 48px;">
+        <div class="cs-card">
+          <div class="card-title">Viktigste funn</div>
+          <ul class="cs-list">
+            <li>Figma og webportalen viste ikke alltid den samme informasjonen</li>
+            <li>Designerne savnet eksempler på hvordan komponentene oppførte seg i praksis</li>
+            <li>Komponenter kunne ha ulike navn på ulike plattformer</li>
+            <li>Utviklere hadde tilgang til informasjon designerne ikke enkelt kunne finne selv</li>
+          </ul>
+        </div>
+      </div>
       <p>
         Et funn som gikk igjen i samtalene med utviklerne, var at de kunne emulere komponenter og se hvordan de fungerte i faktiske apper. Designerne måtte i større grad basere seg på statiske representasjoner i Figma.
-      </p>
-      <p>
-        Dette ble et viktig utgangspunkt for konseptet vi jobbet videre med.
       </p>
       <p style="font-weight: 500; margin-top: 32px;">Min rolle i innsiktsarbeidet</p>
       <p>
@@ -152,31 +156,44 @@
         Researchen viste at designerne først og fremst ønsket bedre oversikt, raskere tilgang til informasjon og tydeligere sammenhenger mellom plattformene.
       </p>
       <p>
-        Vi fokuserte derfor på behovene som kom frem i innsiktsarbeidet:
+        Vi fokuserte derfor på behovene som kom frem i innsiktsarbeidet.
       </p>
-      <ul class="cs-list-section">
-        <li>Finne informasjon raskere</li>
-        <li>Sammenligne plattformer enklere</li>
-        <li>Få bedre forståelse av komponentene</li>
-        <li>Finne svar uten å være avhengig av utviklere</li>
-      </ul>
+      <div style="max-width: 480px; margin: 32px auto 48px;">
+        <div class="cs-card">
+          <div class="card-title">Behovene vi fokuserte på</div>
+          <ul class="cs-list">
+            <li>Finne informasjon raskere</li>
+            <li>Sammenligne plattformer enklere</li>
+            <li>Få bedre forståelse av komponentene</li>
+            <li>Finne svar uten å være avhengig av utviklere</li>
+          </ul>
+        </div>
+      </div>
       <p>
         For å teste konseptet avgrenset vi arbeidet til én komponent: Button. Det gjorde det mulig å utforske løsningene uten å bygge et helt komponentbibliotek.
       </p>
-      <p style="font-weight: 500; margin-top: 32px;">Prioriteringer</p>
-      <p style="font-weight: 500; margin-top: 16px;">Må ha</p>
-      <ul class="cs-list-section">
-        <li>Søk</li>
-        <li>Presentasjon av Native-komponenter i portalen</li>
-        <li>Sammenligning mellom iOS og Android</li>
-        <li>Dokumentasjon knyttet til komponentene</li>
-      </ul>
-      <p style="font-weight: 500; margin-top: 16px;">Ikke prioritert</p>
-      <ul class="cs-list-section">
-        <li>Full emulator</li>
-        <li>Hele komponentbiblioteket</li>
-        <li>Automatisk synkronisering og vedlikehold</li>
-      </ul>
+      <p style="margin-top: 32px;">
+        Med 4 uker til rådighet måtte vi prioritere:
+      </p>
+      <div class="cs-two-col">
+        <div class="cs-card" style="background: #f7f2ec;">
+          <div class="card-title">Må ha</div>
+          <ul class="cs-list">
+            <li>Søk</li>
+            <li>Presentasjon av Native-komponenter i portalen</li>
+            <li>Sammenligning mellom iOS og Android</li>
+            <li>Dokumentasjon knyttet til komponentene</li>
+          </ul>
+        </div>
+        <div class="cs-card" style="background: #f7f2ec;">
+          <div class="card-title">Ikke prioritert</div>
+          <ul class="cs-list">
+            <li>Full emulator</li>
+            <li>Hele komponentbiblioteket</li>
+            <li>Automatisk synkronisering og vedlikehold</li>
+          </ul>
+        </div>
+      </div>
       <p style="font-weight: 500; margin-top: 32px;">Min rolle i konseptutviklingen</p>
       <p>
         Jeg var med på å omsette innsikten til konkrete løsningsforslag og vurdere hvilke funksjoner som var viktigst å prioritere innenfor tiden vi hadde.
@@ -192,18 +209,22 @@
         <h2>En samlet visning av komponenter<br>på tvers av plattformer</h2>
       </div>
       <p>
-        Resultatet ble en prototype der Web, iOS og Android presenteres side om side i samme portal.
+        Resultatet ble en prototype der Web, iOS og Android er like godt representert i samme portal.
       </p>
       <p>
         Målet var å gjøre det enklere å forstå forskjeller og likheter mellom plattformene uten å måtte bytte mellom flere verktøy.
       </p>
-      <p style="font-weight: 500; margin-top: 32px;">Mine hovedansvarsområder</p>
-      <ul class="cs-list-section">
-        <li>Design og utvikling av Android</li>
-        <li>Design og implementering av søkefunksjon</li>
-        <li>Design og implementering av compare-funksjon</li>
-        <li>Utforming av høyre sidemeny</li>
-      </ul>
+      <div style="max-width: 480px; margin: 32px auto 48px;">
+        <div class="cs-card">
+          <div class="card-title">Mine hovedansvarsområder</div>
+          <ul class="cs-list">
+            <li>Design og utvikling av Android</li>
+            <li>Design og implementering av søkefunksjon</li>
+            <li>Design og implementering av compare-funksjon</li>
+            <li>Utforming av høyre sidemeny</li>
+          </ul>
+        </div>
+      </div>
       <p style="font-weight: 500; margin-top: 32px;">Søk</p>
       <p>
         Søkefunksjonen gjør det mulig å finne komponenter fra ett sted og se hvilken plattform de hører til.
@@ -225,6 +246,17 @@
       <p>
         Vi rakk ikke å teste løsningen med brukere, så arbeidet ble stående som en idé som DNB kunne ta med seg videre.
       </p>
+      <p style="font-weight: 500; margin-top: 32px;">Hvordan vi brukte AI i prosjektet</p>
+      <p>
+        AI var en viktig del av arbeidsprosessen gjennom store deler av prosjektet. Vi brukte Claude Code og Figma MCP til å utvikle prototypen, utforske tekniske løsninger og iterere raskt på nye ideer.
+      </p>
+      <p>
+        Ved hjelp av AI kunne vi gå fra konsept til fungerende prototype på kort tid. Samtidig erfarte vi at resultatene måtte kvalitetssikres og vurderes kritisk underveis.
+      </p>
+      <p>
+        AI gjorde det mulig å teste flere retninger raskere, men vi syntes ikke det erstattet behovet for designfaglige vurderinger. Den var heller ikke god til å tolke brukernes behov.
+      </p>
+
       <p style="font-weight: 500; margin-top: 32px;">Min rolle i løsningen</p>
       <p>
         Jeg jobbet med funksjonene som skulle gjøre informasjon lettere tilgjengelig og gi bedre oversikt på tvers av plattformene. Dette inkluderte både designarbeid, prototyping og implementering av sentrale deler av konseptet.
@@ -254,7 +286,19 @@
       <p>
         Prosjektet ga meg også en bedre forståelse av hvordan designarbeid foregår i en stor organisasjon, og hvordan research, samarbeid og prioriteringer påvirker løsningene som blir utviklet.
       </p>
+
+      <p style="font-weight: 500; margin-top: 32px;">Hva jeg lærte om AI</p>
       <p>
+        Gjennom prosjektet fikk jeg praktisk erfaring med å bruke AI som en del av både design- og utviklingsprosessen. Claude Code gjorde det mulig å bygge og iterere på prototypen raskere enn jeg ville klart alene, og ga meg mulighet til å utforske flere løsninger innenfor den tiden vi hadde tilgjengelig.
+      </p>
+      <p>
+        Samtidig erfarte jeg at kvaliteten på resultatene var avhengig av hvor tydelig problemet og rammene var definert. AI kunne foreslå løsninger og generere kode, men det var fortsatt nødvendig å vurdere om løsningene faktisk svarte på brukernes behov og passet inn i prosjektets mål.
+      </p>
+      <p>
+        Arbeidet ga meg en bedre forståelse av hvordan AI kan brukes som et verktøy for å støtte designprosesser, ikke som en erstatning for research, prioriteringer eller designfaglige vurderinger. Jo bedre innsikt og retning jeg kunne gi verktøyet, desto bedre ble resultatene.
+      </p>
+
+      <p style="margin-top: 32px;">
         Det viktigste jeg tar med meg videre, er erfaringen med å omsette innsikt til designvalg og hele tiden stille spørsmålet: Løser dette faktisk problemet vi fant?
       </p>
     </div>
