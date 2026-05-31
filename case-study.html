@@ -10,6 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="case-study.css">
+  <style>
+    .cs-section-wrap.white .cs-card,
+    .cs-section-wrap.light .cs-card {
+      border: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -104,18 +110,18 @@
         Før jeg startet, sendte jeg e-post til Udirs nettredaktør og fikk tillatelse til å bruke siden i prosjektet.
       </p>
       <p>
-        Jeg gjennomførte semistrukturerte intervjuer med tre deltakere fra Udirs målgruppe: en 17 år gammel elev på videregående, en 29 år gammel forelder med barn i barnehage, og en 42 år gammel lærer i grunnskolen. Etter intervjuene kjørte jeg low-fi brukertester der deltakerne fikk omforme forsiden selv. Funnene ble analysert gjennom åpen koding av fragmenter.
+        Jeg gjennomførte semistrukturerte intervjuer med tre personer fra Udirs målgruppe: en elev på videregående, en forelder med barn i barnehage og en lærer i grunnskolen. Etter intervjuene gjennomførte jeg low-fi brukertester der deltakerne fikk omforme forsiden selv. Funnene ble analysert gjennom åpen koding.
       </p>
       <p style="margin-top: 8px;">
-        Tre hovedtemaer kom frem fra den kvalitative analysen:
+        Tre hovedtemaer kom frem fra analysen:
       </p>
       <ul class="cs-list cs-list-section">
-        <li>Design: forvirrende innhold, asymmetrisk, rotete</li>
-        <li>Språk: for mye fagsjargong, for mye tekst, for vanskelig</li>
-        <li>Navigasjon: vet ikke hvor man skal begynne, for mange valg, utydelige elementer</li>
+        <li>For mye informasjon og utydelig struktur</li>
+        <li>Språk som var vanskelig å forstå</li>
+        <li>Usikkerhet rundt hvor man skulle begynne</li>
       </ul>
       <p>
-        Jeg koblet også funnene til WCAG. To krav skilte seg ut: 3.1.5 om lesenivå (sjargongen) og 3.2.3 om konsekvent navigasjon (menyene).
+        Jeg koblet også funnene til WCAG. To krav skilte seg ut: 3.1.5 om lesenivå og 3.2.3 om konsekvent navigasjon.
       </p>
 
       <div class="cs-two-col">
@@ -132,12 +138,16 @@
         <div class="cs-card">
           <div class="card-title">Funn fra intervjuene</div>
           <p>
-            Eleven gikk rett til søk i stedet for å navigere, og følte ikke at siden var ment for hen. Forelderen syntes det så ryddig ut først, men reagerte på den ujevne symmetrien. Læreren syntes kategorihierarkiet var ulogisk. Som et konkret eksempel lå ikke "barnehagemiljø" under "barnehage".
+            Eleven gikk rett til søk i stedet for å navigere, og følte ikke at siden var ment for hen. Forelderen syntes det så ryddig ut først, men reagerte på den ujevne symmetrien. Læreren syntes kategorihierarkiet var ulogisk. Som et konkret eksempel lå ikke «barnehagemiljø» under «barnehage».
           </p>
         </div>
       </div>
 
-      <p class="cs-quote" style="margin-top: 150px; font-size: 24px;">
+      <p style="margin-top: 56px;">
+        På tvers av intervjuene gikk ett problem igjen: Deltakerne visste ikke hvor de skulle begynne.
+      </p>
+
+      <p class="cs-quote" style="margin-top: 56px; font-size: 24px;">
         <em>"De burde fjerne alt og begynne på nytt."</em><br>
         — Lærer, 42
       </p>
@@ -152,7 +162,7 @@
         <h2>Sketching og testing</h2>
       </div>
       <p>
-        Basert på intervjuene skisserte jeg tre konseptretninger, og utviklet den første som en low-fi prototype for testing. Alle tre bygget på samme idé: la brukerne velge målgruppe selv, slik at siden viser det som er relevant for dem. Målet var å redusere mengden informasjon deltakerne måtte forholde seg til.
+        Basert på intervjuene skisserte jeg tre konseptretninger, og utviklet den første som en low-fi prototype for testing. Alle tre bygget på samme idé: la brukerne velge målgruppe selv, slik at siden viser det som er relevant for dem. Dette var et forsøk på å gjøre det tydeligere hvor brukeren skulle begynne.
       </p>
       <p>
         De tre retningene var en pop-up-velger som vises når man åpner siden, samme velger plassert øverst på siden, og en forbedret versjon av kategoribaren som allerede ligger der.
@@ -165,12 +175,12 @@
         </div>
         <div class="cs-card">
           <div class="card-title">Enstemmig endring</div>
-          <p>I hvert intervju ble det pekt ut at "Siste nytt"-seksjonen var unødvendig. <em>"Hvem går inn på udir for å lese nyheter?"</em> spurte eleven.</p>
+          <p>I hvert intervju ble det pekt ut at «Siste nytt»-seksjonen var unødvendig. <em>«Hvem går inn på udir for å lese nyheter?»</em> spurte eleven.</p>
         </div>
       </div>
 
       <div class="cs-starting-image" style="margin-top: 56px;">
-        <img src="Project%20images/Udir-1.webp" alt="My initial low-fi prototype">
+        <img src="Project%20images/Udir-1.webp" alt="Min opprinnelige low-fi prototype">
       </div>
       <p class="cs-img-caption">Utgangspunktet for low-fi brukertestene</p>
 
@@ -178,13 +188,17 @@
         Eleven kunne ikke delta på grunn av sykdom, så brukertesten ble gjennomført med forelderen og læreren. Forelderen likte pop-upen og beholdt den, men bygget om resten av forsiden med fokus på symmetri. Læreren la ideen min til side og lagde sin egen versjon med enklere kategorier: elev, lærer og forelder.
       </p>
 
+      <p>
+        Selv om løsningene deres var forskjellige, ønsket begge å redusere mengden informasjon på forsiden og gjøre det tydeligere hvor de skulle starte.
+      </p>
+
       <div class="cs-result-teacher">
-        <img src="Project%20images/Udir-3.webp" alt="Teacher's redesign">
+        <img src="Project%20images/Udir-3.webp" alt="Lærerens redesign av forsiden">
       </div>
       <p class="cs-img-caption">Lærerens versjon fra brukertesten</p>
 
       <div class="cs-result-student">
-        <img src="Project%20images/Udir-2.webp" alt="Parent's redesign">
+        <img src="Project%20images/Udir-2.webp" alt="Forelderens redesign av forsiden">
       </div>
       <p class="cs-img-caption">Forelderens versjon av forsiden</p>
     </div>
@@ -195,10 +209,10 @@
     <div class="cs-section">
       <div class="cs-section-header">
         <div class="cs-section-number">04 — Løsningen</div>
-        <h2>Det jeg kom frem til</h2>
+        <h2>Hva viste testene?</h2>
       </div>
       <p>
-        De tre retningene bygde på samme idé: at brukeren velger hvilken målgruppe de hører til, slik at innholdet justerer seg og blir lettere å forstå, lese og navigere.
+        Alle de tre konseptretningene bygget på samme idé: at brukeren velger hvilken målgruppe de tilhører, slik at innholdet blir lettere å forstå og navigere.
       </p>
       <p style="margin-top: 8px;">
         De fire målgruppene var:
@@ -210,10 +224,13 @@
         <li>Nyankomne til Norge</li>
       </ul>
       <p>
-        Bare den første retningen, en pop-up, ble laget som prototype og testet. For å finne ut hvilken retning som fungerer best, trengs flere runder med testing.
+        Bare den første retningen, en pop-up, ble laget som prototype og testet. For å finne ut hvilken løsning som fungerer best, ville det vært nødvendig med flere runder testing.
       </p>
       <p>
-        Brukertestene viste hvor ulikt deltakerne gikk frem. Begge ville ha langt færre elementer på forsiden, læreren for å fjerne forstyrrelser og forelderen for å få mer ro og oversikt. Et annet funn var at Udir allerede har en kategorisluser lenger ned på siden, men ingen av deltakerne forstod hva den var til. Ideen finnes altså allerede, den er bare ikke tydelig nok.
+        Brukertestene viste at deltakerne ønsket en roligere og mer fokusert forside. Læreren ville fjerne forstyrrelser, mens forelderen ønsket mer oversikt og tydeligere struktur.
+      </p>
+      <p>
+        Et annet funn var at Udir allerede har en kategoribar lenger ned på siden. Ingen av deltakerne forstod hva den var til, selv om den i prinsippet forsøker å løse det samme problemet som konseptene mine.
       </p>
 
       <div class="cs-bar-image">
@@ -221,16 +238,14 @@
       </div>
       <p class="cs-img-caption">Lett å overse, langt nede på forsiden</p>
 
-      <div class="cs-two-col">
-        <div class="cs-card">
-          <div class="card-title">Kategorisluser</div>
-          <p>Den finnes allerede og kan egentlig være den beste løsningen, bare ikke slik den er nå. Den må gjøres tydeligere, så folk skjønner at den er der for å hjelpe.</p>
-        </div>
-        <div class="cs-card">
-          <div class="card-title">Ulempen med pop-up</div>
-          <p>En pop-up fanger oppmerksomheten, men folk er generelt ikke så glade i dem, og den kan komme i veien for cookies.</p>
-        </div>
-      </div>
+      <p style="margin-top: 32px;">
+        Kategoribaren kan derfor være en del av løsningen allerede i dag, men den må gjøres langt tydeligere dersom den skal fungere som en inngang til relevant innhold.
+      </p>
+
+      <p style="font-weight: 500; margin-top: 32px;">Ulempen med pop-up</p>
+      <p>
+        En pop-up fanger oppmerksomheten, men kan også oppleves forstyrrende og konkurrere med andre elementer på siden, som for eksempel informasjonskapsler.
+      </p>
     </div>
   </div>
 
@@ -239,16 +254,16 @@
     <div class="cs-section">
       <div class="cs-section-header">
         <div class="cs-section-number">05 — Refleksjoner</div>
-        <h2>Hva jeg sitter igjen med</h2>
+        <h2>I ettertid</h2>
       </div>
       <p>
-        Jeg føler at jeg fikk samlet inn mye relevant data om deltakernes behov, utfordringer og atferd. Jeg merker også at jeg blir bedre på å vite hva jeg skal se etter hos deltakerne, og underveis har jeg fått en bredere forståelse av partisipatorisk design, universell utforming og WCAG.
+        Det som overrasket meg mest var hvor forskjellig deltakerne opplevde den samme nettsiden. Selv om de reagerte på ulike ting, slet alle med å forstå strukturen og finne et naturlig sted å starte.
       </p>
       <p>
-        I ettertid tenker jeg at jeg kanskje burde valgt en annen side enn Udir. Jeg mente jeg hadde satt meg godt nok inn i den på forhånd, men da jeg intervjuet deltakerne, skjønte jeg at den var langt mer krevende og omfattende enn jeg trodde.
+        I ettertid tenker jeg at jeg kanskje burde valgt en annen side enn Udir. Jeg mente jeg hadde satt meg godt nok inn i den på forhånd, men da jeg intervjuet deltakerne, skjønte jeg at den var langt mer krevende og omfattende enn jeg trodde. Det gjorde også at jeg ble mer bevisst på hvor viktig det er å forstå konteksten rundt et produkt før man begynner å foreslå løsninger.
       </p>
       <p>
-        Hadde jeg tatt det videre, ville jeg fått til en low-fi brukertest med eleven jeg ikke rakk. Jeg kunne også laget en high-fi prototype å teste med deltakerne, men siden hovedfokuset var å samle innsikt, prioriterte jeg ikke prototypene like høyt.
+        Hadde jeg tatt prosjektet videre, ville jeg gjennomført brukertesten med eleven som ikke kunne delta på grunn av sykdom. Jeg ville også testet de to andre konseptretningene for å finne ut hvilken løsning som fungerte best i praksis. Siden hovedmålet med prosjektet var å samle innsikt, valgte jeg å prioritere research og testing fremfor å videreutvikle prototypene.
       </p>
     </div>
   </div>
@@ -270,7 +285,7 @@
         <span class="diamond d-sm d-sm-2"></span>
       </span>
       <span class="nav-direction">← Forrige prosjekt</span>
-      <span class="nav-title">Onboarding til en<br>stemmestyrt AI-assistent</span>
+      <span class="nav-title">Et første møte<br>med AI</span>
     </a>
     <a href="case-study-odel.html" class="cs-nav-next">
       <span class="nav-diamonds" aria-hidden="true">
@@ -279,7 +294,7 @@
         <span class="diamond d-sm d-sm-2"></span>
       </span>
       <span class="nav-direction">Neste prosjekt →</span>
-      <span class="nav-title">ODEL –<br>finn din lokale bonde</span>
+      <span class="nav-title">ODEL –<br>Finn din lokale bonde</span>
     </a>
   </nav>
 

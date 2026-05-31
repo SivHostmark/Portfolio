@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odel – finn din lokale bonde — Siv Høstmark</title>
+  <title>ODEL – Finn din lokale bonde — Siv Høstmark</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2" as="font" type="font/woff2" crossorigin>
@@ -13,7 +13,10 @@
   <style>
     .cs-section-wrap.white .cs-card {
       background: #fdfaf0;
-      border: 2px solid #e6dbc0;
+      border: none;
+    }
+    .cs-section-wrap.light .cs-card {
+      border: none;
     }
   </style>
 </head>
@@ -40,9 +43,9 @@
       <div class="cs-hero-content">
         <p class="cs-hero-meta">Soloprosjekt · 4 uker · App og landingsside</p>
 
-        <h1><span class="h1-bold">ODEL</span> –<br>finn din lokale bonde</h1>
+        <h1><span class="h1-bold">ODEL</span> –<br>Finn din lokale bonde</h1>
 
-        <p class="cs-hero-desc">Et app-konsept for å finne bønder i nærheten og se hva de selger. Bakgrunnen er at norske gårdsbruk legger ned, og at det er vanskelig for folk å finne informasjon om bønder i nærheten.</p>
+        <p class="cs-hero-desc">Et app-konsept som utforsker hvordan det kan bli enklere å finne lokale bønder, se hva de selger og handle direkte fra produsenten.</p>
       </div>
     </div>
   </section>
@@ -70,26 +73,26 @@
     <div class="cs-section">
       <div class="cs-section-header">
         <div class="cs-section-number">01 — Utfordringen</div>
-        <h2>Norske bønder legger ned</h2>
+        <h2>Hvordan finner man egentlig<br>den lokale bonden?</h2>
       </div>
       <p>
-        Det legges ned omtrent ett norsk gårdsbruk hver dag. En stor del av grunnen er at matkjedene foretrekker å importere fra utlandet fordi det er billigere for dem.
+        Det legges ned omtrent ett norsk gårdsbruk hver dag, samtidig som flere ønsker å handle mer direkte fra bonden. Mange er opptatt av norsk mat, kortreiste varer eller mindre ultraprosessert mat, men det krever ofte mye leting å finne ut hvilke bønder som finnes i nærheten, hva de selger og hvordan man kan komme i kontakt med dem.
       </p>
       <p>
-        Samtidig er det flere som er blitt bevisste på hva de spiser, særlig med tanke på ultraprosessert mat, miljø og kortreist. Mange ønsker å handle mer direkte fra bonden, men er usikre på hvordan de skal finne informasjon om bønder i nærheten.
+        Samtaler med bønder og brukere pekte på et felles problem: Informasjonen finnes, men den er spredt. Noen selger gjennom Facebook-grupper, andre har egne nettsider, og mange er vanskelige å oppdage dersom man ikke allerede vet at de finnes.
       </p>
       <div class="cs-two-col">
         <div class="cs-card">
           <div class="card-title">Bonden</div>
-          <p>Matkjedene foretrekker å importere fra utlandet fordi det er billigere. Norske bønder kan ende opp med å kaste varer butikkene ikke vil betale for.</p>
+          <p>Bønder fortalte at de opplever det som vanskelig å nå ut til nye kunder. Samtidig kan varer bli kastet fordi butikkene ikke vil kjøpe dem eller fordi de ikke oppfyller krav til utseende.</p>
         </div>
         <div class="cs-card">
           <div class="card-title">Brukeren</div>
-          <p>Folk som vil handle direkte fra bonden, vet ofte ikke hvor de finnes eller hva som er til salgs.</p>
+          <p>Folk som ønsker å handle direkte fra bonden vet ofte ikke hvor de skal begynne. De mangler en enkel oversikt over hvilke gårder som finnes i nærheten og hva som faktisk er tilgjengelig.</p>
         </div>
       </div>
       <p style="margin-top: 32px;">
-        En enklere vei fra forbruker til bonde kan bidra til mer kortreist mat, og at bonden får solgt det butikkene ikke alltid vil ta inn.
+        Prosjektet utforsker hvordan man kan gjøre veien fra forbruker til bonde enklere.
       </p>
     </div>
   </div>
@@ -102,28 +105,39 @@
         <h2>Bønder og brukere</h2>
       </div>
       <p>
-        Jeg hadde samtaler med grønnsaksbønder som fortalte at det er vanskelig å være bonde i dag. De sa at de kaster masse grønnsaker fordi butikkene ikke vil betale og fordi grønnsakene ikke er pene nok.
+        Jeg startet med samtaler med grønnsaksbønder som fortalte at det kan være vanskelig å få solgt varene sine. Noen opplever at grønnsaker må kastes fordi butikkene ikke vil kjøpe dem eller fordi de ikke oppfyller krav til utseende.
       </p>
       <p>
-        Semistrukturerte intervjuer med brukere avdekket:
+        Deretter gjennomførte jeg semistrukturerte intervjuer med ni personer i ulike aldersgrupper. Jeg ønsket å forstå hva som påvirker matvalgene deres, hvor opptatt de er av norsk mat, og om de kunne se verdien av en tjeneste som gjorde det enklere å finne lokale bønder.
       </p>
-      <ul class="cs-list-section">
-        <li>Hva som er viktig når de handler mat</li>
-        <li>Hvor opptatt de er av norsk og "ren" mat</li>
-        <li>Om en app med oversikt over gårder i nærheten var noe de kunne tenkt seg</li>
-      </ul>
       <p>
-        En survey ga meg tall som bekreftet det intervjuene antydet. Personas holdt designvalg forankret i reelle behov, og brukertesting av prototypen lot meg justere struktur og funksjonalitet.
+        Flere ønsket å handle direkte fra bonden, men visste ikke hvor de skulle begynne. Noen kjente til REKO-ringen, men opplevde Facebook-gruppene som uoversiktlige.
+      </p>
+      <p>
+        For å validere funnene gjennomførte jeg også en spørreundersøkelse. 69 % svarte at de tenker over om matvarene de kjøper er norske, og 81 % sa at de kunne tenkt seg en samlet oversikt over lokale bønder.
       </p>
 
-      <p style="max-width: 640px; margin: 40px auto 0;">Hovedfunn:</p>
-      <ul class="cs-list-section" style="max-width: 640px; margin: 8px auto 0;">
-        <li>Yngre handler gjerne fra bonden for å unngå ultraprosessert mat</li>
-        <li>Eldre forbinder norsk landbruk med ren og sunn mat</li>
-        <li>Flere syns butikk-kjedene bestemmer for mye av sortimentet</li>
-        <li>69 % tenker over om varene er norske når de handler</li>
-        <li>81 % kunne tenkt seg å ha en samlet oversikt over lokale bønder</li>
-      </ul>
+      <div class="cs-two-col">
+        <div class="cs-card">
+          <div class="card-title">Metodene jeg brukte</div>
+          <ul class="cs-list">
+            <li>Samtaler med bønder</li>
+            <li>Semistrukturerte intervjuer</li>
+            <li>Survey</li>
+            <li>Personas</li>
+            <li>Brukertesting</li>
+          </ul>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Hovedfunn</div>
+          <ul class="cs-list">
+            <li>Folk ønsker å handle mer direkte fra bonden, men mangler oversikt</li>
+            <li>Informasjonen er spredt mellom ulike kanaler</li>
+            <li>Yngre var særlig opptatt av ultraprosessert mat</li>
+            <li>Eldre var mer opptatt av å støtte norsk landbruk</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -132,29 +146,30 @@
     <div class="cs-section">
       <div class="cs-section-header">
         <div class="cs-section-number">03 — Designprosess</div>
-        <h2>Fra skisse til prototype</h2>
-      </div>
-      <div style="max-width: 640px; margin: 14px auto 32px;">
-        <p style="margin: 0 0 10px;">1. Idémyldring og skisser på papir</p>
-        <p style="margin: 0 0 10px;">2. Definere hovedkategorier i appen basert på innsikt:</p>
-        <ul class="cs-list-section" style="margin: 0 0 16px 22px;">
-          <li>Finn din bonde</li>
-          <li>Mat (grønnsaker, ost, kjøtt, egg, honning, frukt og bær)</li>
-          <li>Annet (juletrær, skinn, ved, animalsk, interiør, arrangementer)</li>
-          <li>Kontakt</li>
-        </ul>
-        <p style="margin: 0 0 10px;">3. Tegne og designe ikoner</p>
-        <p style="margin: 0 0 10px;">4. Bygge prototype i Figma</p>
-        <p style="margin: 0;">5. Tegne landingsside og bygge den i VSCode</p>
+        <h2>Fra innsikt til konsept</h2>
       </div>
       <p>
-        Appen er designet for Android. Grunnen til det er fordi Android ofte blir nedprioritert.<br>
-        Hovedfargen er gul fordi det er en optimistisk farge som er lett synlig.
+        Researchen viste at mange ønsket å handle direkte fra bonden, men manglet en enkel oversikt over hvem som solgte hva og hvor de befant seg. Derfor bygget konseptet rundt én hovedidé: å samle informasjon som i dag er spredt mellom Facebook-grupper, nettsider og lokale nettverk.
+      </p>
+      <p>
+        Jeg utforsket hvordan brukeren kunne finne bønder i nærheten, se hva de solgte og oppdage produkter som var tilgjengelige i sesong. Dette resulterte i fire hovedområder i appen:
+      </p>
+      <ul class="cs-list cs-list-section">
+        <li>Finn din bonde</li>
+        <li>Mat</li>
+        <li>Annet</li>
+        <li>Kontakt</li>
+      </ul>
+      <p>
+        Jeg tegnet egne kategoriikoner i Procreate og bygget prototypen i Figma. I tillegg designet og utviklet jeg en enkel landingsside i VSCode for å gi appen et naturlig nedlastningspunkt.
+      </p>
+      <p>
+        Appen ble designet for Android. Jeg valgte også en gul hovedfarge fordi den skiller seg godt ut og bidrar til et vennlig og tilgjengelig uttrykk.
       </p>
       <div style="text-align: center; margin: 32px 0 8px;">
         <img src="Project%20images/ODEL/Odel_knapper.svg" alt="Kategori-ikoner tegnet i Procreate" style="max-width: 420px; width: 100%; height: auto;">
       </div>
-      <p class="cs-img-caption">Kategori-ikonene, tegnet i Procreate.</p>
+      <p class="cs-img-caption">Kategori-ikoner tegnet i Procreate</p>
     </div>
   </div>
 
@@ -166,20 +181,23 @@
         <h2>Det endelige konseptet</h2>
       </div>
       <p>
-        ODEL er et tjenestekonsept for å gjøre det enklere å handle lokalt, fra bonden til forbrukeren. Prototypen er en Android-app der man kan se hvilke bønder som er i nærheten, hva de selger og hva som er i sesong, alt fra ett sted. Inne i "Finn din bonde" kan man markere hvor man er, og de nærmeste gårdene dukker opp på kartet.
+        ODEL er et konsept som skal gjøre det enklere å finne og handle fra lokale bønder. Konseptet samler informasjon som i dag er spredt mellom Facebook-grupper, nettsider og lokale nettverk.
       </p>
       <div class="cs-bar-image" style="margin: -60px -80px -60px;">
         <img src="Project%20images/ODEL/Odel_app_gjennomsiktigbakgrunn.svg" alt="Mockup av flere ODEL-skjermer" style="width: 100%; height: auto; display: block;">
       </div>
       <p class="cs-img-caption" style="margin-top: -95px; margin-bottom: 48px;">Skjermer fra ODEL-appen.</p>
       <p>
-        Inne på hver gård kan man se hva de selger og hva de har i sesong. Mat-menyen er strukturert etter kategori som grønnsaker, ost, kjøtt, egg, honning og frukt og bær, slik at man kan starte fra hva man vil ha og se hvilke gårder i nærheten som har det.
+        I «Finn din bonde» kan brukeren markere hvor de befinner seg og se gårder i nærheten på et kart. Hver gård har en egen side med kontaktinformasjon, produkter og sesongvarer.
       </p>
       <p>
-        Annet-fanen samler ting som juletrær, skinn, ved, animalsk, interiør og arrangementer. Appen viser også utsalgssteder, for eksempel bær-stands om sommeren.
+        For brukere som vet hva de er ute etter, er innholdet organisert etter kategori. Man kan for eksempel starte med grønnsaker, ost, kjøtt, egg, honning eller frukt og bær, og deretter se hvilke gårder som tilbyr det.
       </p>
       <p>
-        Hjemmesiden er kodet i VSCode, med en nedlastningsknapp og en info-side. Den gir folk et reelt landingspunkt for appen, der de kan se hva ODEL er og laste den ned.
+        Annet-fanen samler produkter og aktiviteter som juletrær, ved, skinn, interiør og arrangementer. Appen viser også utsalgssteder, som sesongbaserte bær- og grønnsaksutsalg.
+      </p>
+      <p>
+        For å gi appen et eget nedlastningspunkt designet og utviklet jeg også en enkel landingsside i VSCode med informasjon om konseptet.
       </p>
       <div class="cs-bar-image" style="margin-top: 32px;">
         <img src="Project%20images/ODEL/landinsside.webp" alt="Skjermbilde av ODEL-hjemmesiden" style="width: 100%; height: auto; display: block;">
@@ -193,13 +211,16 @@
     <div class="cs-section">
       <div class="cs-section-header">
         <div class="cs-section-number">05 — Refleksjoner</div>
-        <h2>Konseptets verdi</h2>
+        <h2>I ettertid</h2>
       </div>
       <p>
-        En app som denne er ikke nok alene til å redde norske bønder, men den gjør veien fra forbruker til bonde kortere. Det kan bidra til at flere ser hva norsk landbruk leverer, og at butikkene merker etterspørselen.
+        Prosjektet startet med et ønske om å gjøre det enklere å støtte norske bønder, men underveis ble det tydelig at utfordringen først og fremst handlet om tilgjengelighet. Flere av deltakerne ønsket å handle direkte fra bonden, men manglet oversikt over hvilke muligheter som fantes.
       </p>
       <p>
-        Det har også andre fordeler. Maten er ikke fraktet like langt, og det kan bidra til mer bevissthet og respekt rundt maten vi spiser.
+        En annen refleksjon er at problemet ikke nødvendigvis handler om mangel på informasjon. Informasjonen finnes allerede, men den er spredt mellom ulike kanaler og kan være vanskelig å finne når man trenger den.
+      </p>
+      <p>
+        Hadde jeg tatt prosjektet videre, ville jeg testet konseptet med bønder og brukere over tid for å undersøke om det faktisk ble en del av handlevanene deres.
       </p>
     </div>
   </div>
