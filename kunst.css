@@ -180,6 +180,25 @@
     gap: 3px;
     padding: 0 12px;
   }
+
+  /* Større bilde + pilene flyttet ned til caption-nivå */
+  .kunst-lightbox {
+    padding: 32px 16px;
+  }
+  .kunst-lightbox-img {
+    max-width: min(92vw, 700px);
+    max-height: min(60vh, 700px);
+  }
+  .kunst-lightbox-prev,
+  .kunst-lightbox-next {
+    top: auto;
+    bottom: 32px;
+    transform: none;
+    font-size: 40px;
+    padding: 8px 16px;
+  }
+  .kunst-lightbox-prev { left: 8px; }
+  .kunst-lightbox-next { right: 8px; }
 }
 
 @media (max-width: 480px) {
