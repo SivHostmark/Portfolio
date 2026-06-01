@@ -123,17 +123,47 @@
       captionSize.textContent = img.dataset.size || '';
     };
 
+    /* Alle direkte body-barn unntatt selve lightbox-en — settes inert når
+       lightbox-en åpnes så fokus holdes inni og resten av siden ikke kan
+       tabes til. */
+    const pageElements = Array.from(document.body.children).filter(
+      el => el !== lightbox
+    );
+
+    const openLightbox = (i) => {
+      showImage(i);
+      lightbox.classList.add('visible');
+      lightbox.removeAttribute('aria-hidden');
+      document.body.style.overflow = 'hidden';
+      pageElements.forEach(el => el.setAttribute('inert', ''));
+      requestAnimationFrame(() => closeBtn.focus());
+    };
+
     gridImgs.forEach((img, i) => {
-      img.addEventListener('click', () => {
-        showImage(i);
-        lightbox.classList.add('visible');
-        document.body.style.overflow = 'hidden';
+      /* Gjør hvert bilde tab-bart og åpne lightbox med Enter / mellomrom */
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Åpne ' + img.alt);
+
+      img.addEventListener('click', () => openLightbox(i));
+
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(i);
+        }
       });
     });
 
     const closeLightbox = () => {
       lightbox.classList.remove('visible');
+      lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      pageElements.forEach(el => el.removeAttribute('inert'));
+      /* Returner fokus til bildet som åpnet lightbox-en */
+      if (currentIndex >= 0 && gridImgs[currentIndex]) {
+        gridImgs[currentIndex].focus();
+      }
       setTimeout(() => { lightboxImg.src = ''; }, 300);
     };
 

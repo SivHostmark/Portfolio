@@ -52,6 +52,13 @@
   opacity: 0.85;
 }
 
+/* Tab-fokus blir klippet bort av .kunst-item sin overflow: hidden.
+   Sett outline-en INSIDE bildet i stedet (negativ offset). */
+.kunst-item img:focus-visible {
+  outline: 3px solid #ff7700;
+  outline-offset: -3px;
+}
+
 /* ── LIGHTBOX ── */
 .kunst-lightbox {
   position: fixed;
