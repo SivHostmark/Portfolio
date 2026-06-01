@@ -376,14 +376,16 @@
 }
 
 /* Sub-overskrifter inne i seksjoner (Søk, Compare, Metoder osv.) —
-   semantisk h3 men styles som en bold paragraf. */
+   semantisk h3 men styles som en bold paragraf. Plassert som <p> i
+   samme seksjon: max-width 640px sentrert. */
 .cs-subhead {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.7;
   color: #333;
-  margin: 32px 0 0;
+  max-width: 640px;
+  margin: 32px auto 0;
 }
 
 .cs-card p {
