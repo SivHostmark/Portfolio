@@ -149,17 +149,5 @@
   </script>
 
   <script src="menu.js"></script>
-
-  <script>
-    /* Midlertidig viewport-widget — fjern når responsiv-jobben er ferdig */
-    (function () {
-      const box = document.createElement('div');
-      box.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.85);color:#fff;font-family:monospace;font-size:13px;padding:8px 12px;border-radius:4px;z-index:99999;pointer-events:none;';
-      document.body.appendChild(box);
-      const update = () => { box.textContent = window.innerWidth + ' × ' + window.innerHeight; };
-      update();
-      window.addEventListener('resize', update);
-    })();
-  </script>
 </body>
 </html>
