@@ -358,6 +358,11 @@
   margin-top: 56px;
 }
 
+/* På smalere desktop / tablet blir 2 kolonner for trangt — stack i stedet */
+@media (max-width: 1100px) {
+  .cs-two-col { grid-template-columns: 1fr; gap: 32px; }
+}
+
 .cs-card {
   padding: 28px 32px;
   border: 1px solid #e8e8e8;
@@ -772,6 +777,14 @@
 .cs-project-nav a:last-child {
   align-items: flex-end;
   text-align: right;
+}
+
+/* Mellom desktop og mobil: titlene er for trange ved 70% bredde + 80px padding */
+@media (max-width: 1400px) {
+  .cs-project-nav a {
+    width: 100%;
+    padding: 40px 48px;
+  }
 }
 
 .cs-project-nav a:hover {
