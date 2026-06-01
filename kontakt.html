@@ -99,20 +99,52 @@
     .kontakt-alt a {
       margin: 0 8px;
     }
-    .kontakt-takk {
-      text-align: center;
-      padding: 80px 24px;
+    .kontakt-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      pointer-events: none;
     }
-    .kontakt-takk h2 {
+    .kontakt-modal[hidden] { display: none; }
+    .kontakt-modal-content {
+      position: relative;
+      background: #ffffff;
+      padding: 56px 48px 48px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      pointer-events: auto;
+    }
+    .kontakt-modal h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 48px;
       font-weight: 400;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
-    .kontakt-takk p {
-      font-size: 17px;
+    .kontakt-modal p {
+      font-size: 16px;
       line-height: 1.6;
+      color: #333;
     }
+    .kontakt-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      color: #555;
+      padding: 8px 12px;
+    }
+    .kontakt-modal-close:hover { color: #000; }
     @media (max-width: 600px) {
       .kontakt-name-row { grid-template-columns: 1fr; }
       .kontakt-heading { font-size: 42px; }
@@ -180,14 +212,18 @@
       <button class="btn" type="submit">Send</button>
     </form>
 
-    <div class="kontakt-takk" hidden>
-      <h2>Takk!</h2>
-      <p>Meldingen er sendt. Jeg svarer så snart jeg kan.</p>
+    <div class="kontakt-modal" hidden role="dialog" aria-modal="true" aria-labelledby="takk-tittel">
+      <div class="kontakt-modal-content">
+        <button class="kontakt-modal-close" aria-label="Lukk">×</button>
+        <h2 id="takk-tittel">Takk!</h2>
+        <p>Meldingen er sendt. Jeg svarer så snart jeg kan.</p>
+      </div>
     </div>
 
     <script>
       const form = document.querySelector('.kontakt-form');
-      const takk = document.querySelector('.kontakt-takk');
+      const modal = document.querySelector('.kontakt-modal');
+      const modalClose = document.querySelector('.kontakt-modal-close');
 
       const setMessages = () => {
         form.querySelectorAll('input, textarea').forEach(field => {
@@ -205,8 +241,21 @@
       };
       setMessages();
 
+      const openModal = () => {
+        modal.hidden = false;
+        modalClose.focus();
+      };
+      const closeModal = () => {
+        modal.hidden = true;
+      };
+
+      modalClose.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.hidden) closeModal();
+      });
+
       /* AJAX-innsending så brukeren aldri sendes til FormSubmit sin
-         takk-side. Bytter inn en lokal melding når sendingen er ferdig. */
+         takk-side. Viser en lokal popup-modal når sendingen er ferdig. */
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const sendBtn = form.querySelector('button[type="submit"]');
@@ -219,16 +268,16 @@
             headers: { 'Accept': 'application/json' }
           });
           if (res.ok) {
-            form.hidden = true;
-            takk.hidden = false;
-            takk.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            form.reset();
+            openModal();
           } else {
             throw new Error('Status ' + res.status);
           }
         } catch (err) {
+          alert('Noe gikk galt — prøv igjen om en stund, eller send e-post direkte til siv.hostmark@gmail.com');
+        } finally {
           sendBtn.disabled = false;
           sendBtn.textContent = 'Send';
-          alert('Noe gikk galt — prøv igjen om en stund, eller send e-post direkte til siv.hostmark@gmail.com');
         }
       });
     </script>
