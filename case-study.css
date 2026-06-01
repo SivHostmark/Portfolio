@@ -769,6 +769,9 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--black);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .cs-project-nav .nav-arrow {
@@ -827,4 +830,7 @@
 /* ── SMÅ TELEFONER ── */
 @media (max-width: 480px) {
   .cs-hero h1 { font-size: 28px; }
+  .cs-project-nav .nav-title { display: none; }
+  .cs-project-nav a { gap: 0; padding: 24px 16px; }
+  .cs-project-nav .nav-label { max-width: 90px; line-height: 1.4; }
 }
