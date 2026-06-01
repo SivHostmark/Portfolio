@@ -80,6 +80,13 @@
   pointer-events: auto;
 }
 
+/* Lightbox-containeren får fokus via JS når den åpnes (tabindex=-1) —
+   men vi vil ikke ha synlig fokusramme på selve containeren. */
+.kunst-lightbox:focus,
+.kunst-lightbox:focus-visible {
+  outline: none;
+}
+
 .kunst-lightbox-img {
   max-width: min(60vw, 700px);
   max-height: min(70vh, 800px);

@@ -23,7 +23,7 @@
         <li><a href="index.html#projects">UX Portefølje</a></li>
         <li class="active"><a href="kunst-portefolio.html">Kunst Portefølje</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a href="about.html">Om meg</a></li>
+        <li><a href="om-meg.html">Om meg</a></li>
       </ul>
     </nav>
     <button class="menu-toggle" aria-label="Meny" aria-expanded="false">
@@ -74,7 +74,7 @@
   </main>
 
   <!-- LIGHTBOX -->
-  <div class="kunst-lightbox" id="kunst-lightbox" aria-hidden="true">
+  <div class="kunst-lightbox" id="kunst-lightbox" aria-hidden="true" tabindex="-1">
     <button class="kunst-lightbox-close" aria-label="Lukk">×</button>
     <button class="kunst-lightbox-prev" aria-label="Forrige bilde">‹</button>
     <figure class="kunst-lightbox-figure">
@@ -150,7 +150,10 @@
       lightbox.removeAttribute('aria-hidden');
       document.body.style.overflow = 'hidden';
       pageElements.forEach(el => el.setAttribute('inert', ''));
-      requestAnimationFrame(() => closeBtn.focus());
+      /* Fokus til selve lightbox-containeren (tabindex=-1) i stedet for
+         X-knappen — så orange focus-outline ikke ligger på X under
+         pil-navigasjon. Tab fra container går til Lukk, Forrige, Neste. */
+      requestAnimationFrame(() => lightbox.focus());
     };
 
     gridImgs.forEach((img, i) => {
