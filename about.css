@@ -124,3 +124,21 @@
     margin-bottom: 14px;
   }
 }
+
+/* ── SMÅ TELEFONER ──
+   Stack med h1 + ingress over bildet og resten under */
+@media (max-width: 480px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .about-text {
+    display: contents;
+  }
+  .about-text > * { order: 3; }
+  .about-text > h1,
+  .about-text > .lead { order: 1; }
+  .about-text > h1 { text-align: center; }
+  .about-portrait { order: 2; max-width: 280px; margin: 0 auto; }
+  .about-text > .btn { justify-self: center; }
+}
