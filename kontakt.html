@@ -99,6 +99,20 @@
     .kontakt-alt a {
       margin: 0 8px;
     }
+    .kontakt-takk {
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .kontakt-takk h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .kontakt-takk p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
     @media (max-width: 600px) {
       .kontakt-name-row { grid-template-columns: 1fr; }
       .kontakt-heading { font-size: 42px; }
@@ -136,11 +150,10 @@
     <h1 class="kontakt-heading">La oss bli kjent!</h1>
     <p class="kontakt-intro">Send gjerne en melding, eller ring meg på <a href="tel:+4791725699" style="color:inherit;text-decoration:underline;white-space:nowrap;">+47 917 25 699</a>.<br>Jeg elsker å bli invitert på kaffe!</p>
 
-    <form class="kontakt-form" action="https://formsubmit.co/siv.hostmark@gmail.com" method="POST">
+    <form class="kontakt-form" action="https://formsubmit.co/ajax/siv.hostmark@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Ny melding fra porteføljen">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://sivhostmark.github.io/Portfolio/">
       <div>
         <div class="kontakt-name-row">
           <div>
@@ -167,8 +180,15 @@
       <button class="btn" type="submit">Send</button>
     </form>
 
+    <div class="kontakt-takk" hidden>
+      <h2>Takk!</h2>
+      <p>Meldingen er sendt. Jeg svarer så snart jeg kan.</p>
+    </div>
+
     <script>
       const form = document.querySelector('.kontakt-form');
+      const takk = document.querySelector('.kontakt-takk');
+
       const setMessages = () => {
         form.querySelectorAll('input, textarea').forEach(field => {
           field.addEventListener('invalid', () => {
@@ -184,6 +204,33 @@
         });
       };
       setMessages();
+
+      /* AJAX-innsending så brukeren aldri sendes til FormSubmit sin
+         takk-side. Bytter inn en lokal melding når sendingen er ferdig. */
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const sendBtn = form.querySelector('button[type="submit"]');
+        sendBtn.disabled = true;
+        sendBtn.textContent = 'Sender...';
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.hidden = true;
+            takk.hidden = false;
+            takk.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            throw new Error('Status ' + res.status);
+          }
+        } catch (err) {
+          sendBtn.disabled = false;
+          sendBtn.textContent = 'Send';
+          alert('Noe gikk galt — prøv igjen om en stund, eller send e-post direkte til siv.hostmark@gmail.com');
+        }
+      });
     </script>
 
   </section>
