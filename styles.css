@@ -463,9 +463,10 @@ header.dark-nav .menu-toggle span {
     padding: 80px 32px 32px;
     border-radius: 0 0 0 2px;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-8px);
     pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s 0.25s;
     z-index: 150;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -473,8 +474,10 @@ header.dark-nav .menu-toggle span {
 
   header nav.open {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s 0s;
   }
 
   /* Lys boks når headeren er i dark-nav-modus (lyse seksjoner / scrollet ned) */
