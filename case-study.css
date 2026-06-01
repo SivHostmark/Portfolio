@@ -796,6 +796,7 @@
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .cs-hero            { padding: 140px 24px 72px; }
+  .cs-hero-inner      { grid-template-columns: 1fr; gap: 0; }
   .cs-hero h1         { font-size: 38px; }
   .cs-hero-desc       { font-size: 17px; }
   .cs-overview        { padding: 0 24px; }
@@ -821,4 +822,9 @@
   .nav-diamonds { display: none; }
 
   .to-top-extra { display: none; }
+}
+
+/* ── SMÅ TELEFONER ── */
+@media (max-width: 480px) {
+  .cs-hero h1 { font-size: 28px; }
 }
