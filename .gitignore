@@ -4,9 +4,18 @@
 # inspirasjons-/referansebildene, cover-bildet og resultat-gjengivelsen.
 /Project images/AI-onboarding/*
 !/Project images/AI-onboarding/case-study-utkast.md
-!/Project images/AI-onboarding/20250808_091939.jpg
+!/Project images/AI-onboarding/20250808_091939.webp
 !/Project images/AI-onboarding/notion2.avif
-!/Project images/AI-onboarding/fiken.png
-!/Project images/AI-onboarding/gpt og claude.png
-!/Project images/AI-onboarding/coverfoto3.png
-!/Project images/AI-onboarding/resultat.png
+!/Project images/AI-onboarding/fiken.webp
+!/Project images/AI-onboarding/gpt og claude.webp
+!/Project images/AI-onboarding/coverfoto3.webp
+!/Project images/AI-onboarding/resultat.webp
+
+# DNB-interne ressurser fra praksisplassen — skal IKKE publiseres
+/studentprosjekt2026/
+
+# PNG-kildefiler erstattet av WebP (allerede slettet, men holdes ute hvis de dukker opp igjen)
+/Project images/DNB/button.png
+/Project images/DNB/android components.png
+/Project images/ODEL/Odel_mockup_1 fikset.png
+/Project images/ODEL/Odel_app_gjennomsiktigbakgrunn copy fikset.png
