@@ -795,8 +795,9 @@
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  .cs-hero            { padding: 0 24px 72px; }
-  .cs-hero h1         { font-size: 36px; }
+  .cs-hero            { padding: 140px 24px 72px; }
+  .cs-hero h1         { font-size: 38px; }
+  .cs-hero-desc       { font-size: 17px; }
   .cs-overview        { padding: 0 24px; }
   .cs-overview-inner  { flex-direction: column; }
   .cs-overview-item   { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 28px 0; padding-left: 0; padding-right: 0; }
@@ -810,8 +811,14 @@
   .cs-image-grid.three{ grid-template-columns: 1fr; }
   .cs-stats           { grid-template-columns: 1fr; }
 
-  .cs-project-nav     { grid-template-columns: 1fr; }
-  .cs-project-nav a   { padding: 40px 24px; }
-  .cs-project-nav a:first-child { border-right: none; border-bottom: 1px solid #e8e8e8; }
-  .cs-project-nav a:last-child  { align-items: flex-start; text-align: left; }
+  .cs-project-nav a   {
+    width: 100%;
+    padding: 24px 20px;
+    gap: 6px;
+  }
+  .cs-project-nav .nav-direction { font-size: 11px; }
+  .cs-project-nav .nav-title { font-size: 15px; line-height: 1.3; }
+  .nav-diamonds { display: none; }
+
+  .to-top-extra { display: none; }
 }

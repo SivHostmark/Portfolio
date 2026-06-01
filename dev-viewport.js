@@ -1,8 +1,6 @@
-/* Viewport-størrelse-widget. Vises bare når URL-en har ?dev (f.eks. siv-portefolio.html?dev).
-   Fjern <script src="dev-viewport.js"></script> fra HTML-filene før publisering hvis du vil. */
+/* Midlertidig viewport-størrelse-widget. Vises på alle sider mens du jobber med responsivitet.
+   Fjern <script src="dev-viewport.js"></script> fra HTML-filene før publisering. */
 (function () {
-  if (!window.location.search.includes('dev')) return;
-
   const box = document.createElement('div');
   box.style.cssText = [
     'position:fixed',

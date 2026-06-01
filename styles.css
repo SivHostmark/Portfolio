@@ -455,7 +455,7 @@ header.dark-nav .menu-toggle span {
 
   .menu-toggle { display: block; }
 
-  nav {
+  header nav {
     position: fixed;
     top: 0;
     right: 0;
@@ -471,7 +471,7 @@ header.dark-nav .menu-toggle span {
     -webkit-backdrop-filter: blur(8px);
   }
 
-  nav.open {
+  header nav.open {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
@@ -482,20 +482,20 @@ header.dark-nav .menu-toggle span {
     background: rgba(255, 255, 255, 0.65);
   }
 
-  nav ul {
+  header nav ul {
     flex-direction: column;
     gap: 18px;
     text-align: right;
   }
 
-  nav ul li a {
+  header nav ul li a {
     font-size: 14px;
     color: var(--white);
     letter-spacing: 0.08em;
     text-shadow: none;
   }
 
-  nav ul li a::after { background: var(--white); }
+  header nav ul li a::after { background: var(--white); }
 
   #hero { padding: 0 24px; }
 
