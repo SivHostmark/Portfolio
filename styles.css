@@ -422,6 +422,7 @@ footer {
   height: 2px;
   margin: -1px 0 0 -11px;
   background: var(--white);
+  transform-origin: center center;
   transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
 }
 
