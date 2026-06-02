@@ -408,7 +408,6 @@ footer {
   border: none;
   padding: 0;
   cursor: pointer;
-  z-index: 200;
   position: relative;
   width: 44px;
   height: 44px;
@@ -449,13 +448,7 @@ header.dark-nav .menu-toggle span {
 @media (max-width: 768px) {
   header { padding: 24px; }
 
-  .menu-toggle {
-    display: flex;
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    z-index: 1000;
-  }
+  .menu-toggle { display: block; }
 
   header nav {
     position: fixed;
