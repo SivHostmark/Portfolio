@@ -446,12 +446,6 @@ header.dark-nav .menu-toggle span {
   transform: translateY(0) rotate(-45deg);
 }
 
-/* Åpen meny har alltid mørk nav-bakgrunn, så X-en må være hvit
-   også på dark-nav-sider der strekene ellers er svarte. */
-header.dark-nav .menu-toggle.open span {
-  background: var(--white);
-}
-
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
