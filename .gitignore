@@ -14,7 +14,8 @@
 # DNB-interne ressurser fra praksisplassen — skal IKKE publiseres
 /studentprosjekt2026/
 
-# PNG-kildefiler erstattet av WebP (allerede slettet, men holdes ute hvis de dukker opp igjen)
+# PNG-kildefiler erstattet av WebP/AVIF — holdes lokalt, skal IKKE i repoet
+/Hero_painting.png
 /Project images/DNB/button.png
 /Project images/DNB/android components.png
 /Project images/ODEL/Odel_mockup_1 fikset.png
