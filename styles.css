@@ -409,6 +409,9 @@ footer {
   padding: 0;
   cursor: pointer;
   position: relative;
+  /* Må ligge over den åpne menyen (nav har z-index 150), ellers
+     dekker menypanelet knappen så X-en blir usynlig og udødbar. */
+  z-index: 200;
   width: 44px;
   height: 44px;
 }
@@ -441,6 +444,12 @@ header.dark-nav .menu-toggle span {
 }
 .menu-toggle.open span:nth-child(3) {
   transform: translateY(0) rotate(-45deg);
+}
+
+/* Åpen meny har alltid mørk nav-bakgrunn, så X-en må være hvit
+   også på dark-nav-sider der strekene ellers er svarte. */
+header.dark-nav .menu-toggle.open span {
+  background: var(--white);
 }
 
 
