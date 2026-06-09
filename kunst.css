@@ -101,6 +101,24 @@
   transform: scale(1);
 }
 
+/* Slide-inn når man blar mellom bilder (swipe, piler, piltaster).
+   Det nye bildet glir inn fra samme side som bevegelsen. */
+@keyframes kunstSlideInRight {
+  from { opacity: 0; transform: translateX(36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes kunstSlideInLeft {
+  from { opacity: 0; transform: translateX(-36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.kunst-lightbox-img.slide-next { animation: kunstSlideInRight 0.28s ease; }
+.kunst-lightbox-img.slide-prev { animation: kunstSlideInLeft 0.28s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kunst-lightbox-img.slide-next,
+  .kunst-lightbox-img.slide-prev { animation: none; }
+}
+
 .kunst-lightbox-figure {
   margin: 0;
   display: flex;

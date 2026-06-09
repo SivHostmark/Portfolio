@@ -129,7 +129,7 @@
     let touchStartX = 0, touchStartY = 0, swiped = false;
     const SWIPE_MIN = 40; // piksler før et drag regnes som swipe
 
-    const showImage = (index) => {
+    const showImage = (index, direction) => {
       if (index < 0) index = gridImgs.length - 1;
       if (index >= gridImgs.length) index = 0;
       currentIndex = index;
@@ -139,6 +139,14 @@
       captionTitle.textContent = img.dataset.title || img.alt;
       captionMedium.textContent = img.dataset.medium || '';
       captionSize.textContent = img.dataset.size || '';
+
+      /* Spill slide-animasjonen i blaretningen på nytt for hvert bytte:
+         fjern klassen, tving reflow, legg den på igjen. */
+      lightboxImg.classList.remove('slide-next', 'slide-prev');
+      if (direction) {
+        void lightboxImg.offsetWidth;
+        lightboxImg.classList.add(direction === 'next' ? 'slide-next' : 'slide-prev');
+      }
     };
 
     /* Alle direkte body-barn unntatt selve lightbox-en — settes inert når
@@ -196,19 +204,19 @@
 
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      showImage(currentIndex - 1);
+      showImage(currentIndex - 1, 'prev');
     });
 
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      showImage(currentIndex + 1);
+      showImage(currentIndex + 1, 'next');
     });
 
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('visible')) return;
       if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1, 'prev');
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1, 'next');
     });
 
     /* Swipe på touch-skjerm: dra til siden for å bla, samme retning som
@@ -227,7 +235,7 @@
       const dy = t.clientY - touchStartY;
       if (Math.abs(dx) > SWIPE_MIN && Math.abs(dx) > Math.abs(dy)) {
         swiped = true;
-        showImage(dx < 0 ? currentIndex + 1 : currentIndex - 1);
+        showImage(dx < 0 ? currentIndex + 1 : currentIndex - 1, dx < 0 ? 'next' : 'prev');
       }
     }, { passive: true });
   </script>
