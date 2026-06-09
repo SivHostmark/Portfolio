@@ -125,6 +125,9 @@
     });
 
     let currentIndex = -1;
+    /* Touch-swipe-tilstand for å bla mellom bildene på mobil */
+    let touchStartX = 0, touchStartY = 0, swiped = false;
+    const SWIPE_MIN = 40; // piksler før et drag regnes som swipe
 
     const showImage = (index) => {
       if (index < 0) index = gridImgs.length - 1;
@@ -186,6 +189,8 @@
     };
 
     lightbox.addEventListener('click', () => {
+      /* Ikke lukk hvis klikket egentlig var slutten på en swipe */
+      if (swiped) { swiped = false; return; }
       closeLightbox();
     });
 
@@ -205,6 +210,26 @@
       if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
       if (e.key === 'ArrowRight') showImage(currentIndex + 1);
     });
+
+    /* Swipe på touch-skjerm: dra til siden for å bla, samme retning som
+       pilene. Vertikale drag ignoreres, og et vanlig trykk er for kort
+       til å telle som swipe. */
+    lightbox.addEventListener('touchstart', (e) => {
+      const t = e.changedTouches[0];
+      touchStartX = t.clientX;
+      touchStartY = t.clientY;
+      swiped = false;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      if (Math.abs(dx) > SWIPE_MIN && Math.abs(dx) > Math.abs(dy)) {
+        swiped = true;
+        showImage(dx < 0 ? currentIndex + 1 : currentIndex - 1);
+      }
+    }, { passive: true });
   </script>
 
   <script src="menu.js"></script>
