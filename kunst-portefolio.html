@@ -125,6 +125,7 @@
     });
 
     let currentIndex = -1;
+    let savedScrollY = 0;   // bevarer scroll-posisjonen mens lightboxen låser siden
     /* Touch-swipe-tilstand for å bla mellom bildene på mobil */
     let touchStartX = 0, touchStartY = 0, swiped = false;
     const SWIPE_MIN = 40; // piksler før et drag regnes som swipe
@@ -251,6 +252,14 @@
       showImage(i);
       lightbox.classList.add('visible');
       lightbox.removeAttribute('aria-hidden');
+      /* Lås bakgrunnen så siden ikke kan scrolles mens lightboxen er åpen.
+         position: fixed + lagret scroll-posisjon virker også på mobil, der
+         overflow: hidden alene ikke alltid stopper touch-scroll. */
+      savedScrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + savedScrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
       document.body.style.overflow = 'hidden';
       pageElements.forEach(el => el.setAttribute('inert', ''));
       /* Fokus til selve lightbox-containeren (tabindex=-1) i stedet for
@@ -278,7 +287,13 @@
     const closeLightbox = () => {
       lightbox.classList.remove('visible');
       lightbox.setAttribute('aria-hidden', 'true');
+      /* Lås opp bakgrunnen og gjenopprett scroll-posisjonen. */
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
+      window.scrollTo(0, savedScrollY);
       pageElements.forEach(el => el.removeAttribute('inert'));
       /* Returner fokus til bildet som åpnet lightbox-en, men uten den
          synlige oransje ringen. Ringen kommer tilbake hvis brukeren
