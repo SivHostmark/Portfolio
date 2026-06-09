@@ -154,16 +154,23 @@
       captionSize.textContent = img.dataset.size || '';
     };
 
-    /* Bytt bilde umiddelbart uten animasjon (rask bla, holdt piltast,
-       eller redusert bevegelse). Sentrerer bildet og avbryter en
-       eventuell pågående slide. */
-    const snapToImage = (index) => {
-      currentIndex = index;
-      setImage(index);
+    /* Bytt bilde uten slide (rask bla, holdt piltast, redusert bevegelse).
+       Viser det gjeldende bildet fullt ut med en gang, forhåndslaster/
+       dekoder det neste, og bytter src først når det er klart. Da blir
+       det aldri et tomt glimt (blink) selv om man blar fort. */
+    const snapToImage = (index, token) => {
       lightboxImg.style.transition = 'none';
       lightboxImg.style.transform = 'translateX(0)';
       lightboxImg.style.opacity = '1';
-      isAnimating = false;
+      const pre = new Image();
+      pre.src = gridImgs[index].src;
+      const apply = () => {
+        if (token !== navToken) return; // erstattet av en nyere bla
+        setImage(index);
+        isAnimating = false;
+      };
+      if (pre.decode) { pre.decode().then(apply).catch(apply); }
+      else { pre.onload = apply; pre.onerror = apply; }
     };
 
     const showImage = (index) => {
@@ -186,12 +193,13 @@
       let index = currentIndex + delta;
       if (index < 0) index = gridImgs.length - 1;
       if (index >= gridImgs.length) index = 0;
+      currentIndex = index; // logisk indeks oppdateres med en gang
 
       const token = ++navToken; // enhver ny bla ugyldiggjør forrige animasjon
       const instant = fast || reduceMotion || recentNav || isAnimating;
       markRecent();
 
-      if (instant) { snapToImage(index); return; }
+      if (instant) { snapToImage(index, token); return; }
 
       isAnimating = true;
 
@@ -220,7 +228,6 @@
 
       Promise.all([fadedOut, decoded]).then(() => {
         if (token !== navToken) return; // avbrutt av en nyere bla
-        currentIndex = index;
         setImage(index);
         /* Hopp til inngangssiden uten transition, så animer inn. */
         lightboxImg.style.transition = 'none';
