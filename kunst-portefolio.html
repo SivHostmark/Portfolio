@@ -129,24 +129,83 @@
     let touchStartX = 0, touchStartY = 0, swiped = false;
     const SWIPE_MIN = 40; // piksler før et drag regnes som swipe
 
-    const showImage = (index, direction) => {
-      if (index < 0) index = gridImgs.length - 1;
-      if (index >= gridImgs.length) index = 0;
-      currentIndex = index;
+    /* Slide-animasjon ved bla */
+    let isAnimating = false;
+    const SLIDE_DUR = 180;  // ms per fase (ut, så inn)
+    const SLIDE_DIST = 36;  // px bildet glir
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Setter bilde og bildetekst direkte (brukes ved åpning). */
+    const setImage = (index) => {
       const img = gridImgs[index];
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
       captionTitle.textContent = img.dataset.title || img.alt;
       captionMedium.textContent = img.dataset.medium || '';
       captionSize.textContent = img.dataset.size || '';
+    };
 
-      /* Spill slide-animasjonen i blaretningen på nytt for hvert bytte:
-         fjern klassen, tving reflow, legg den på igjen. */
-      lightboxImg.classList.remove('slide-next', 'slide-prev');
-      if (direction) {
+    const showImage = (index) => {
+      if (index < 0) index = gridImgs.length - 1;
+      if (index >= gridImgs.length) index = 0;
+      currentIndex = index;
+      setImage(index);
+      /* Nullstill inline-stiler fra en evt. tidligere slide, så CSS-ens
+         scale-inn på åpning får styre. */
+      lightboxImg.style.transition = '';
+      lightboxImg.style.transform = '';
+      lightboxImg.style.opacity = '';
+    };
+
+    /* Myk bla: ton + skyv gjeldende bilde ut, bytt innhold mens det er
+       usynlig (etter at neste er ferdig dekodet), ton + skyv det inn fra
+       motsatt side. Ingen blink fordi byttet skjer ved opacity 0 og det
+       nye bildet er forhåndslastet. */
+    const navigate = (delta, direction) => {
+      if (isAnimating) return;
+      let index = currentIndex + delta;
+      if (index < 0) index = gridImgs.length - 1;
+      if (index >= gridImgs.length) index = 0;
+
+      if (reduceMotion) { currentIndex = index; setImage(index); return; }
+
+      isAnimating = true;
+
+      const pre = new Image();
+      pre.src = gridImgs[index].src;
+      const decoded = pre.decode ? pre.decode().catch(() => {}) : Promise.resolve();
+
+      const exitX = direction === 'next' ? -SLIDE_DIST : SLIDE_DIST;
+      const enterX = -exitX;
+
+      lightboxImg.style.transition = 'transform ' + SLIDE_DUR + 'ms ease, opacity ' + SLIDE_DUR + 'ms ease';
+      lightboxImg.style.opacity = '0';
+      lightboxImg.style.transform = 'translateX(' + exitX + 'px)';
+
+      const fadedOut = new Promise((resolve) => {
+        let done = false;
+        const finish = () => { if (!done) { done = true; resolve(); } };
+        const onEnd = (e) => {
+          if (e.propertyName !== 'opacity') return;
+          lightboxImg.removeEventListener('transitionend', onEnd);
+          finish();
+        };
+        lightboxImg.addEventListener('transitionend', onEnd);
+        setTimeout(finish, SLIDE_DUR + 60); // fallback om transitionend uteblir
+      });
+
+      Promise.all([fadedOut, decoded]).then(() => {
+        currentIndex = index;
+        setImage(index);
+        /* Hopp til inngangssiden uten transition, så animer inn. */
+        lightboxImg.style.transition = 'none';
+        lightboxImg.style.transform = 'translateX(' + enterX + 'px)';
         void lightboxImg.offsetWidth;
-        lightboxImg.classList.add(direction === 'next' ? 'slide-next' : 'slide-prev');
-      }
+        lightboxImg.style.transition = 'transform ' + SLIDE_DUR + 'ms ease, opacity ' + SLIDE_DUR + 'ms ease';
+        lightboxImg.style.opacity = '1';
+        lightboxImg.style.transform = 'translateX(0)';
+        setTimeout(() => { isAnimating = false; }, SLIDE_DUR + 40);
+      });
     };
 
     /* Alle direkte body-barn unntatt selve lightbox-en — settes inert når
@@ -204,19 +263,19 @@
 
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      showImage(currentIndex - 1, 'prev');
+      navigate(-1, 'prev');
     });
 
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      showImage(currentIndex + 1, 'next');
+      navigate(1, 'next');
     });
 
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('visible')) return;
       if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showImage(currentIndex - 1, 'prev');
-      if (e.key === 'ArrowRight') showImage(currentIndex + 1, 'next');
+      if (e.key === 'ArrowLeft') navigate(-1, 'prev');
+      if (e.key === 'ArrowRight') navigate(1, 'next');
     });
 
     /* Swipe på touch-skjerm: dra til siden for å bla, samme retning som
@@ -235,7 +294,7 @@
       const dy = t.clientY - touchStartY;
       if (Math.abs(dx) > SWIPE_MIN && Math.abs(dx) > Math.abs(dy)) {
         swiped = true;
-        showImage(dx < 0 ? currentIndex + 1 : currentIndex - 1, dx < 0 ? 'next' : 'prev');
+        navigate(dx < 0 ? 1 : -1, dx < 0 ? 'next' : 'prev');
       }
     }, { passive: true });
   </script>
