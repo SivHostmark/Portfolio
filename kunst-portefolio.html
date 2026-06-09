@@ -131,11 +131,20 @@
 
     /* Slide-animasjon ved bla */
     let isAnimating = false;
+    let navToken = 0;       // ugyldiggjør en pågående animasjon når man blar videre
+    let recentNav = false;  // sant en liten stund etter siste bla (for å oppdage rask bla)
+    let recentTimer = null;
     const SLIDE_DUR = 180;  // ms per fase (ut, så inn)
     const SLIDE_DIST = 36;  // px bildet glir
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* Setter bilde og bildetekst direkte (brukes ved åpning). */
+    const markRecent = () => {
+      recentNav = true;
+      if (recentTimer) clearTimeout(recentTimer);
+      recentTimer = setTimeout(() => { recentNav = false; }, SLIDE_DUR + 80);
+    };
+
+    /* Setter bilde og bildetekst direkte. */
     const setImage = (index) => {
       const img = gridImgs[index];
       lightboxImg.src = img.src;
@@ -143,6 +152,18 @@
       captionTitle.textContent = img.dataset.title || img.alt;
       captionMedium.textContent = img.dataset.medium || '';
       captionSize.textContent = img.dataset.size || '';
+    };
+
+    /* Bytt bilde umiddelbart uten animasjon (rask bla, holdt piltast,
+       eller redusert bevegelse). Sentrerer bildet og avbryter en
+       eventuell pågående slide. */
+    const snapToImage = (index) => {
+      currentIndex = index;
+      setImage(index);
+      lightboxImg.style.transition = 'none';
+      lightboxImg.style.transform = 'translateX(0)';
+      lightboxImg.style.opacity = '1';
+      isAnimating = false;
     };
 
     const showImage = (index) => {
@@ -159,15 +180,18 @@
 
     /* Myk bla: ton + skyv gjeldende bilde ut, bytt innhold mens det er
        usynlig (etter at neste er ferdig dekodet), ton + skyv det inn fra
-       motsatt side. Ingen blink fordi byttet skjer ved opacity 0 og det
-       nye bildet er forhåndslastet. */
-    const navigate = (delta, direction) => {
-      if (isAnimating) return;
+       motsatt side. Ved rask bla hoppes det rett til bildet i stedet, så
+       man aldri "henger" mens animasjonen spilles av. */
+    const navigate = (delta, direction, fast) => {
       let index = currentIndex + delta;
       if (index < 0) index = gridImgs.length - 1;
       if (index >= gridImgs.length) index = 0;
 
-      if (reduceMotion) { currentIndex = index; setImage(index); return; }
+      const token = ++navToken; // enhver ny bla ugyldiggjør forrige animasjon
+      const instant = fast || reduceMotion || recentNav || isAnimating;
+      markRecent();
+
+      if (instant) { snapToImage(index); return; }
 
       isAnimating = true;
 
@@ -195,6 +219,7 @@
       });
 
       Promise.all([fadedOut, decoded]).then(() => {
+        if (token !== navToken) return; // avbrutt av en nyere bla
         currentIndex = index;
         setImage(index);
         /* Hopp til inngangssiden uten transition, så animer inn. */
@@ -204,7 +229,7 @@
         lightboxImg.style.transition = 'transform ' + SLIDE_DUR + 'ms ease, opacity ' + SLIDE_DUR + 'ms ease';
         lightboxImg.style.opacity = '1';
         lightboxImg.style.transform = 'translateX(0)';
-        setTimeout(() => { isAnimating = false; }, SLIDE_DUR + 40);
+        setTimeout(() => { if (token === navToken) isAnimating = false; }, SLIDE_DUR + 40);
       });
     };
 
@@ -224,7 +249,7 @@
       /* Fokus til selve lightbox-containeren (tabindex=-1) i stedet for
          X-knappen — så orange focus-outline ikke ligger på X under
          pil-navigasjon. Tab fra container går til Lukk, Forrige, Neste. */
-      requestAnimationFrame(() => lightbox.focus());
+      requestAnimationFrame(() => lightbox.focus({ preventScroll: true }));
     };
 
     gridImgs.forEach((img, i) => {
@@ -248,9 +273,15 @@
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
       pageElements.forEach(el => el.removeAttribute('inert'));
-      /* Returner fokus til bildet som åpnet lightbox-en */
+      /* Returner fokus til bildet som åpnet lightbox-en, men uten den
+         synlige oransje ringen. Ringen kommer tilbake hvis brukeren
+         senere Tab-er seg til bildet (klassen fjernes ved blur). */
       if (currentIndex >= 0 && gridImgs[currentIndex]) {
-        gridImgs[currentIndex].focus();
+        const target = gridImgs[currentIndex];
+        target.classList.add('no-focus-ring');
+        target.addEventListener('blur', () => target.classList.remove('no-focus-ring'), { once: true });
+        /* preventScroll: ikke hopp/scroll siden til bildet når lightboxen lukkes */
+        target.focus({ preventScroll: true });
       }
       setTimeout(() => { lightboxImg.src = ''; }, 300);
     };
@@ -274,8 +305,8 @@
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('visible')) return;
       if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') navigate(-1, 'prev');
-      if (e.key === 'ArrowRight') navigate(1, 'next');
+      if (e.key === 'ArrowLeft') navigate(-1, 'prev', e.repeat);
+      if (e.key === 'ArrowRight') navigate(1, 'next', e.repeat);
     });
 
     /* Swipe på touch-skjerm: dra til siden for å bla, samme retning som

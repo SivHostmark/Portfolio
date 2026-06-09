@@ -59,6 +59,13 @@
   outline-offset: -3px;
 }
 
+/* Når fokus føres programmatisk tilbake til galleribildet etter at
+   lightboxen lukkes, vil vi ikke ha den synlige ringen. Den vises
+   fortsatt ved vanlig Tab-navigasjon. */
+.kunst-item img.no-focus-ring:focus-visible {
+  outline: none;
+}
+
 /* ── LIGHTBOX ── */
 .kunst-lightbox {
   position: fixed;
