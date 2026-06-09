@@ -293,7 +293,13 @@
       document.body.style.left = '';
       document.body.style.right = '';
       document.body.style.overflow = '';
+      /* Hopp tilbake til lagret posisjon UTEN myk scroll. html har
+         scroll-behavior: smooth, så en vanlig scrollTo ville animert
+         nedover fra toppen når vi låser opp. Sett 'auto' midlertidig. */
+      const prevScrollBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
       window.scrollTo(0, savedScrollY);
+      document.documentElement.style.scrollBehavior = prevScrollBehavior;
       pageElements.forEach(el => el.removeAttribute('inert'));
       /* Returner fokus til bildet som åpnet lightbox-en, men uten den
          synlige oransje ringen. Ringen kommer tilbake hvis brukeren
