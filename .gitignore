@@ -14,6 +14,9 @@
 # DNB-interne ressurser fra praksisplassen — skal IKKE publiseres
 /studentprosjekt2026/
 
+# Gammel CV-versjon — beholdes lokalt som backup, skal IKKE publiseres
+/CV_Siv-Høstmark gammel.pdf
+
 # PNG-kildefiler erstattet av WebP/AVIF — holdes lokalt, skal IKKE i repoet
 /Hero_painting.png
 /Project images/DNB/button.png
