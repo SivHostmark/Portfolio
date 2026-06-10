@@ -21,7 +21,7 @@
     }
   </style>
 </head>
-<body>
+<body class="cs-jump-page">
 
   <!-- ─────────────────────────────── HEADER ─── -->
   <header class="dark-nav">
@@ -324,6 +324,21 @@
 
   </main>
 
+  <!-- ─────────────────────────────── MOBIL: HOPP TIL SEKSJON ─── -->
+  <div class="cs-jump" id="cs-jump">
+    <div class="cs-jump-panel" id="cs-jump-panel" role="region" aria-label="Hopp til seksjon">
+      <a href="#cs-section-problem"  class="cs-jump-link" data-section="cs-section-problem">01 - Utfordringen</a>
+      <a href="#cs-section-research" class="cs-jump-link" data-section="cs-section-research">02 - Innsikt</a>
+      <a href="#cs-section-process"  class="cs-jump-link" data-section="cs-section-process">03 - Konsept</a>
+      <a href="#cs-section-solution" class="cs-jump-link" data-section="cs-section-solution">04 - Løsningen</a>
+      <a href="#cs-section-results"  class="cs-jump-link" data-section="cs-section-results">05 - Refleksjoner</a>
+    </div>
+    <button type="button" class="cs-jump-toggle" id="cs-jump-toggle" aria-expanded="false" aria-controls="cs-jump-panel">
+      <span class="cs-jump-current">Hopp til seksjon</span>
+      <span class="cs-jump-caret" aria-hidden="true">▾</span>
+    </button>
+  </div>
+
   <!-- ─────────────────────────────── FOOTER ─── -->
   <footer>
     <div class="footer-left">
@@ -368,9 +383,21 @@
     ];
     const navLinks = document.querySelectorAll('.cs-sidenav-link');
 
+    /* ── Mobil "hopp til seksjon"-meny ── */
+    const jump = document.getElementById('cs-jump');
+    const jumpToggle = document.getElementById('cs-jump-toggle');
+    const jumpPanel = document.getElementById('cs-jump-panel');
+    const jumpLinks = jump ? jump.querySelectorAll('.cs-jump-link') : [];
+    const jumpCurrent = jump ? jump.querySelector('.cs-jump-current') : null;
+
     const setActive = (id) => {
       navLinks.forEach(link => {
         link.classList.toggle('active', link.dataset.section === id);
+      });
+      jumpLinks.forEach(link => {
+        const on = link.dataset.section === id;
+        link.classList.toggle('active', on);
+        if (on && jumpCurrent) jumpCurrent.textContent = link.textContent;
       });
     };
 
@@ -389,6 +416,50 @@
       const el = document.getElementById(id);
       if (el) spyObserver.observe(el);
     });
+
+    /* ── Åpne/lukke bunnmenyen ── */
+    if (jump && jumpToggle && jumpPanel) {
+      const closeJump = () => {
+        jump.classList.remove('open');
+        jumpToggle.setAttribute('aria-expanded', 'false');
+      };
+      const openJump = () => {
+        jump.classList.add('open');
+        jumpToggle.setAttribute('aria-expanded', 'true');
+      };
+      jumpToggle.addEventListener('click', () => {
+        jump.classList.contains('open') ? closeJump() : openJump();
+      });
+      jumpLinks.forEach(link => link.addEventListener('click', closeJump));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && jump.classList.contains('open')) closeJump();
+      });
+      document.addEventListener('click', (e) => {
+        if (jump.classList.contains('open') && !jump.contains(e.target)) closeJump();
+      });
+
+      const firstSection = document.getElementById('cs-section-problem');
+      const updateJumpLabel = () => {
+        if (!jumpCurrent || !firstSection) return;
+        if (firstSection.getBoundingClientRect().top > window.innerHeight * 0.35) {
+          jumpCurrent.textContent = 'Hopp til seksjon';
+          jumpLinks.forEach(l => l.classList.remove('active'));
+        }
+      };
+      window.addEventListener('scroll', updateJumpLabel, { passive: true });
+      updateJumpLabel();
+
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            jump.classList.toggle('cs-jump-hidden', entry.isIntersecting);
+            if (entry.isIntersecting) closeJump();
+          });
+        }, { threshold: 0 });
+        footerObserver.observe(footer);
+      }
+    }
 
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
