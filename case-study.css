@@ -649,6 +649,10 @@
   line-height: 1.2;
 }
 
+/* Kortnavn og korte retnings-etiketter brukes bare på mobil (se mobil-spørringen) */
+.cs-project-nav .nav-title-short { display: none; }
+.cs-project-nav .nav-label-short { display: none; }
+
 /* ── DIVIDER ── */
 .cs-divider {
   width: 40px;
@@ -678,8 +682,20 @@
     padding: 24px 20px;
     gap: 6px;
   }
+  /* Kort retnings-etikett ("Forrige"/"Neste") med pil, prosjektnavn under */
   .cs-project-nav .nav-direction { font-size: 11px; }
-  .cs-project-nav .nav-title { font-size: 15px; line-height: 1.3; }
+  .cs-project-nav .nav-label { display: none; }
+  .cs-project-nav .nav-label-short { display: inline; }
+  /* Bytt full tittel mot kortnavn på mobil/nettbrett */
+  .cs-project-nav .nav-title { display: none; }
+  .cs-project-nav .nav-title-short {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
   .nav-diamonds { display: none; }
 
   .to-top-extra { display: none; }
@@ -688,9 +704,7 @@
 /* ── SMÅ TELEFONER ── */
 @media (max-width: 480px) {
   .cs-hero h1 { font-size: 28px; }
-  .cs-project-nav .nav-title { display: none; }
-  .cs-project-nav a { gap: 0; padding: 24px 16px; }
-  .cs-project-nav .nav-label { max-width: 90px; line-height: 1.4; }
+  .cs-project-nav a { gap: 4px; padding: 24px 16px; }
 }
 
 /* ── MOBIL: HOPP-TIL-SEKSJON-MENY (der sidemenyen er skjult) ── */
