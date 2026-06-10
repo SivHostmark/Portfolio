@@ -806,3 +806,22 @@
   .cs-jump-page .cs-jump { display: block; }
   .cs-jump-page .cs-section-wrap { scroll-margin-top: 90px; } /* anker-hopp lander under fixed header */
 }
+
+/* ── Telefon-mockup (AI-casen, Løsningen): desktop som før, men zoom inn
+   på mobil siden bildet har mye hvit luft rundt telefonen ── */
+.cs-mockup {
+  max-width: 560px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .cs-mockup-wrap { overflow: hidden; border-radius: 8px; }
+  .cs-mockup {
+    display: block;
+    max-width: none;
+    width: 220%;
+    margin-left: -60%;   /* sentrerer den brede mockupen, hvite sider klippes bort */
+    border-radius: 0;
+  }
+}
