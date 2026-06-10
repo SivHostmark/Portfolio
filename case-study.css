@@ -458,11 +458,25 @@
   height: auto;
 }
 
+/* Litt større bilde på mobil: gå helt ut til skjermkanten (full bredde),
+   uten å overskride viewporten, så ingen sidescroll. Desktop som før. */
+.cs-bleed-mobile { margin: 32px 0; }
+@media (max-width: 768px) {
+  .cs-bleed-mobile { margin-left: -24px; margin-right: -24px; }
+}
+
 .cs-img-caption {
   font-size: 11px;
   color: var(--mid-gray);
   letter-spacing: 0.06em;
   margin-top: 10px;
+}
+
+/* ODEL landingsside: dra teksten opp i laptop-bildets bunn-luft på desktop,
+   men gi vanlig luft på mobil der bildet er mindre og teksten ellers overlapper. */
+.cs-caption-pull { margin-top: -24px; }
+@media (max-width: 768px) {
+  .cs-caption-pull { margin-top: 10px; }
 }
 
 .cs-img-caption-large {
