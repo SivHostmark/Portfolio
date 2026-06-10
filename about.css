@@ -115,6 +115,6 @@
   .about-text > h1,
   .about-text > .lead { order: 1; }
   .about-text > h1 { text-align: center; }
-  .about-portrait { order: 2; max-width: 280px; margin: 0 auto; }
+  .about-portrait { order: 2; max-width: 280px; margin: 0 auto 18px; }
   .about-text > .btn { justify-self: center; margin-top: 8px; }
 }
