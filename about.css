@@ -5,6 +5,7 @@
 
 .about-hero {
   min-height: calc(100vh - 88px);
+  min-height: calc(100svh - 88px); /* synlig skjermhøyde på mobil */
   display: flex;
   align-items: center;
   padding: 80px 48px;

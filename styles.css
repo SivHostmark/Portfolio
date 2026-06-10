@@ -137,6 +137,7 @@ header.dark-nav .logo-mark span    { color: var(--black); }
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
+  min-height: 100svh; /* unngår at hero blir høyere enn synlig skjerm på mobil (adresselinje) */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -500,7 +501,9 @@ header.dark-nav .menu-toggle span {
 
   #hero { padding: 0 24px; }
 
-  .project-section { padding: 80px 24px; }
+  /* Ikke tving full skjermhøyde per seksjon på mobil — det gir bare
+     mye tomrom og unødvendig scrolling. La padding styre høyden. */
+  .project-section { padding: 80px 24px; min-height: auto; }
 
   .project-inner,
   .project-inner.reverse {
