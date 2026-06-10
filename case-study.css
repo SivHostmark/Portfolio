@@ -641,6 +641,13 @@
   line-height: 1;
 }
 
+/* Begge sider bruker samme pil-glyf (→). Speilvend forrige-pilen, så de
+   blir helt like i størrelse og høyde i stedet for to ulike tegn. */
+.cs-project-nav .cs-nav-prev .nav-arrow {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
 .cs-project-nav .nav-title {
   font-family: 'Jost', sans-serif;
   font-size: clamp(18px, 2vw, 26px);
@@ -686,6 +693,7 @@
   .cs-project-nav .nav-direction { font-size: 11px; }
   .cs-project-nav .nav-label { display: none; }
   .cs-project-nav .nav-label-short { display: inline; }
+  .cs-project-nav .nav-arrow { position: relative; top: -2px; }  /* løft pilen til tekstens midte */
   /* Bytt full tittel mot kortnavn på mobil/nettbrett */
   .cs-project-nav .nav-title { display: none; }
   .cs-project-nav .nav-title-short {
