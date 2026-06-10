@@ -692,3 +692,95 @@
   .cs-project-nav a { gap: 0; padding: 24px 16px; }
   .cs-project-nav .nav-label { max-width: 90px; line-height: 1.4; }
 }
+
+/* ── MOBIL: HOPP-TIL-SEKSJON-MENY (der sidemenyen er skjult) ── */
+.cs-jump {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 160;
+  font-family: var(--font-body);
+  transition: transform 0.3s ease;
+}
+
+/* Glir ned og bort når man er nede ved footeren, opp igjen når man scroller opp */
+.cs-jump.cs-jump-hidden {
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+/* Lukket linje */
+.cs-jump-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cs-jump-current {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cs-jump-caret {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--black);
+  transition: transform 0.3s ease;
+}
+.cs-jump.open .cs-jump-caret { transform: rotate(180deg); }
+
+/* Panel som folder seg ut over linja */
+.cs-jump-panel {
+  background: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
+  overflow-y: auto;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+}
+.cs-jump.open .cs-jump-panel {
+  max-height: 68vh;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
+}
+
+.cs-jump-link {
+  display: block;
+  padding: 15px 24px;
+  color: #6c6c6c;
+  font-family: var(--font-body);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  transition: color 0.3s ease;
+}
+.cs-jump-link.active {
+  color: var(--black);
+  font-weight: 600;
+}
+
+@media (max-width: 1299px) {
+  .cs-jump-page .cs-jump { display: block; }
+  .cs-jump-page .cs-section-wrap { scroll-margin-top: 90px; } /* anker-hopp lander under fixed header */
+}
