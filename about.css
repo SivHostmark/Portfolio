@@ -87,12 +87,12 @@
     margin-bottom: 16px;
   }
   .about-text .lead {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.4;
     margin-bottom: 20px;
   }
   .about-text p:not(.lead) {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7;
     margin-bottom: 14px;
   }
