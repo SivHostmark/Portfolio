@@ -88,7 +88,7 @@
 
 .cs-cover-image {
   background: rgba(197, 224, 205, 0.7);
-  height: 562px;
+  height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -459,8 +459,8 @@
 }
 
 /* Litt større bilde på mobil: gå helt ut til skjermkanten (full bredde),
-   uten å overskride viewporten, så ingen sidescroll. Desktop som før. */
-.cs-bleed-mobile { margin: 32px 0; }
+   uten å overskride viewporten, så ingen sidescroll. Desktop urørt
+   (topp/bunn-margin settes inline per bilde, ikke left/right). */
 @media (max-width: 768px) {
   .cs-bleed-mobile { margin-left: -24px; margin-right: -24px; }
 }
